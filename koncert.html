@@ -177,6 +177,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 #fmt-tools .fmt-lbl{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-right:2px}
 .fmt-btn{height:26px;min-width:30px;padding:0 8px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;font-size:12px;font-weight:700;color:var(--text2);cursor:pointer;font-family:var(--font-ui)}
 .fmt-btn:active{background:var(--bg3)}
+.fmt-btn:disabled{opacity:.45;cursor:not-allowed}
 .fmt-btn.alt{font-weight:600;min-width:34px}
 #bulk-wrap{display:none;flex:1;flex-direction:column;min-height:0;border-bottom:1px solid var(--border)}
 #bulk-grid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(120px,38%) minmax(170px,62%)}
@@ -385,6 +386,8 @@ body.resizing-panel{user-select:none;cursor:col-resize}
               <button class="fmt-btn" onmousedown="preventFormatBlur(event)" onclick="applyInlineFormat('underline')"><u>U</u></button>
               <button class="fmt-btn alt" onmousedown="preventFormatBlur(event)" onclick="shiftText(-1)">←</button>
               <button class="fmt-btn alt" onmousedown="preventFormatBlur(event)" onclick="shiftText(1)">→</button>
+              <button class="fmt-btn alt" id="undo-btn" onmousedown="preventFormatBlur(event)" onclick="undoEdit()" title="Cofnij (Ctrl+Z)">↶</button>
+              <button class="fmt-btn alt" id="redo-btn" onmousedown="preventFormatBlur(event)" onclick="redoEdit()" title="Ponow (Ctrl+Y)">↷</button>
             </div>
             <div id="bulk-wrap">
               <div id="bulk-grid">
@@ -467,7 +470,7 @@ let showChords=true,reorderMode=false,dragSongIdx=-1;
 let scrollCarry=0;
 let adminMode=false,tabletOnboardingDone=false,onboardingSeenVersion=0;
 let adminPassResolve=null;
-let lastFormatEl=null,lastFormatSelStart=0,lastFormatSelEnd=0;
+let editHistory=[],editHistoryIdx=-1,editHistoryTimer=null,historyApplying=false;
 
 function normalizeLine(l){
   return {
@@ -672,30 +675,94 @@ function isFormatField(el){
   return !!(el.classList&&((el.classList.contains('ci'))||(el.classList.contains('li'))));
 }
 
-function rememberFormatSelection(el){
-  if(!isFormatField(el))return;
-  lastFormatEl=el;
-  if(typeof el.selectionStart==='number')lastFormatSelStart=el.selectionStart;
-  if(typeof el.selectionEnd==='number')lastFormatSelEnd=el.selectionEnd;
-}
-
 function preventFormatBlur(e){
   if(e)e.preventDefault();
 }
 
 function getFormatTarget(){
-  const active=document.activeElement;
-  if(isFormatField(active)){rememberFormatSelection(active);return active}
-  if(lastFormatEl&&document.contains(lastFormatEl))return lastFormatEl;
-  return null;
+  const el=document.activeElement;
+  return isFormatField(el)?el:null;
 }
 
-function restoreRememberedSelection(el){
-  if(!el||typeof el.setSelectionRange!=='function')return;
-  const len=(el.value||'').length;
-  const s=Math.max(0,Math.min(len,lastFormatSelStart));
-  const e=Math.max(0,Math.min(len,lastFormatSelEnd));
-  el.setSelectionRange(s,e);
+function cloneLines(src){return (src||[]).map(l=>({...l}))}
+
+function getEditorSnapshot(){
+  return {
+    title:document.getElementById('ed-title').value,
+    key:document.getElementById('ed-key').value,
+    bpm:document.getElementById('ed-bpm').value,
+    notes:document.getElementById('ed-notes').value,
+    chordLayout,
+    editMode,
+    lines:cloneLines(lines)
+  };
+}
+
+function updateUndoRedoButtons(){
+  const u=document.getElementById('undo-btn');
+  const r=document.getElementById('redo-btn');
+  if(u)u.disabled=editHistoryIdx<=0;
+  if(r)r.disabled=editHistoryIdx<0||editHistoryIdx>=editHistory.length-1;
+}
+
+function pushEditorHistory(force){
+  if(!isEditing||historyApplying||curIdx<0)return;
+  const snap=getEditorSnapshot();
+  const sig=JSON.stringify(snap);
+  if(!force&&editHistoryIdx>=0&&JSON.stringify(editHistory[editHistoryIdx])===sig)return;
+  if(editHistoryIdx<editHistory.length-1)editHistory=editHistory.slice(0,editHistoryIdx+1);
+  editHistory.push(snap);
+  if(editHistory.length>200)editHistory.shift();
+  editHistoryIdx=editHistory.length-1;
+  updateUndoRedoButtons();
+}
+
+function scheduleEditorHistory(){
+  if(!isEditing||historyApplying)return;
+  clearTimeout(editHistoryTimer);
+  editHistoryTimer=setTimeout(()=>{editHistoryTimer=null;pushEditorHistory(false)},160);
+}
+
+function applyEditorSnapshot(snap){
+  if(!snap)return;
+  historyApplying=true;
+  document.getElementById('ed-title').value=snap.title||'';
+  document.getElementById('ed-key').value=snap.key||'';
+  document.getElementById('ed-bpm').value=snap.bpm||'';
+  document.getElementById('ed-notes').value=snap.notes||'';
+  lines=(snap.lines&&snap.lines.length)?snap.lines.map(normalizeLine):[{id:uid(),chord:'',lyric:'',type:'normal'}];
+  setChordLayout(snap.chordLayout==='side'?'side':'above');
+  const txt=linesToBulkColumns(lines);
+  document.getElementById('bulk-chords').value=txt.chords;
+  document.getElementById('bulk-lyrics').value=txt.lyrics;
+  renderLineEditor();
+  setEditMode(snap.editMode==='lines'?'lines':'bulk');
+  updatePreview();
+  historyApplying=false;
+}
+
+function resetEditorHistory(){
+  clearTimeout(editHistoryTimer);
+  editHistory=[];
+  editHistoryIdx=-1;
+  pushEditorHistory(true);
+  updateUndoRedoButtons();
+}
+
+function undoEdit(){
+  if(editHistoryIdx<=0){toast('Brak cofania');return}
+  clearTimeout(editHistoryTimer);
+  editHistoryIdx--;
+  applyEditorSnapshot(editHistory[editHistoryIdx]);
+  updateUndoRedoButtons();
+}
+
+function redoEdit(){
+  if(editHistoryIdx<0||editHistoryIdx>=editHistory.length-1){toast('Brak ponowienia');return}
+  clearTimeout(editHistoryTimer);
+  editHistoryIdx++;
+  applyEditorSnapshot(editHistory[editHistoryIdx]);
+  updateUndoRedoButtons();
 }
 
 function notifyFieldInput(el){el.dispatchEvent(new Event('input',{bubbles:true}))}
@@ -715,7 +782,6 @@ function wrapSelection(el,left,right){
 function applyInlineFormat(type){
   const el=getFormatTarget();
   if(!el){toast('Najpierw kliknij pole tekstu lub akordów');return}
-  if(document.activeElement!==el){el.focus();restoreRememberedSelection(el)}
   if(type==='bold')wrapSelection(el,'**','**');
   else if(type==='italic')wrapSelection(el,'*','*');
   else if(type==='underline')wrapSelection(el,'__','__');
@@ -724,7 +790,6 @@ function applyInlineFormat(type){
 function shiftText(dir){
   const el=getFormatTarget();
   if(!el){toast('Najpierw kliknij pole tekstu lub akordów');return}
-  if(document.activeElement!==el){el.focus();restoreRememberedSelection(el)}
   const v=el.value||'';
   const s=el.selectionStart??0,e=el.selectionEnd??0;
 
@@ -1020,6 +1085,7 @@ function setChordLayout(mode){
   document.getElementById('cm-side-btn').classList.toggle('on',chordLayout==='side');
   document.getElementById('line-list').classList.toggle('side-mode',editMode==='lines'&&chordLayout==='side');
   updatePreview();
+  if(!historyApplying)pushEditorHistory(true);
 }
 
 function splitBulkText(text){
@@ -1079,6 +1145,7 @@ function syncBulkScroll(source){
 function onBulkInput(){
   lines=bulkToLines(document.getElementById('bulk-chords').value,document.getElementById('bulk-lyrics').value);
   updatePreview();
+  scheduleEditorHistory();
 }
 
 function setEditMode(mode){
@@ -1100,6 +1167,7 @@ function setEditMode(mode){
   document.getElementById('add-line-btn').style.display=mode==='lines'?'block':'none';
   document.getElementById('sp-lines-actions').style.display=mode==='lines'?'flex':'none';
   updatePreview();
+  if(!historyApplying)pushEditorHistory(true);
 }
 
 /* EDITOR */
@@ -1119,6 +1187,7 @@ function openEditor(){
   document.getElementById('bulk-lyrics').value=txt.lyrics;
   renderLineEditor();updatePreview();
   setEditMode('bulk');
+  resetEditorHistory();
 }
 
 function renderLineEditor(){
@@ -1140,7 +1209,7 @@ function renderLineEditor(){
   });
 }
 
-function onLI(idx,field,val){lines[idx][field]=val;updatePreview()}
+function onLI(idx,field,val){lines[idx][field]=val;updatePreview();scheduleEditorHistory()}
 
 function lkey(e,idx,field){
   if(e.key==='Enter'){e.preventDefault();addLine(idx+1)}
@@ -1154,6 +1223,7 @@ function addLine(afterIdx){
   const nl={id:uid(),chord:'',lyric:'',type:'normal'};
   if(afterIdx!=null)lines.splice(afterIdx,0,nl);else lines.push(nl);
   renderLineEditor();updatePreview();
+  pushEditorHistory(true);
   const ins=afterIdx!=null?afterIdx:lines.length-1;
   setTimeout(()=>{const rows=document.querySelectorAll('.lr');if(rows[ins]){const inp=rows[ins].querySelector('.li');if(inp)inp.focus()}},30);
 }
@@ -1161,11 +1231,12 @@ function addLine(afterIdx){
 function addSection(){
   lines.push({id:uid(),chord:'',lyric:'',type:'section'});
   renderLineEditor();updatePreview();
+  pushEditorHistory(true);
   setTimeout(()=>{const rows=document.querySelectorAll('.lr');const last=rows[rows.length-1];if(last){const inp=last.querySelector('.li');if(inp)inp.focus()}},30);
 }
 
-function addBreak(){lines.push({id:uid(),chord:'',lyric:'',type:'empty'});renderLineEditor();updatePreview()}
-function removeLine(idx){if(lines.length===1){lines=[{id:uid(),chord:'',lyric:'',type:'normal'}]}else lines.splice(idx,1);renderLineEditor();updatePreview()}
+function addBreak(){lines.push({id:uid(),chord:'',lyric:'',type:'empty'});renderLineEditor();updatePreview();pushEditorHistory(true)}
+function removeLine(idx){if(lines.length===1){lines=[{id:uid(),chord:'',lyric:'',type:'normal'}]}else lines.splice(idx,1);renderLineEditor();updatePreview();pushEditorHistory(true)}
 
 function updatePreview(){
   const key=document.getElementById('ed-key').value;
@@ -1183,6 +1254,7 @@ function saveSong(){
   const title=document.getElementById('ed-title').value.trim();
   if(!title){toast('Tytuł jest wymagany!');return}
   songs[curIdx]={...songs[curIdx],title,key:document.getElementById('ed-key').value.trim(),bpm:document.getElementById('ed-bpm').value.trim(),notes:document.getElementById('ed-notes').value.trim(),chordLayout,lines:lines.map(l=>({...l}))};
+  clearTimeout(editHistoryTimer);
   isEditing=false;save();
   renderList(document.getElementById('search').value.trim().toLowerCase());
   document.getElementById('stbar-title').textContent=title;
@@ -1193,7 +1265,7 @@ function saveSong(){
 function toggleEdit(){
   isEditing=!isEditing;
   document.getElementById('edit-btn').textContent=isEditing?'👁':'✏️';
-  if(isEditing)openEditor();else openView();
+  if(isEditing)openEditor();else{clearTimeout(editHistoryTimer);openView();}
 }
 
 function deleteSong(){
@@ -1265,7 +1337,13 @@ document.getElementById('modal-ov').addEventListener('click',e=>{if(e.target===d
 
 /* KEYS & SWIPE */
 document.addEventListener('keydown',e=>{
-  if(isEditing)return;
+  if(isEditing){
+    const k=String(e.key||'').toLowerCase();
+    const mod=e.ctrlKey||e.metaKey;
+    if(mod&&k==='z'&&!e.shiftKey){e.preventDefault();undoEdit();return}
+    if((mod&&k==='y')||(mod&&e.shiftKey&&k==='z')){e.preventDefault();redoEdit();return}
+    return;
+  }
   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();if(curIdx<songs.length-1)selectSong(curIdx+1)}
   if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();if(curIdx>0)selectSong(curIdx-1)}
   if(e.key===' '){e.preventDefault();toggleAutoscroll()}
@@ -1273,15 +1351,11 @@ document.addEventListener('keydown',e=>{
 });
 let tx0=0;
 document.addEventListener('touchstart',e=>{if(isScrolling&&shouldStopOnTouch(e.target)){stopScroll();showStopFeedback();}},{passive:true});
-document.addEventListener('focusin',e=>{if(isFormatField(e.target))rememberFormatSelection(e.target)});
-document.addEventListener('click',e=>{if(isFormatField(e.target))rememberFormatSelection(e.target)});
-document.addEventListener('keyup',e=>{if(isFormatField(e.target))rememberFormatSelection(e.target)});
-document.addEventListener('selectionchange',()=>{const el=document.activeElement;if(isFormatField(el))rememberFormatSelection(el)});
 document.getElementById('vmode').addEventListener('touchstart',e=>{tx0=e.touches[0].clientX},{passive:true});
 document.getElementById('vmode').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>80){if(dx<0&&curIdx<songs.length-1)selectSong(curIdx+1);else if(dx>0&&curIdx>0)selectSong(curIdx-1)}},{passive:true});
 
 /* LIVE META */
-['ed-title','ed-key','ed-bpm'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{if(isEditing)updatePreview()}));
+['ed-title','ed-key','ed-bpm','ed-notes'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{if(isEditing){updatePreview();scheduleEditorHistory()}}));
 document.getElementById('import-file').addEventListener('change',importData);
 document.getElementById('sp-resizer').addEventListener('mousedown',startPanelResize);
 window.addEventListener('mousemove',onPanelResize);
