@@ -220,7 +220,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 #sp-cancel-btn:active{background:var(--bg3)}
 
 /* AUTOSCROLL */
-#ascroll{position:absolute;bottom:14px;right:14px;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px 8px;box-shadow:var(--shadow2);z-index:10;opacity:0;pointer-events:none;transition:opacity .3s}
+#ascroll{display:none !important}
 #ascroll.vis{opacity:1;pointer-events:all}
 .asc-h{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 .asc-pills{display:flex;gap:5px;align-items:center}
@@ -247,6 +247,13 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 #tablet-tip.on{display:flex;transform:translateX(-50%) translateY(0)}
 #tablet-tip span{font-size:12px;color:var(--text2);line-height:1.35}
 #tablet-tip button{padding:6px 10px;border:1px solid var(--border);background:var(--bg2);border-radius:8px;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer}
+#admin-pass-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:320;align-items:center;justify-content:center;padding:20px}
+#admin-pass-ov.on{display:flex}
+#admin-pass{background:var(--card);border-radius:14px;padding:18px;width:100%;max-width:420px;box-shadow:var(--shadow2)}
+#admin-pass h3{font-family:var(--font-ui);font-size:15px;color:var(--text);margin-bottom:10px}
+#admin-pass input{width:100%;padding:10px 11px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:15px;font-family:var(--font-ui);outline:none}
+#admin-pass input:focus{border-color:var(--accent)}
+#admin-pass-actions{display:flex;gap:8px;margin-top:10px}
 
 @media(max-width:700px){
   :root{--sidebar-w:270px}
@@ -263,9 +270,6 @@ body.resizing-panel{user-select:none;cursor:col-resize}
   #stbar .ctl-btn{font-size:16px}
   #tempo-btn{min-width:58px;padding:0 8px;font-size:10px}
   #del-btn{display:none}
-  #ascroll{right:8px;bottom:10px;padding:8px 7px;border-radius:12px}
-  .asc-pills{flex-wrap:wrap;max-width:190px;justify-content:center}
-  .asc-pill{font-size:10px;padding:4px 7px}
   #sp-resizer{display:none}
   #sped.active{flex-direction:column}
   #sp-prev{border-right:none;border-bottom:1px solid var(--border);padding:12px 12px 20px;min-height:38vh}
@@ -329,7 +333,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
         <div class="ibtn ctl-btn" onclick="changeFontSize(2)" title="Wiekszy tekst">+</div>
         <div class="sep"></div>
         <div class="ibtn on" id="chord-vis-btn" onclick="toggleChordVisibility()" title="Pokaz/ukryj akordy">🎼</div>
-        <div class="ibtn" id="tempo-btn" onclick="cycleScrollPreset()" title="Tempo autoscroll">LENTO</div>
+        <div class="ibtn" id="tempo-btn" onclick="cycleScrollPreset()" title="Tempo autoscroll">B.WOLNO</div>
         <div class="sep"></div>
         <div class="ibtn" id="asc-btn" onclick="toggleAutoscroll()" title="Auto-scroll">▶</div>
         <div class="sep"></div>
@@ -432,14 +436,25 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 </div>
 <div id="toast"></div>
 <div id="stop-flash"></div>
-<div id="tablet-tip"><span>Tip: ▶ start/stop, tempo zmienisz przyciskiem LENTO, a ↻ songs.json pobiera najnowsze zmiany.</span><button onclick="dismissTabletOnboarding()">Rozumiem</button></div>
+<div id="tablet-tip"><span>Tip: ▶ start/stop, tempo zmienisz przyciskiem B.WOLNO, a ↻ songs.json pobiera najnowsze zmiany.</span><button onclick="dismissTabletOnboarding()">Rozumiem</button></div>
+<div id="admin-pass-ov">
+  <div id="admin-pass">
+    <h3>Haslo admina</h3>
+    <input id="admin-pass-input" type="password" placeholder="Wpisz haslo" onkeydown="onAdminPassKey(event)">
+    <div id="admin-pass-actions">
+      <button class="ms" onclick="closeAdminPassModal(null)">Anuluj</button>
+      <button class="mp" onclick="submitAdminPass()">OK</button>
+    </div>
+  </div>
+</div>
 
 <script>
 const STORE='spiewnik_v3',PREF='spiewnik_prefs_v3',EXPORT_VER=1,BUNDLED_JSON='songs.json';
 const EDITOR_MIN_W=260,EDITOR_DEFAULT_W=420;
 const SCROLL_SPEED_PRESETS=[8,14,24,38,56];
-const SCROLL_SPEED_LABELS=['ULTRA','LENTO','WOLNO','SREDNIO','SZYBKO'];
-const ADMIN_PASS='admin123';
+const SCROLL_SPEED_LABELS=['ULTRA','B.WOLNO','WOLNO','SREDNIO','SZYBKO'];
+const ONBOARDING_VER=2;
+const ADMIN_PASS_HASH='240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9';
 const GH_OWNER='grudzik1992',GH_REPO='scena',GH_BRANCH='main',GH_FILE='songs.json';
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
 const TITLES=["Ja wysiadam","Pomidory","Wiśnia","Moja i twoja nadzieja","Pogoda ducha","Miłość w Portofino","Miałeś być","Smooth Operator","Testosteron","Prześliczna wiolonczelistka","Teksański","Fever","Kasztany","Długość dźwięku samotności","Jesteś lekiem","Ale jestem","Co mi panie dasz","Stand by Me","Zacznij od Bacha","Wszystko mi mówi że mnie ktoś pokochał","Jeżeli chcesz","Ruchome piaski","Shallow","Sway (g-moll)","Poszłabym za tobą","Ostatni","Krakowski spleen","Tears in Heaven","Jolene","Kochaj mnie mimo wszystko"];
@@ -450,7 +465,8 @@ let sbOpen=true,lines=[],editMode='bulk',chordLayout='above';
 let editorWidth=EDITOR_DEFAULT_W,panelResizing=false;
 let showChords=true,reorderMode=false,dragSongIdx=-1;
 let scrollCarry=0;
-let adminMode=false,tabletOnboardingDone=false;
+let adminMode=false,tabletOnboardingDone=false,onboardingSeenVersion=0;
+let adminPassResolve=null;
 
 function normalizeLine(l){
   return {
@@ -532,12 +548,14 @@ function loadData(){
     showChords=(p.sc!==false);
     scrollPreset=Number.isInteger(p.st)?p.st:1;
     tabletOnboardingDone=!!p.tb;
+    onboardingSeenVersion=Number.isInteger(p.tv)?p.tv:0;
   }catch(e){}
+  if(onboardingSeenVersion<ONBOARDING_VER)tabletOnboardingDone=false;
   scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,scrollPreset));
   editorWidth=clampEditorWidth(editorWidth);
 }
 function save(){try{localStorage.setItem(STORE,JSON.stringify(songs))}catch(e){}}
-function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset,tb:tabletOnboardingDone}))}catch(e){}}
+function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset,tb:tabletOnboardingDone,tv:onboardingSeenVersion}))}catch(e){}}
 
 function makeExportPayload(){
   return {
@@ -545,7 +563,7 @@ function makeExportPayload(){
     version:EXPORT_VER,
     exportedAt:new Date().toISOString(),
     songs:songs.map(normalizeSong),
-    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset,tb:tabletOnboardingDone}
+    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset,tb:tabletOnboardingDone,tv:onboardingSeenVersion}
   };
 }
 
@@ -563,6 +581,8 @@ function applyImportedPrefs(importedPrefs){
   if(typeof importedPrefs.sc==='boolean')showChords=importedPrefs.sc;
   if(Number.isInteger(importedPrefs.st))scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,importedPrefs.st));
   if(typeof importedPrefs.tb==='boolean')tabletOnboardingDone=importedPrefs.tb;
+  if(Number.isInteger(importedPrefs.tv))onboardingSeenVersion=importedPrefs.tv;
+  if(onboardingSeenVersion<ONBOARDING_VER)tabletOnboardingDone=false;
   applyTheme();
   applyEditorWidth();
   updateChordButton();
@@ -722,15 +742,52 @@ function updateAdminUI(){
   p.style.display=adminMode?'':'none';
 }
 
-function toggleAdminMode(){
+async function sha256Hex(text){
+  const input=new TextEncoder().encode(String(text||''));
+  const digest=await crypto.subtle.digest('SHA-256',input);
+  return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+function askAdminPassword(){
+  const ov=document.getElementById('admin-pass-ov');
+  const inp=document.getElementById('admin-pass-input');
+  if(!ov||!inp)return Promise.resolve(null);
+  inp.value='';
+  ov.classList.add('on');
+  setTimeout(()=>inp.focus(),30);
+  return new Promise(resolve=>{adminPassResolve=resolve});
+}
+
+function closeAdminPassModal(value){
+  const ov=document.getElementById('admin-pass-ov');
+  if(ov)ov.classList.remove('on');
+  const resolve=adminPassResolve;
+  adminPassResolve=null;
+  if(resolve)resolve(value);
+}
+
+function submitAdminPass(){
+  const inp=document.getElementById('admin-pass-input');
+  closeAdminPassModal(inp?inp.value:'');
+}
+
+function onAdminPassKey(e){
+  if(e.key==='Enter'){e.preventDefault();submitAdminPass();return}
+  if(e.key==='Escape'){e.preventDefault();closeAdminPassModal(null)}
+}
+
+async function toggleAdminMode(){
   if(adminMode){
     adminMode=false;
     updateAdminUI();
     toast('🔒 Admin OFF');
     return;
   }
-  const pass=prompt('Haslo admina:');
-  if(pass!==ADMIN_PASS){toast('❌ Zle haslo');return}
+  if(!(crypto&&crypto.subtle)){toast('❌ Brak wsparcia szyfrowania w przegladarce');return}
+  const pass=await askAdminPassword();
+  if(pass==null)return;
+  const passHash=await sha256Hex(pass);
+  if(passHash!==ADMIN_PASS_HASH){toast('❌ Zle haslo');return}
   adminMode=true;
   updateAdminUI();
   toast('🔓 Admin ON');
@@ -771,12 +828,13 @@ async function publishGlobalChanges(){
 function maybeShowTabletOnboarding(){
   const tip=document.getElementById('tablet-tip');
   if(!tip)return;
-  const isTablet=window.innerWidth>700&&window.innerWidth<=1100;
-  tip.classList.toggle('on',isTablet&&!tabletOnboardingDone);
+  const isMobileOrTablet=window.innerWidth<=1100;
+  tip.classList.toggle('on',isMobileOrTablet&&!tabletOnboardingDone);
 }
 
 function dismissTabletOnboarding(){
   tabletOnboardingDone=true;
+  onboardingSeenVersion=ONBOARDING_VER;
   const tip=document.getElementById('tablet-tip');
   if(tip)tip.classList.remove('on');
   savePrefs();
