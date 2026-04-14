@@ -109,6 +109,7 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 #fsize-lbl{font-size:12px;color:var(--text3);min-width:24px;text-align:center;font-family:var(--font-mono)}
 #stbar .ctl-btn{font-size:18px;line-height:1}
 #chord-vis-btn{font-size:16px}
+#vocal-btn{font-size:16px}
 #del-btn{padding:0 10px;font-size:13px;background:transparent;color:#c44;border:1px solid rgba(200,50,50,.3);border-radius:8px;cursor:pointer;font-family:var(--font-ui);height:38px;white-space:nowrap}
 #del-btn:active{background:rgba(200,50,50,.1)}
 
@@ -136,6 +137,9 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 .lb.side.no-chords .rw{grid-template-columns:1fr}
 .lb.side.no-chords .rc{display:none}
 .empty-msg{color:var(--text3);font-style:italic;font-size:15px;font-family:var(--font-lyrics)}
+body.vocal-mode #edit-btn,body.vocal-mode #del-btn{opacity:.35;pointer-events:none}
+body.vocal-mode #chord-vis-btn{opacity:.45;pointer-events:none}
+body.vocal-mode .lb{line-height:2.08}
 
 /* ============================================================
    SPLIT EDITOR
@@ -252,6 +256,8 @@ body.resizing-panel{user-select:none;cursor:col-resize}
   #fsize-lbl{font-size:11px;min-width:20px}
   #stbar .ctl-btn{font-size:16px}
   #del-btn{display:none}
+  body.vocal-mode #vmode{padding:18px 12px 104px}
+  body.vocal-mode #stbar{border-bottom-color:rgba(232,100,58,.35)}
   #ascroll{right:8px;bottom:10px;padding:8px 7px;border-radius:12px}
   .asc-pills{flex-wrap:wrap;max-width:190px;justify-content:center}
   .asc-pill{font-size:10px;padding:4px 7px}
@@ -311,6 +317,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
         <div class="ibtn ctl-btn" onclick="changeFontSize(2)" title="Wiekszy tekst">+</div>
         <div class="sep"></div>
         <div class="ibtn on" id="chord-vis-btn" onclick="toggleChordVisibility()" title="Pokaz/ukryj akordy">🎼</div>
+        <div class="ibtn" id="vocal-btn" onclick="toggleVocalMode()" title="Tryb wokalistki">🎙</div>
         <div class="sep"></div>
         <div class="ibtn" id="asc-btn" onclick="toggleAutoscroll()" title="Auto-scroll">▶</div>
         <div class="sep"></div>
@@ -424,6 +431,7 @@ let sbOpen=true,lines=[],editMode='bulk',chordLayout='above';
 let editorWidth=EDITOR_DEFAULT_W,panelResizing=false;
 let showChords=true,reorderMode=false,dragSongIdx=-1;
 let scrollCarry=0;
+let vocalMode=false,vocalPrevFont=18,vocalPrevChords=true;
 
 function normalizeLine(l){
   return {
@@ -497,12 +505,12 @@ function loadData(){
     if(s){songs=JSON.parse(s);songs=songs.map(normalizeSong)}
     else throw 0;
   }catch(e){songs=TITLES.map(t=>({id:uid(),title:t,key:'',bpm:'',notes:'',lines:[]}))}
-  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W;showChords=(p.sc!==false);scrollPreset=Number.isInteger(p.st)?p.st:1}catch(e){}
+  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W;showChords=(p.sc!==false);scrollPreset=Number.isInteger(p.st)?p.st:1;vocalMode=!!p.vm}catch(e){}
   scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,scrollPreset));
   editorWidth=clampEditorWidth(editorWidth);
 }
 function save(){try{localStorage.setItem(STORE,JSON.stringify(songs))}catch(e){}}
-function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset}))}catch(e){}}
+function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset,vm:vocalMode}))}catch(e){}}
 
 function makeExportPayload(){
   return {
@@ -510,7 +518,7 @@ function makeExportPayload(){
     version:EXPORT_VER,
     exportedAt:new Date().toISOString(),
     songs:songs.map(normalizeSong),
-    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset}
+    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset,vm:vocalMode}
   };
 }
 
@@ -527,8 +535,10 @@ function applyImportedPrefs(importedPrefs){
   if(Number.isFinite(+importedPrefs.ew))editorWidth=clampEditorWidth(+importedPrefs.ew);
   if(typeof importedPrefs.sc==='boolean')showChords=importedPrefs.sc;
   if(Number.isInteger(importedPrefs.st))scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,importedPrefs.st));
+  if(typeof importedPrefs.vm==='boolean')vocalMode=importedPrefs.vm;
   applyTheme();
   applyEditorWidth();
+  setVocalMode(vocalMode,false);
   updateChordButton();
   updateTempoUI();
   savePrefs();
@@ -680,15 +690,61 @@ function toggleSb(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.
 function updateChordButton(){
   const b=document.getElementById('chord-vis-btn');
   b.textContent=showChords?'🎼':'📝';
-  b.classList.toggle('on',showChords);
-  b.title=showChords?'Akordy widoczne - kliknij aby przelaczyc na sam tekst':'Tryb wokalistki - kliknij aby pokazac akordy';
+  b.classList.toggle('on',showChords&&!vocalMode);
+  b.title=vocalMode?'Tryb wokalistki: akordy zablokowane':'Pokaz/ukryj akordy';
 }
 
 function toggleChordVisibility(){
+  if(vocalMode){toast('Tryb wokalistki blokuje zmiane akordow');return}
   showChords=!showChords;
   updateChordButton();
   if(curIdx>=0){if(isEditing)updatePreview();else openView();}
   savePrefs();
+}
+
+function updateVocalButton(){
+  const b=document.getElementById('vocal-btn');
+  b.classList.toggle('on',vocalMode);
+  b.textContent=vocalMode?'🎙':'🎤';
+  b.title=vocalMode?'Tryb wokalistki wlaczony':'Wlacz tryb wokalistki';
+}
+
+function setVocalMode(on,persist){
+  const next=!!on;
+  if(vocalMode===next){
+    document.body.classList.toggle('vocal-mode',vocalMode);
+    updateVocalButton();
+    updateChordButton();
+    if(persist)savePrefs();
+    return;
+  }
+
+  if(next){
+    if(isEditing)toggleEdit();
+    vocalPrevFont=fontSize;
+    vocalPrevChords=showChords;
+    showChords=false;
+    fontSize=Math.max(fontSize,28);
+    document.getElementById('fsize-lbl').textContent=fontSize;
+    if(window.innerWidth<700&&sbOpen)toggleSb();
+  }else{
+    fontSize=Math.max(12,Math.min(36,vocalPrevFont||fontSize));
+    showChords=vocalPrevChords;
+    document.getElementById('fsize-lbl').textContent=fontSize;
+  }
+
+  vocalMode=next;
+  document.body.classList.toggle('vocal-mode',vocalMode);
+  updateVocalButton();
+  updateChordButton();
+  if(curIdx>=0){if(isEditing)updatePreview();else openView();}
+  if(persist)savePrefs();
+}
+
+function toggleVocalMode(){
+  const next=!vocalMode;
+  setVocalMode(next,true);
+  toast(next?'🎙 Tryb wokalistki':'📖 Tryb normalny');
 }
 
 function updateTempoUI(){
@@ -995,12 +1051,14 @@ function saveSong(){
 }
 
 function toggleEdit(){
+  if(vocalMode){toast('Wylacz tryb wokalistki, aby edytowac');return}
   isEditing=!isEditing;
   document.getElementById('edit-btn').textContent=isEditing?'👁':'✏️';
   if(isEditing)openEditor();else openView();
 }
 
 function deleteSong(){
+  if(vocalMode){toast('Wylacz tryb wokalistki, aby usuwac utwory');return}
   if(curIdx<0)return;
   if(!confirm(`Usunąć "${songs[curIdx].title}"?`))return;
   songs.splice(curIdx,1);curIdx=Math.min(curIdx,songs.length-1);
@@ -1087,7 +1145,9 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.s
 
 /* INIT */
 loadData();applyTheme();applyEditorWidth();renderList();document.getElementById('fsize-lbl').textContent=fontSize;
+setVocalMode(vocalMode,false);
 updateChordButton();
+updateVocalButton();
 updateTempoUI();
 if(!localStorage.getItem(STORE))loadBundledData(false);
 </script>
