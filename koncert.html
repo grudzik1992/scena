@@ -364,10 +364,11 @@ body.resizing-panel{user-select:none;cursor:col-resize}
         <div id="ascroll">
           <div class="asc-h">Tempo</div>
           <div class="asc-pills">
-            <div class="asc-pill" id="asc-p0" onclick="setScrollPreset(0)">Lento</div>
-            <div class="asc-pill" id="asc-p1" onclick="setScrollPreset(1)">Wolno</div>
-            <div class="asc-pill" id="asc-p2" onclick="setScrollPreset(2)">Srednio</div>
-            <div class="asc-pill" id="asc-p3" onclick="setScrollPreset(3)">Szybko</div>
+            <div class="asc-pill" id="asc-p0" onclick="setScrollPreset(0)">Ultra</div>
+            <div class="asc-pill" id="asc-p1" onclick="setScrollPreset(1)">Lento</div>
+            <div class="asc-pill" id="asc-p2" onclick="setScrollPreset(2)">Wolno</div>
+            <div class="asc-pill" id="asc-p3" onclick="setScrollPreset(3)">Srednio</div>
+            <div class="asc-pill" id="asc-p4" onclick="setScrollPreset(4)">Szybko</div>
           </div>
         </div>
       </div>
@@ -390,7 +391,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 <script>
 const STORE='spiewnik_v3',PREF='spiewnik_prefs_v3',EXPORT_VER=1,BUNDLED_JSON='songs.json';
 const EDITOR_MIN_W=260,EDITOR_DEFAULT_W=420;
-const SCROLL_SPEED_PRESETS=[14,24,38,56];
+const SCROLL_SPEED_PRESETS=[8,14,24,38,56];
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
 const TITLES=["Ja wysiadam","Pomidory","Wiśnia","Moja i twoja nadzieja","Pogoda ducha","Miłość w Portofino","Miałeś być","Smooth Operator","Testosteron","Prześliczna wiolonczelistka","Teksański","Fever","Kasztany","Długość dźwięku samotności","Jesteś lekiem","Ale jestem","Co mi panie dasz","Stand by Me","Zacznij od Bacha","Wszystko mi mówi że mnie ktoś pokochał","Jeżeli chcesz","Ruchome piaski","Shallow","Sway (g-moll)","Poszłabym za tobą","Ostatni","Krakowski spleen","Tears in Heaven","Jolene","Kochaj mnie mimo wszystko"];
 
@@ -1039,6 +1040,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'&&isEditing)toggleEdit()
 });
 let tx0=0;
+document.addEventListener('touchstart',()=>{if(isScrolling)stopScroll()},{passive:true});
 document.getElementById('vmode').addEventListener('touchstart',e=>{tx0=e.touches[0].clientX},{passive:true});
 document.getElementById('vmode').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>80){if(dx<0&&curIdx<songs.length-1)selectSong(curIdx+1);else if(dx>0&&curIdx>0)selectSong(curIdx-1)}},{passive:true});
 
