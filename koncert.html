@@ -68,14 +68,23 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 .si.on{background:var(--accent)}
 .si.on .sn,.si.on .st{color:#fff!important}
 .si.on .sb{background:rgba(255,255,255,.22);color:#fff;border-color:transparent}
+.si.reorder{cursor:grab}
+.si.reorder.dragging{opacity:.5}
+.drag-h{font-size:11px;color:var(--text3);letter-spacing:-1px;min-width:10px;display:none}
+.si.reorder .drag-h{display:block}
 .sn{font-size:11px;color:var(--text3);min-width:22px;text-align:right;font-family:var(--font-mono)}
 .st{flex:1;font-size:13.5px;color:var(--text);line-height:1.3;font-weight:500}
 .sbs{display:flex;gap:3px}
 .sb{font-size:10px;padding:2px 5px;border-radius:4px;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
 .sb.c{background:var(--accentbg);color:var(--accent);border-color:rgba(192,67,14,.28)}
 .sb.l{background:var(--goldbg);color:var(--gold);border-color:rgba(154,111,0,.28)}
+.rctl{display:flex;gap:3px}
+.rbtn{width:20px;height:20px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);border-radius:5px;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.rbtn:disabled{opacity:.35;cursor:default}
 #add-btn{margin:8px 10px;padding:9px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:center;flex-shrink:0;font-family:var(--font-ui)}
 #add-btn:active{background:var(--accent2)}
+.list-tools{display:flex;gap:8px;padding:8px 10px 0}
+.list-tools .side-btn{min-width:0}
 .side-actions{display:flex;gap:8px;padding:0 10px 10px;flex-wrap:wrap}
 .side-btn{flex:1;min-width:88px;padding:8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;color:var(--text2);font-family:var(--font-ui)}
 .side-btn:active{background:var(--bg3)}
@@ -122,6 +131,8 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 .lb.side .rc{color:var(--chord);font-family:var(--font-mono);font-weight:600;font-size:.85em;line-height:1.45;letter-spacing:.05em;white-space:pre-wrap;white-space:break-spaces;display:block}
 .lb.side .rl{display:block;line-height:1.9;white-space:pre-wrap;white-space:break-spaces}
 .lb.side .rw.no-chord .rc{opacity:.35}
+.lb.side.no-chords .rw{grid-template-columns:1fr}
+.lb.side.no-chords .rc{display:none}
 .empty-msg{color:var(--text3);font-style:italic;font-size:15px;font-family:var(--font-lyrics)}
 
 /* ============================================================
@@ -253,6 +264,9 @@ body.concert #vmode{padding:28px 40px 100px}
     </div>
     <div id="song-list"></div>
     <button id="add-btn" onclick="showAddModal()">+ Dodaj utwór</button>
+    <div class="list-tools">
+      <button class="side-btn" id="reorder-btn" onclick="toggleReorderMode()">↕ Przestaw</button>
+    </div>
     <div class="side-actions">
       <button class="side-btn" onclick="exportData()">⬇ Eksport</button>
       <button class="side-btn" onclick="openImport()">⬆ Import</button>
@@ -275,6 +289,8 @@ body.concert #vmode{padding:28px 40px 100px}
         <div class="ibtn" onclick="changeFontSize(-2)" style="font-size:12px">A−</div>
         <div id="fsize-lbl">18</div>
         <div class="ibtn" onclick="changeFontSize(2)" style="font-size:14px">A+</div>
+        <div class="sep"></div>
+        <div class="ibtn on" id="chord-vis-btn" onclick="toggleChordVisibility()" title="Pokaz/ukryj akordy">AK</div>
         <div class="sep"></div>
         <div class="ibtn" id="asc-btn" onclick="toggleAutoscroll()" title="Auto-scroll">▶</div>
         <div class="sep"></div>
@@ -379,6 +395,7 @@ let songs=[],curIdx=-1,isDark=false,isConcert=false,isEditing=false;
 let fontSize=18,scrollSpeed=30,isScrolling=false,rafId=null,lastTs=0;
 let sbOpen=true,lines=[],editMode='bulk',chordLayout='above';
 let editorWidth=EDITOR_DEFAULT_W,panelResizing=false;
+let showChords=true,reorderMode=false,dragSongIdx=-1;
 
 function normalizeLine(l){
   return {
@@ -452,11 +469,11 @@ function loadData(){
     if(s){songs=JSON.parse(s);songs=songs.map(normalizeSong)}
     else throw 0;
   }catch(e){songs=TITLES.map(t=>({id:uid(),title:t,key:'',bpm:'',notes:'',lines:[]}))}
-  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W}catch(e){}
+  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W;showChords=(p.sc!==false)}catch(e){}
   editorWidth=clampEditorWidth(editorWidth);
 }
 function save(){try{localStorage.setItem(STORE,JSON.stringify(songs))}catch(e){}}
-function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth}))}catch(e){}}
+function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords}))}catch(e){}}
 
 function makeExportPayload(){
   return {
@@ -464,7 +481,7 @@ function makeExportPayload(){
     version:EXPORT_VER,
     exportedAt:new Date().toISOString(),
     songs:songs.map(normalizeSong),
-    prefs:{dark:isDark,fs:fontSize,ew:editorWidth}
+    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords}
   };
 }
 
@@ -479,8 +496,10 @@ function applyImportedPrefs(importedPrefs){
   if(typeof importedPrefs.dark==='boolean')isDark=importedPrefs.dark;
   if(Number.isFinite(+importedPrefs.fs))fontSize=Math.max(12,Math.min(36,+importedPrefs.fs));
   if(Number.isFinite(+importedPrefs.ew))editorWidth=clampEditorWidth(+importedPrefs.ew);
+  if(typeof importedPrefs.sc==='boolean')showChords=importedPrefs.sc;
   applyTheme();
   applyEditorWidth();
+  updateChordButton();
   savePrefs();
 }
 
@@ -628,6 +647,45 @@ function toggleTheme(){isDark=!isDark;applyTheme();savePrefs()}
 function toggleConcert(){isConcert=!isConcert;document.body.classList.toggle('concert',isConcert);document.getElementById('concert-btn').classList.toggle('on',isConcert);toast(isConcert?'🎤 Tryb koncertu':'📖 Normalny')}
 function toggleSb(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen)}
 
+function updateChordButton(){
+  const b=document.getElementById('chord-vis-btn');
+  b.textContent=showChords?'AK':'TXT';
+  b.classList.toggle('on',showChords);
+  b.title=showChords?'Ukryj akordy (tryb wokalistki)':'Pokaz akordy';
+}
+
+function toggleChordVisibility(){
+  showChords=!showChords;
+  updateChordButton();
+  if(curIdx>=0){if(isEditing)updatePreview();else openView();}
+  savePrefs();
+}
+
+function moveSong(from,to){
+  if(from===to||from<0||to<0||from>=songs.length||to>=songs.length)return;
+  const [mv]=songs.splice(from,1);
+  songs.splice(to,0,mv);
+  if(curIdx===from)curIdx=to;
+  else if(from<curIdx&&to>=curIdx)curIdx--;
+  else if(from>curIdx&&to<=curIdx)curIdx++;
+  save();
+  renderList(document.getElementById('search').value.trim().toLowerCase());
+  if(curIdx>=0){
+    document.getElementById('stbar-title').textContent=songs[curIdx].title;
+    if(!isEditing)openView();else updatePreview();
+  }
+}
+
+function toggleReorderMode(){
+  reorderMode=!reorderMode;
+  dragSongIdx=-1;
+  const btn=document.getElementById('reorder-btn');
+  btn.textContent=reorderMode?'✓ Gotowe':'↕ Przestaw';
+  btn.classList.toggle('on',reorderMode);
+  renderList(document.getElementById('search').value.trim().toLowerCase());
+  toast(reorderMode?'↕ Tryb przestawiania: przeciagaj lub uzyj strzalek':'✅ Kolejnosc zapisana');
+}
+
 /* LIST */
 function renderList(q=''){
   const list=document.getElementById('song-list');
@@ -637,9 +695,35 @@ function renderList(q=''){
     const hc=s.lines&&s.lines.some(l=>l.chord&&l.chord.trim());
     const hl=s.lines&&s.lines.some(l=>l.lyric&&l.lyric.trim());
     const d=document.createElement('div');
-    d.className='si'+(i===curIdx?' on':'');
-    d.innerHTML=`<span class="sn">${i+1}</span><span class="st">${esc(s.title)}</span><span class="sbs">${hc?'<span class="sb c" title="Utwór ma akordy">AK</span>':''}${hl&&!hc?'<span class="sb l" title="Tylko tekst">TXT</span>':''}</span>`;
-    d.onclick=()=>selectSong(i);
+    d.className='si'+(i===curIdx?' on':'')+(reorderMode?' reorder':'');
+    d.draggable=!!reorderMode;
+    const right=reorderMode
+      ? `<span class="rctl"><button class="rbtn up" ${i===0?'disabled':''} title="Przesun wyzej">↑</button><button class="rbtn dn" ${i===songs.length-1?'disabled':''} title="Przesun nizej">↓</button></span>`
+      : `<span class="sbs">${hc?'<span class="sb c" title="Utwór ma akordy">AK</span>':''}${hl&&!hc?'<span class="sb l" title="Tylko tekst">TXT</span>':''}</span>`;
+    d.innerHTML=`<span class="drag-h" title="Przeciagnij">⋮⋮</span><span class="sn">${i+1}</span><span class="st">${esc(s.title)}</span>${right}`;
+    d.onclick=(e)=>{if(e.target.closest('.rbtn'))return;selectSong(i)};
+
+    if(reorderMode){
+      const up=d.querySelector('.rbtn.up');
+      const dn=d.querySelector('.rbtn.dn');
+      if(up)up.onclick=(e)=>{e.stopPropagation();moveSong(i,i-1)};
+      if(dn)dn.onclick=(e)=>{e.stopPropagation();moveSong(i,i+1)};
+
+      d.addEventListener('dragstart',ev=>{
+        dragSongIdx=i;
+        d.classList.add('dragging');
+        ev.dataTransfer.effectAllowed='move';
+        ev.dataTransfer.setData('text/plain',String(i));
+      });
+      d.addEventListener('dragend',()=>{dragSongIdx=-1;d.classList.remove('dragging')});
+      d.addEventListener('dragover',ev=>{ev.preventDefault();ev.dataTransfer.dropEffect='move'});
+      d.addEventListener('drop',ev=>{
+        ev.preventDefault();
+        const from=dragSongIdx>=0?dragSongIdx:+ev.dataTransfer.getData('text/plain');
+        moveSong(from,i);
+      });
+    }
+
     list.appendChild(d);
   });
   document.getElementById('topbar-count').textContent=(curIdx>=0?(curIdx+1)+' / ':'')+songs.length;
@@ -667,24 +751,25 @@ function openView(){
   if(s.key)meta.push(`<span class="key-pill">${esc(s.key)}</span>`);
   if(s.bpm)meta.push(`♩ ${esc(s.bpm)} BPM`);
   if(s.notes)meta.push(`📝 ${esc(s.notes)}`);
-  document.getElementById('vmode').innerHTML=`<div class="song-head"><h1 style="font-size:${Math.max(fontSize+6,22)}px">${esc(s.title)}</h1>${meta.length?`<div class="song-meta">${meta.join('')}</div>`:''}</div><div style="font-size:${fontSize}px">${buildLyrics(s.lines,s.chordLayout||'above')}</div>`;
+  document.getElementById('vmode').innerHTML=`<div class="song-head"><h1 style="font-size:${Math.max(fontSize+6,22)}px">${esc(s.title)}</h1>${meta.length?`<div class="song-meta">${meta.join('')}</div>`:''}</div><div style="font-size:${fontSize}px">${buildLyrics(s.lines,s.chordLayout||'above',showChords)}</div>`;
   document.getElementById('vmode').scrollTop=0;
 }
 
-function buildLyrics(lns,layout){
+function buildLyrics(lns,layout,withChords){
+  const show=withChords!==false;
   const mode=layout==='side'?'side':'above';
   if(!lns||!lns.length)return'<span class="empty-msg">Brak tekstu — kliknij ✏️ aby dodać.</span>';
-  let h=`<div class="lb ${mode==='side'?'side':''}">`;
+  let h=`<div class="lb ${mode==='side'?'side':''} ${show?'':'no-chords'}">`;
   for(const l of lns){
     if(l.type==='empty'){h+='<span class="el"></span>';continue}
     if(l.type==='section'){h+=`<span class="sl">${escKeepBreaks(l.lyric||'')}</span>`;continue}
     if(mode==='side'){
       const chord=String(l.chord||'');
       const lyric=String(l.lyric||'');
-      h+=`<span class="rw${chord.trim()?'':' no-chord'}"><span class="rc">${chord.trim()?escKeepBreaks(chord):'&nbsp;'}</span><span class="rl">${lyric.trim()?escKeepBreaks(lyric):'&nbsp;'}</span></span>`;
+      h+=`<span class="rw${chord.trim()?'':' no-chord'}"><span class="rc">${show&&chord.trim()?escKeepBreaks(chord):'&nbsp;'}</span><span class="rl">${lyric.trim()?escKeepBreaks(lyric):'&nbsp;'}</span></span>`;
       continue;
     }
-    if(l.chord&&l.chord.trim())h+=`<span class="cl">${escKeepBreaks(l.chord)}</span>`;
+    if(show&&l.chord&&l.chord.trim())h+=`<span class="cl">${escKeepBreaks(l.chord)}</span>`;
     if(l.lyric&&l.lyric.trim())h+=`<span class="ll">${escKeepBreaks(l.lyric)}</span>`;
   }
   return h+'</div>';
@@ -850,7 +935,7 @@ function updatePreview(){
   const meta=[];
   if(key)meta.push(`<span class="key-pill">${esc(key)}</span>`);
   if(bpm)meta.push(`♩ ${esc(bpm)} BPM`);
-  document.getElementById('sp-prev-inner').innerHTML=`<div class="song-head" style="margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)"><div style="font-family:var(--font-lyrics);font-size:20px;font-style:italic;color:var(--text);margin-bottom:6px">${esc(title)}</div>${meta.length?`<div class="song-meta">${meta.join('')}</div>`:''}</div><div style="font-size:${fontSize}px">${buildLyrics(lines,chordLayout)}</div>`;
+  document.getElementById('sp-prev-inner').innerHTML=`<div class="song-head" style="margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)"><div style="font-family:var(--font-lyrics);font-size:20px;font-style:italic;color:var(--text);margin-bottom:6px">${esc(title)}</div>${meta.length?`<div class="song-meta">${meta.join('')}</div>`:''}</div><div style="font-size:${fontSize}px">${buildLyrics(lines,chordLayout,showChords)}</div>`;
 }
 
 function saveSong(){
@@ -920,6 +1005,7 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.s
 
 /* INIT */
 loadData();applyTheme();applyEditorWidth();renderList();document.getElementById('fsize-lbl').textContent=fontSize;
+updateChordButton();
 if(!localStorage.getItem(STORE))loadBundledData(false);
 </script>
 </body>

@@ -1,7 +1,7 @@
 {
   "app": "spiewnik-koncertowy",
   "version": 1,
-  "exportedAt": "2026-04-14T10:50:21.229Z",
+  "exportedAt": "2026-04-14T11:34:25.919Z",
   "songs": [
     {
       "id": "mnyat16fc9ot",
@@ -6791,301 +6791,307 @@
       "key": "",
       "bpm": "",
       "notes": "",
-      "chordLayout": "above",
+      "chordLayout": "side",
       "lines": [
         {
-          "id": "mnyi2qlxghak",
-          "chord": "",
+          "id": "mnyj72pf7rwh",
+          "chord": "e(7-5) A /x2 d",
           "lyric": "When marimba rhythms start to play",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxtk0i",
+          "id": "mnyj72pfdi8d",
           "chord": "",
           "lyric": "Dance with me, make me sway",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx85nz",
+          "id": "mnyj72pfqmov",
           "chord": "",
           "lyric": "Like a lazy ocean hugs the shore",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxvysb",
+          "id": "mnyj72pfwqff",
           "chord": "",
           "lyric": "Hold me close, sway me more",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxn2dg",
+          "id": "mnyj72pf0mlg",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyi2qlxxrj6",
+          "id": "mnyj72pf3wiv",
           "chord": "",
           "lyric": "Like a flower bending in the breeze",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx4saw",
+          "id": "mnyj72pf6x1t",
           "chord": "",
           "lyric": "Bend with me, sway with ease",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxld1u",
+          "id": "mnyj72pf644m",
           "chord": "",
           "lyric": "When we dance you have a way with me",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx0my4",
+          "id": "mnyj72pfj9m9",
           "chord": "",
           "lyric": "Stay with me, sway with me",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxknlt",
+          "id": "mnyj72pfs6ml",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Ref",
+          "type": "section"
         },
         {
-          "id": "mnyi2qlxmpbl",
-          "chord": "",
+          "id": "mnyj72pfm4bs",
+          "chord": "C",
           "lyric": "Other dancers may be on the floor",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx56ej",
-          "chord": "",
+          "id": "mnyj72pfa699",
+          "chord": "F",
           "lyric": "Dear, but my eyes will see only you",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx1ehp",
-          "chord": "",
+          "id": "mnyj72pfyu9h",
+          "chord": "A",
           "lyric": "Only you have that magic technique",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx99nm",
-          "chord": "",
+          "id": "mnyj72pfmbch",
+          "chord": "B (A)",
           "lyric": "When we sway I go weak",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxb4be",
+          "id": "mnyj72pfdnji",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Zwr",
+          "type": "section"
         },
         {
-          "id": "mnyi2qlxw58i",
+          "id": "mnyj72pfr535",
           "chord": "",
           "lyric": "I can hear the sounds of violins",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxpl6l",
+          "id": "mnyj72pfr973",
           "chord": "",
           "lyric": "Long before it begins",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxgnsm",
+          "id": "mnyj72pfe6tb",
           "chord": "",
           "lyric": "Make me thrill as only you know how",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx53ek",
+          "id": "mnyj72pffvj1",
           "chord": "",
           "lyric": "Sway me smooth, sway me now",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx535s",
+          "id": "mnyj72pfkzg5",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Ref",
+          "type": "section"
         },
         {
-          "id": "mnyi2qlxgedj",
+          "id": "mnyj72pfac9a",
           "chord": "",
           "lyric": "Other dancers may be on the floor",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx61ks",
+          "id": "mnyj72pf547f",
           "chord": "",
           "lyric": "Dear, but my eyes will see only you",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxna1w",
+          "id": "mnyj72pfowzv",
           "chord": "",
           "lyric": "Only you have that magic technique",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxbd1y",
+          "id": "mnyj72pfskfq",
           "chord": "",
           "lyric": "When we sway I go weak",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxr5oc",
+          "id": "mnyj72pfgehs",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Zwr",
+          "type": "section"
         },
         {
-          "id": "mnyi2qlxzf9s",
+          "id": "mnyj72pfr8qi",
           "chord": "",
           "lyric": "I can hear the sounds of violins",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx9wkw",
+          "id": "mnyj72pfl0we",
           "chord": "",
           "lyric": "Long before it begins",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx39kv",
+          "id": "mnyj72pfc6hq",
           "chord": "",
           "lyric": "Make me thrill as only you know how",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx0yqs",
+          "id": "mnyj72pfxmsd",
           "chord": "",
           "lyric": "Sway me smooth, sway me now",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxp1ap",
+          "id": "mnyj72pfqok0",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyi2qlx6ji6",
+          "id": "mnyj72pfx4ng",
           "chord": "",
           "lyric": "When marimba rhythms start to play",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx5pkt",
+          "id": "mnyj72pflugn",
           "chord": "",
           "lyric": "Dance with me, make me sway",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxe7ea",
+          "id": "mnyj72pflc9g",
           "chord": "",
           "lyric": "Like a lazy ocean hugs the shore",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxcaxj",
+          "id": "mnyj72pfu410",
           "chord": "",
           "lyric": "Hold me close, sway me more",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxmvi1",
+          "id": "mnyj72pf828b",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyi2qlx3md3",
+          "id": "mnyj72pfcvq4",
           "chord": "",
           "lyric": "Like a flower bending in the breeze",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx6bl9",
+          "id": "mnyj72pf2921",
           "chord": "",
           "lyric": "Bend with me, sway with ease",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxh12l",
+          "id": "mnyj72pfibst",
           "chord": "",
           "lyric": "When we dance you have a way with me",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxzbmg",
+          "id": "mnyj72pfnms7",
           "chord": "",
           "lyric": "Stay with me, sway with me",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxoofg",
+          "id": "mnyj72pf2gy3",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyi2qlxz29k",
+          "id": "mnyj72pfkob2",
           "chord": "",
           "lyric": "When marimba start to play",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx8ynh",
+          "id": "mnyj72pfek0s",
           "chord": "",
           "lyric": "Hold me close, make sway",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxqayb",
+          "id": "mnyj72pfx5y5",
           "chord": "",
           "lyric": "Like a ocean hugs the shore",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxfzi7",
+          "id": "mnyj72pfi52l",
           "chord": "",
           "lyric": "Hold me close, sway me more",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxf3ta",
+          "id": "mnyj72pfrxrf",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyi2qlxw2ig",
+          "id": "mnyj72pfaokn",
           "chord": "",
           "lyric": "Like a flower bending in the breeze",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlx4yhd",
+          "id": "mnyj72pfu0mh",
           "chord": "",
           "lyric": "Bend with me, sway with ease",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxl4ga",
+          "id": "mnyj72pf4ac6",
           "chord": "",
           "lyric": "When we dance you have a way with me",
           "type": "normal"
         },
         {
-          "id": "mnyi2qlxdupc",
+          "id": "mnyj72pfsei5",
           "chord": "",
           "lyric": "Stay with me, sway with me",
           "type": "normal"
+        },
+        {
+          "id": "mnyj72pft2t4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
         }
       ]
     },
@@ -7177,263 +7183,257 @@
       "key": "",
       "bpm": "",
       "notes": "",
-      "chordLayout": "above",
+      "chordLayout": "side",
       "lines": [
         {
-          "id": "mnyb4ak8eisx",
-          "chord": "",
+          "id": "mnyje1wqabhz",
+          "chord": "d B F a",
           "lyric": "Zatańcz ze mną jeszcze raz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8m9jf",
+          "id": "mnyje1wqeqm3",
           "chord": "",
           "lyric": "Otul twarzą moją twarz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak85esb",
+          "id": "mnyje1wqh7ot",
           "chord": "",
           "lyric": "Co z nami będzie? - za oknem świt",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8uao3",
+          "id": "mnyje1wqre1l",
           "chord": "",
           "lyric": "Tak nam dobrze mogło być",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8ihou",
+          "id": "mnyje1wqyog7",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Ref",
+          "type": "section"
         },
         {
-          "id": "mnyb4ak8k6kc",
-          "chord": "",
+          "id": "mnyje1wqn3yg",
+          "chord": "B Dsus2 /x2",
           "lyric": "Gdy ciebie zabraknie i ziemia rozstąpi się",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8kc5s",
+          "id": "mnyje1wq2m5o",
           "chord": "",
           "lyric": "W nicości trwam",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8ua2l",
-          "chord": "",
+          "id": "mnyje1wql4v1",
+          "chord": "B Dsus",
           "lyric": "Gdy kiedyś odejdziesz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak870ae",
-          "chord": "",
+          "id": "mnyje1wq7553",
+          "chord": "g",
           "lyric": "Nas już nie będzie i siebie nie znajdziesz też",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8q18d",
+          "id": "mnyje1wqzulx",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Zwr",
+          "type": "section"
         },
         {
-          "id": "mnyb4ak8iyeh",
+          "id": "mnyje1wqbklp",
           "chord": "",
           "lyric": "Zatańcz ze mną jeszcze raz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8nrlu",
+          "id": "mnyje1wqgwcp",
           "chord": "",
           "lyric": "Chcę chłonąć każdy oddech twój",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak88xq6",
+          "id": "mnyje1wqa6o6",
           "chord": "",
           "lyric": "Co z nami będzie? - uwierz mi",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak866kp",
+          "id": "mnyje1wqvx48",
           "chord": "",
           "lyric": "Tak jak ja nie kochał nikt",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8esq6",
+          "id": "mnyje1wqp7cj",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Ref",
+          "type": "section"
         },
         {
-          "id": "mnyb4ak8iaps",
+          "id": "mnyje1wq2zzx",
           "chord": "",
           "lyric": "Gdy ciebie zabraknie i ziemia rozstąpi się",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak88oxe",
+          "id": "mnyje1wq4328",
           "chord": "",
           "lyric": "W nicości trwam",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8080u",
+          "id": "mnyje1wql0x1",
           "chord": "",
           "lyric": "Gdy kiedyś odejdziesz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8go72",
+          "id": "mnyje1wqjvce",
           "chord": "",
           "lyric": "Nas już nie będzie i siebie nie znajdziesz też",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak82a4f",
+          "id": "mnyje1wq1djn",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyb4ak8161h",
+          "id": "mnyje1wqus04",
           "chord": "",
           "lyric": "Gdy ciebie zabraknie i ziemia rozstąpi się",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8wprf",
+          "id": "mnyje1wqymyi",
           "chord": "",
           "lyric": "W nicości trwam",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8thir",
+          "id": "mnyje1wqrtpg",
           "chord": "",
           "lyric": "Gdy kiedyś odejdziesz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8v0aj",
+          "id": "mnyje1wqmdp0",
           "chord": "",
           "lyric": "Nas już nie będzie i siebie nie znajdziesz też",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8a0wc",
+          "id": "mnyje1wqwgyd",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Bridge",
+          "type": "section"
         },
         {
-          "id": "mnyb4ak8mdk6",
-          "chord": "",
+          "id": "mnyje1wq3j1l",
+          "chord": "D G",
           "lyric": "W salonie wśród ciepłych świec",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak88n07",
-          "chord": "",
+          "id": "mnyje1wq7dbb",
+          "chord": "h G",
           "lyric": "Już nigdy nie zbudzisz mnie",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8k1zr",
-          "chord": "",
+          "id": "mnyje1wqqp1u",
+          "chord": "D G",
           "lyric": "Już nigdy nie powiesz mi",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak896ry",
-          "chord": "",
+          "id": "mnyje1wq2w4o",
+          "chord": "h G",
           "lyric": "Jak bardzo kochałeś mnie",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8oqf8",
-          "chord": "",
+          "id": "mnyje1wq6zfy",
+          "chord": "B g",
           "lyric": "Kochałeś mnie, kochałeś mnie...",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8311c",
+          "id": "mnyje1wq5vj9",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyb4ak8viaf",
-          "chord": "",
+          "id": "mnyje1wqjivg",
+          "chord": "d B F a",
           "lyric": "Czy słyszysz jak tam daleko muzyka gra?",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8ygx6",
-          "chord": "",
-          "lyric": "",
-          "type": "empty"
-        },
-        {
-          "id": "mnyb4ak8gkms",
+          "id": "mnyje1wqa65m",
           "chord": "",
           "lyric": "Zatańcz ze mną, jeszcze raz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak84aih",
+          "id": "mnyje1wqhynj",
           "chord": "",
-          "lyric": "",
-          "type": "empty"
+          "lyric": "Ref",
+          "type": "section"
         },
         {
-          "id": "mnyb4ak83udx",
+          "id": "mnyje1wqioad",
           "chord": "",
           "lyric": "Gdy ciebie zabraknie i ziemia rozstąpi się",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8870r",
+          "id": "mnyje1wqammt",
           "chord": "",
           "lyric": "W nicości trwam",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8fwln",
+          "id": "mnyje1wq8xla",
           "chord": "",
           "lyric": "Gdy kiedyś odejdziesz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8f922",
+          "id": "mnyje1wqzuxg",
           "chord": "",
           "lyric": "Nas już nie będzie i siebie nie znajdziesz też",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8io7n",
+          "id": "mnyje1wqcld5",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyb4ak80w9a",
-          "chord": "",
+          "id": "mnyje1wqq228",
+          "chord": "B Dsus2 /x2",
           "lyric": "Zatańcz ze mną, ostatni raz",
           "type": "normal"
         },
         {
-          "id": "mnyb4ak8w4ss",
+          "id": "mnyje1wqajlb",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mnyb4ak8fe5m",
-          "chord": "",
+          "id": "mnyje1wqvb2u",
+          "chord": "g",
           "lyric": "Nas już nie będzie i siebie nie znajdziesz też",
           "type": "normal"
         }
@@ -7825,211 +7825,217 @@
       "key": "",
       "bpm": "",
       "notes": "",
-      "chordLayout": "above",
+      "chordLayout": "side",
       "lines": [
         {
-          "id": "mnyb5bp5us5n",
-          "chord": "",
+          "id": "mnyjlbcdaeyq",
+          "chord": "a C G a ",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp50c2d",
-          "chord": "",
+          "id": "mnyjlbcdd8mx",
+          "chord": "G a",
           "lyric": "I'm begging of you, please don't take my man",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5dp58",
+          "id": "mnyjlbcdp1ok",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5ci2s",
+          "id": "mnyjlbcdf92m",
           "chord": "",
           "lyric": "Please don't take him just because you can",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5r2f7",
+          "id": "mnyjlbcdrn31",
           "chord": "",
           "lyric": "Your beauty is beyond compare",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp50c7v",
+          "id": "mnyjlbcddp1b",
           "chord": "",
           "lyric": "With flaming locks of auburn hair",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5649i",
+          "id": "mnyjlbcdlfpc",
           "chord": "",
           "lyric": "Ivory skin and eyes of emerald green",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5i6lp",
+          "id": "mnyjlbcdfcvh",
           "chord": "",
           "lyric": "Your smile is like a breath of spring",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp58htm",
+          "id": "mnyjlbcd5vx5",
           "chord": "",
           "lyric": "Your voice is soft like summer rain",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5rnos",
+          "id": "mnyjlbcd3w45",
           "chord": "",
           "lyric": "I cannot compete with you, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp56mw9",
+          "id": "mnyjlbcddnnm",
           "chord": "",
           "lyric": "He talks about you in his sleep",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5s3lh",
+          "id": "mnyjlbcdno2l",
           "chord": "",
           "lyric": "There's nothing I can do to keep",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5oaqq",
+          "id": "mnyjlbcdibde",
           "chord": "",
           "lyric": "From crying when he calls your name, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5d2qi",
+          "id": "mnyjlbcd8gd2",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5dvks",
+          "id": "mnyjlbcdwwgf",
           "chord": "",
           "lyric": "I'm begging of you, please don't take my man",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp52cle",
+          "id": "mnyjlbcd647a",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp571cj",
+          "id": "mnyjlbcdhxzn",
           "chord": "",
           "lyric": "Please don't take him just because you can",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5q3n3",
+          "id": "mnyjlbcdqdv8",
           "chord": "",
           "lyric": "Now you could have your choice of men",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5x76b",
+          "id": "mnyjlbcdmcme",
           "chord": "",
           "lyric": "I could never love again",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5g3y9",
+          "id": "mnyjlbcdwz23",
           "chord": "",
           "lyric": "'Cause he's the only one for me, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5vd3r",
+          "id": "mnyjlbcdb2bq",
           "chord": "",
           "lyric": "I had to have this talk with you",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5k9lm",
+          "id": "mnyjlbcdpi3q",
           "chord": "",
           "lyric": "My happiness depends on you",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5jyir",
+          "id": "mnyjlbcdet1c",
           "chord": "",
           "lyric": "And whatever you decide to do, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp52dsq",
+          "id": "mnyjlbcdtz4s",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5gz4w",
+          "id": "mnyjlbcdz8jt",
           "chord": "",
           "lyric": "Oh, I'm begging of you, please don't take my man",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5hvgt",
+          "id": "mnyjlbcdvwh0",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp58anu",
+          "id": "mnyjlbcdynih",
           "chord": "",
           "lyric": "Please don't take him even though you can",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp594fj",
+          "id": "mnyjlbcd8zii",
           "chord": "",
           "lyric": "I can easily understand",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5frrz",
+          "id": "mnyjlbcd1aon",
           "chord": "",
           "lyric": "How you could easily take my man",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5zle3",
+          "id": "mnyjlbcdy6yw",
           "chord": "",
           "lyric": "But you don't know what he means to me, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5d3hd",
+          "id": "mnyjlbcd1tkv",
           "chord": "",
           "lyric": "Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5xo9q",
+          "id": "mnyjlbcd9728",
           "chord": "",
           "lyric": "Jolene (Jolene)",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp51gv9",
+          "id": "mnyjlbcdidgb",
           "chord": "",
           "lyric": "Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyb5bp5g91s",
+          "id": "mnyjlbcdaao9",
           "chord": "",
           "lyric": "Jolene",
           "type": "normal"
+        },
+        {
+          "id": "mnyjlbcd5pne",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
         }
       ]
     },
@@ -8039,151 +8045,181 @@
       "key": "",
       "bpm": "",
       "notes": "",
-      "chordLayout": "above",
+      "chordLayout": "side",
       "lines": [
         {
-          "id": "mnyb60qmnjtf",
-          "chord": "",
+          "id": "mnyjnfdb2iar",
+          "chord": "Zwr. ",
           "lyric": "Kochaj mnie mimo wszystko",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm4vy9",
-          "chord": "",
+          "id": "mnyjnfdbkvs2",
+          "chord": "A h A h",
           "lyric": "Do niedzieli jakos szlo",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmlmmy",
-          "chord": "",
+          "id": "mnyjnfdbo0pp",
+          "chord": "fis G D",
           "lyric": "Lukier miód liryczne cudo",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmqzcm",
+          "id": "mnyjnfdbyxwo",
           "chord": "",
           "lyric": "Kochaj mnie mimo wszystko",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmp78f",
-          "chord": "",
+          "id": "mnyjnfdbzmdu",
+          "chord": "Ref.",
           "lyric": "Nagle cos drobiazdzek wrecz",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm3ha5",
-          "chord": "",
+          "id": "mnyjnfdbv9ow",
+          "chord": "h G D /x2",
           "lyric": "Na manowce zlosci wywiódl mnie",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmpjhl",
-          "chord": "",
+          "id": "mnyjnfdbmt46",
+          "chord": "h G D e ",
           "lyric": "Kochaj mnie mimo wszystko",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm4dd7",
+          "id": "mnyjnfdb8ec2",
+          "chord": "h G D",
+          "lyric": "Jesli zwatpisz choc jeden raz",
+          "type": "normal"
+        },
+        {
+          "id": "mnyjnfdb1qla",
           "chord": "",
           "lyric": "Jesli zwatpisz choc jeden raz",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm9wlc",
-          "chord": "",
-          "lyric": "Jesli zwatpisz choc jeden raz",
-          "type": "normal"
-        },
-        {
-          "id": "mnyb60qmxsnh",
+          "id": "mnyjnfdbqhf0",
           "chord": "",
           "lyric": "Jesli zwatpisz choc raz",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmhkmy",
+          "id": "mnyjnfdbgn38",
           "chord": "",
           "lyric": "To chocbys z pistoletem zaszedl mi droge",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmhe2q",
+          "id": "mnyjnfdblqcg",
           "chord": "",
           "lyric": "Powrotów nie bedzie",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmr9cy",
+          "id": "mnyjnfdbwpsy",
           "chord": "",
           "lyric": "Czasem cos... tyci czort",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmc3jt",
+          "id": "mnyjnfdb32qk",
           "chord": "",
           "lyric": "Zdania szyk przestawi mi",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmoyy2",
+          "id": "mnyjnfdbov6n",
           "chord": "",
           "lyric": "Kochaj mnie mimo wszystko",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmm0rl",
+          "id": "mnyjnfdb5dk2",
           "chord": "",
           "lyric": "Lub slalomem gubiac krok",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm3w47",
+          "id": "mnyjnfdb26gh",
           "chord": "",
           "lyric": "wracam po dwóch glebszych",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmr8kt",
+          "id": "mnyjnfdbh5id",
           "chord": "",
           "lyric": "pózno w noc",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm15au",
+          "id": "mnyjnfdbf8nl",
           "chord": "",
           "lyric": "Kochaj mnie mimo wszystko",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmlk3w",
+          "id": "mnyjnfdbm9q6",
           "chord": "",
           "lyric": "Jesli zwatpisz choc jeden raz",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmr16k",
+          "id": "mnyjnfdb795s",
           "chord": "",
           "lyric": "Jesli zwatpisz choc jeden raz",
           "type": "normal"
         },
         {
-          "id": "mnyb60qm5blh",
+          "id": "mnyjnfdb6xjl",
           "chord": "",
           "lyric": "Jesli zwatpisz choc raz",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmfb3l",
+          "id": "mnyjnfdbrel0",
           "chord": "",
           "lyric": "To chocbys z pistoletem zaszedl mi droge",
           "type": "normal"
         },
         {
-          "id": "mnyb60qmctz1",
+          "id": "mnyjnfdba45d",
           "chord": "",
           "lyric": "Powrotów nie bedzie",
           "type": "normal"
+        },
+        {
+          "id": "mnyjnfdbxlbw",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mnyjnfdb663j",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mnyjnfdb3hb8",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mnyjnfdbc1i6",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mnyjnfdbwrck",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
         }
       ]
     }
