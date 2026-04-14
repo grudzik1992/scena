@@ -380,11 +380,11 @@ body.resizing-panel{user-select:none;cursor:col-resize}
             </div>
             <div id="fmt-tools">
               <span class="fmt-lbl">Format</span>
-              <button class="fmt-btn" onclick="applyInlineFormat('bold')"><strong>B</strong></button>
-              <button class="fmt-btn" onclick="applyInlineFormat('italic')"><em>I</em></button>
-              <button class="fmt-btn" onclick="applyInlineFormat('underline')"><u>U</u></button>
-              <button class="fmt-btn alt" onclick="shiftText(-1)">←</button>
-              <button class="fmt-btn alt" onclick="shiftText(1)">→</button>
+              <button class="fmt-btn" onmousedown="preventFormatBlur(event)" onclick="applyInlineFormat('bold')"><strong>B</strong></button>
+              <button class="fmt-btn" onmousedown="preventFormatBlur(event)" onclick="applyInlineFormat('italic')"><em>I</em></button>
+              <button class="fmt-btn" onmousedown="preventFormatBlur(event)" onclick="applyInlineFormat('underline')"><u>U</u></button>
+              <button class="fmt-btn alt" onmousedown="preventFormatBlur(event)" onclick="shiftText(-1)">←</button>
+              <button class="fmt-btn alt" onmousedown="preventFormatBlur(event)" onclick="shiftText(1)">→</button>
             </div>
             <div id="bulk-wrap">
               <div id="bulk-grid">
@@ -467,6 +467,7 @@ let showChords=true,reorderMode=false,dragSongIdx=-1;
 let scrollCarry=0;
 let adminMode=false,tabletOnboardingDone=false,onboardingSeenVersion=0;
 let adminPassResolve=null;
+let lastFormatEl=null,lastFormatSelStart=0,lastFormatSelEnd=0;
 
 function normalizeLine(l){
   return {
@@ -665,12 +666,36 @@ function escKeepBreaks(s){
 }
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200)}
 
+function isFormatField(el){
+  if(!el)return false;
+  if(el.id==='bulk-chords'||el.id==='bulk-lyrics')return true;
+  return !!(el.classList&&((el.classList.contains('ci'))||(el.classList.contains('li'))));
+}
+
+function rememberFormatSelection(el){
+  if(!isFormatField(el))return;
+  lastFormatEl=el;
+  if(typeof el.selectionStart==='number')lastFormatSelStart=el.selectionStart;
+  if(typeof el.selectionEnd==='number')lastFormatSelEnd=el.selectionEnd;
+}
+
+function preventFormatBlur(e){
+  if(e)e.preventDefault();
+}
+
 function getFormatTarget(){
-  const el=document.activeElement;
-  if(!el)return null;
-  if(el.id==='bulk-chords'||el.id==='bulk-lyrics')return el;
-  if(el.classList&&((el.classList.contains('ci'))||(el.classList.contains('li'))))return el;
+  const active=document.activeElement;
+  if(isFormatField(active)){rememberFormatSelection(active);return active}
+  if(lastFormatEl&&document.contains(lastFormatEl))return lastFormatEl;
   return null;
+}
+
+function restoreRememberedSelection(el){
+  if(!el||typeof el.setSelectionRange!=='function')return;
+  const len=(el.value||'').length;
+  const s=Math.max(0,Math.min(len,lastFormatSelStart));
+  const e=Math.max(0,Math.min(len,lastFormatSelEnd));
+  el.setSelectionRange(s,e);
 }
 
 function notifyFieldInput(el){el.dispatchEvent(new Event('input',{bubbles:true}))}
@@ -690,6 +715,7 @@ function wrapSelection(el,left,right){
 function applyInlineFormat(type){
   const el=getFormatTarget();
   if(!el){toast('Najpierw kliknij pole tekstu lub akordów');return}
+  if(document.activeElement!==el){el.focus();restoreRememberedSelection(el)}
   if(type==='bold')wrapSelection(el,'**','**');
   else if(type==='italic')wrapSelection(el,'*','*');
   else if(type==='underline')wrapSelection(el,'__','__');
@@ -698,6 +724,7 @@ function applyInlineFormat(type){
 function shiftText(dir){
   const el=getFormatTarget();
   if(!el){toast('Najpierw kliknij pole tekstu lub akordów');return}
+  if(document.activeElement!==el){el.focus();restoreRememberedSelection(el)}
   const v=el.value||'';
   const s=el.selectionStart??0,e=el.selectionEnd??0;
 
@@ -1246,6 +1273,10 @@ document.addEventListener('keydown',e=>{
 });
 let tx0=0;
 document.addEventListener('touchstart',e=>{if(isScrolling&&shouldStopOnTouch(e.target)){stopScroll();showStopFeedback();}},{passive:true});
+document.addEventListener('focusin',e=>{if(isFormatField(e.target))rememberFormatSelection(e.target)});
+document.addEventListener('click',e=>{if(isFormatField(e.target))rememberFormatSelection(e.target)});
+document.addEventListener('keyup',e=>{if(isFormatField(e.target))rememberFormatSelection(e.target)});
+document.addEventListener('selectionchange',()=>{const el=document.activeElement;if(isFormatField(el))rememberFormatSelection(el)});
 document.getElementById('vmode').addEventListener('touchstart',e=>{tx0=e.touches[0].clientX},{passive:true});
 document.getElementById('vmode').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>80){if(dx<0&&curIdx<songs.length-1)selectSong(curIdx+1);else if(dx>0&&curIdx>0)selectSong(curIdx-1)}},{passive:true});
 
