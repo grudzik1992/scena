@@ -212,8 +212,12 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 
 #add-line-btn{margin:7px 10px;padding:8px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;font-size:13px;color:var(--text2);cursor:pointer;text-align:center;font-family:var(--font-ui);flex-shrink:0}
 #add-line-btn:active{background:var(--bg3)}
-#sp-save-btn{margin:0 10px 10px;padding:10px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-ui);flex-shrink:0}
+#sp-save-actions{display:flex;gap:8px;margin:0 10px 10px;flex-shrink:0}
+#sp-save-actions button{flex:1;padding:10px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-ui)}
+#sp-save-btn{background:var(--accent);color:#fff;border:none}
 #sp-save-btn:active{background:var(--accent2)}
+#sp-cancel-btn{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+#sp-cancel-btn:active{background:var(--bg3)}
 
 /* AUTOSCROLL */
 #ascroll{position:absolute;bottom:14px;right:14px;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px 8px;box-shadow:var(--shadow2);z-index:10;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -393,7 +397,10 @@ body.resizing-panel{user-select:none;cursor:col-resize}
             </div>
             <div id="line-list"></div>
             <button id="add-line-btn" onclick="addLine()">+ Nowa linijka</button>
-            <button id="sp-save-btn" onclick="saveSong()">💾 Zapisz</button>
+            <div id="sp-save-actions">
+              <button id="sp-save-btn" onclick="saveSong()">💾 Zapisz</button>
+              <button id="sp-cancel-btn" onclick="toggleEdit()">Anuluj</button>
+            </div>
           </div>
         </div>
 
