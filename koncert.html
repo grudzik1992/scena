@@ -392,6 +392,7 @@ let fontSize=18,scrollSpeed=30,isScrolling=false,rafId=null,lastTs=0;
 let sbOpen=true,lines=[],editMode='bulk',chordLayout='above';
 let editorWidth=EDITOR_DEFAULT_W,panelResizing=false;
 let showChords=true,reorderMode=false,dragSongIdx=-1;
+let scrollCarry=0;
 
 function normalizeLine(l){
   return {
@@ -979,10 +980,26 @@ function startScroll(){
   const el=getScrollTarget();
   if(!el){toast('Brak widoku do przewijania');return}
   if(el.scrollHeight<=el.clientHeight+4){toast('Brak miejsca do przewijania');return}
-  isScrolling=true;document.getElementById('asc-btn').classList.add('on');document.getElementById('asc-btn').textContent='⏸';document.getElementById('ascroll').classList.add('vis');lastTs=0;rafId=requestAnimationFrame(doScroll)
+  isScrolling=true;scrollCarry=0;document.getElementById('asc-btn').classList.add('on');document.getElementById('asc-btn').textContent='⏸';document.getElementById('ascroll').classList.add('vis');lastTs=0;rafId=requestAnimationFrame(doScroll)
 }
 function stopScroll(){isScrolling=false;document.getElementById('asc-btn').classList.remove('on');document.getElementById('asc-btn').textContent='▶';document.getElementById('ascroll').classList.remove('vis');if(rafId){cancelAnimationFrame(rafId);rafId=null}}
-function doScroll(ts){if(!isScrolling)return;const dt=lastTs?ts-lastTs:0;lastTs=ts;const el=getScrollTarget();if(el){el.scrollTop+=(scrollSpeed/1500)*dt;if(el.scrollTop+el.clientHeight>=el.scrollHeight-8){stopScroll();toast('🎵 Koniec');return}}rafId=requestAnimationFrame(doScroll)}
+function doScroll(ts){
+  if(!isScrolling)return;
+  const dt=lastTs?ts-lastTs:0;
+  lastTs=ts;
+  const el=getScrollTarget();
+  if(el){
+    const pxPerSec=20+scrollSpeed*3.4;
+    scrollCarry+=(pxPerSec*dt)/1000;
+    const step=Math.floor(scrollCarry);
+    if(step>0){
+      el.scrollTop+=step;
+      scrollCarry-=step;
+    }
+    if(el.scrollTop+el.clientHeight>=el.scrollHeight-8){stopScroll();toast('🎵 Koniec');return}
+  }
+  rafId=requestAnimationFrame(doScroll)
+}
 
 /* MODAL */
 function showAddModal(){document.getElementById('modal-ov').classList.add('on');document.getElementById('modal-title').value='';setTimeout(()=>document.getElementById('modal-title').focus(),80)}
