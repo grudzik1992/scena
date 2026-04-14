@@ -216,8 +216,10 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 /* AUTOSCROLL */
 #ascroll{position:absolute;bottom:14px;right:14px;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px 8px;box-shadow:var(--shadow2);z-index:10;opacity:0;pointer-events:none;transition:opacity .3s}
 #ascroll.vis{opacity:1;pointer-events:all}
-#asc-spd{appearance:none;-webkit-appearance:none;writing-mode:vertical-lr;direction:rtl;width:22px;height:70px;cursor:pointer;accent-color:var(--accent)}
-.asl{font-size:10px;color:var(--text3);text-align:center}
+.asc-h{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.asc-pills{display:flex;gap:5px;align-items:center}
+.asc-pill{padding:4px 8px;border:1px solid var(--border);background:var(--bg2);color:var(--text2);border-radius:999px;font-size:11px;font-weight:600;cursor:pointer;user-select:none}
+.asc-pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
 
 /* MODAL */
 #modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center;padding:20px}
@@ -360,9 +362,13 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 
         <!-- AUTOSCROLL -->
         <div id="ascroll">
-          <div class="asl">↑ szybko</div>
-          <input type="range" id="asc-spd" min="5" max="100" value="30" orient="vertical" oninput="scrollSpeed=+this.value">
-          <div class="asl">wolno ↓</div>
+          <div class="asc-h">Tempo</div>
+          <div class="asc-pills">
+            <div class="asc-pill" id="asc-p0" onclick="setScrollPreset(0)">Lento</div>
+            <div class="asc-pill" id="asc-p1" onclick="setScrollPreset(1)">Wolno</div>
+            <div class="asc-pill" id="asc-p2" onclick="setScrollPreset(2)">Srednio</div>
+            <div class="asc-pill" id="asc-p3" onclick="setScrollPreset(3)">Szybko</div>
+          </div>
         </div>
       </div>
     </div>
@@ -384,11 +390,12 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 <script>
 const STORE='spiewnik_v3',PREF='spiewnik_prefs_v3',EXPORT_VER=1,BUNDLED_JSON='songs.json';
 const EDITOR_MIN_W=260,EDITOR_DEFAULT_W=420;
+const SCROLL_SPEED_PRESETS=[14,24,38,56];
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
 const TITLES=["Ja wysiadam","Pomidory","Wiśnia","Moja i twoja nadzieja","Pogoda ducha","Miłość w Portofino","Miałeś być","Smooth Operator","Testosteron","Prześliczna wiolonczelistka","Teksański","Fever","Kasztany","Długość dźwięku samotności","Jesteś lekiem","Ale jestem","Co mi panie dasz","Stand by Me","Zacznij od Bacha","Wszystko mi mówi że mnie ktoś pokochał","Jeżeli chcesz","Ruchome piaski","Shallow","Sway (g-moll)","Poszłabym za tobą","Ostatni","Krakowski spleen","Tears in Heaven","Jolene","Kochaj mnie mimo wszystko"];
 
 let songs=[],curIdx=-1,isDark=false,isEditing=false;
-let fontSize=18,scrollSpeed=30,isScrolling=false,rafId=null,lastTs=0;
+let fontSize=18,scrollPreset=1,isScrolling=false,rafId=null,lastTs=0;
 let sbOpen=true,lines=[],editMode='bulk',chordLayout='above';
 let editorWidth=EDITOR_DEFAULT_W,panelResizing=false;
 let showChords=true,reorderMode=false,dragSongIdx=-1;
@@ -466,11 +473,12 @@ function loadData(){
     if(s){songs=JSON.parse(s);songs=songs.map(normalizeSong)}
     else throw 0;
   }catch(e){songs=TITLES.map(t=>({id:uid(),title:t,key:'',bpm:'',notes:'',lines:[]}))}
-  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W;showChords=(p.sc!==false)}catch(e){}
+  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W;showChords=(p.sc!==false);scrollPreset=Number.isInteger(p.st)?p.st:1}catch(e){}
+  scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,scrollPreset));
   editorWidth=clampEditorWidth(editorWidth);
 }
 function save(){try{localStorage.setItem(STORE,JSON.stringify(songs))}catch(e){}}
-function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords}))}catch(e){}}
+function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify({dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset}))}catch(e){}}
 
 function makeExportPayload(){
   return {
@@ -478,7 +486,7 @@ function makeExportPayload(){
     version:EXPORT_VER,
     exportedAt:new Date().toISOString(),
     songs:songs.map(normalizeSong),
-    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords}
+    prefs:{dark:isDark,fs:fontSize,ew:editorWidth,sc:showChords,st:scrollPreset}
   };
 }
 
@@ -494,9 +502,11 @@ function applyImportedPrefs(importedPrefs){
   if(Number.isFinite(+importedPrefs.fs))fontSize=Math.max(12,Math.min(36,+importedPrefs.fs));
   if(Number.isFinite(+importedPrefs.ew))editorWidth=clampEditorWidth(+importedPrefs.ew);
   if(typeof importedPrefs.sc==='boolean')showChords=importedPrefs.sc;
+  if(Number.isInteger(importedPrefs.st))scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,importedPrefs.st));
   applyTheme();
   applyEditorWidth();
   updateChordButton();
+  updateTempoUI();
   savePrefs();
 }
 
@@ -654,6 +664,19 @@ function toggleChordVisibility(){
   showChords=!showChords;
   updateChordButton();
   if(curIdx>=0){if(isEditing)updatePreview();else openView();}
+  savePrefs();
+}
+
+function updateTempoUI(){
+  for(let i=0;i<SCROLL_SPEED_PRESETS.length;i++){
+    const el=document.getElementById(`asc-p${i}`);
+    if(el)el.classList.toggle('on',i===scrollPreset);
+  }
+}
+
+function setScrollPreset(idx){
+  scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,idx));
+  updateTempoUI();
   savePrefs();
 }
 
@@ -989,7 +1012,7 @@ function doScroll(ts){
   lastTs=ts;
   const el=getScrollTarget();
   if(el){
-    const pxPerSec=20+scrollSpeed*3.4;
+    const pxPerSec=SCROLL_SPEED_PRESETS[scrollPreset];
     scrollCarry+=(pxPerSec*dt)/1000;
     const step=Math.floor(scrollCarry);
     if(step>0){
@@ -1031,6 +1054,7 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.s
 /* INIT */
 loadData();applyTheme();applyEditorWidth();renderList();document.getElementById('fsize-lbl').textContent=fontSize;
 updateChordButton();
+updateTempoUI();
 if(!localStorage.getItem(STORE))loadBundledData(false);
 </script>
 </body>
