@@ -505,7 +505,15 @@ function loadData(){
     if(s){songs=JSON.parse(s);songs=songs.map(normalizeSong)}
     else throw 0;
   }catch(e){songs=TITLES.map(t=>({id:uid(),title:t,key:'',bpm:'',notes:'',lines:[]}))}
-  try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');isDark=!!p.dark;fontSize=p.fs||18;editorWidth=p.ew||EDITOR_DEFAULT_W;showChords=(p.sc!==false);scrollPreset=Number.isInteger(p.st)?p.st:1;vocalMode=!!p.vm}catch(e){}
+  try{
+    const p=JSON.parse(localStorage.getItem(PREF)||'{}');
+    isDark=!!p.dark;
+    fontSize=p.fs||18;
+    editorWidth=p.ew||EDITOR_DEFAULT_W;
+    showChords=(p.sc!==false);
+    scrollPreset=Number.isInteger(p.st)?p.st:1;
+    vocalMode=(typeof p.vm==='boolean')?p.vm:(window.innerWidth<=700);
+  }catch(e){}
   scrollPreset=Math.max(0,Math.min(SCROLL_SPEED_PRESETS.length-1,scrollPreset));
   editorWidth=clampEditorWidth(editorWidth);
 }
