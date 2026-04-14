@@ -1,4 +1,4 @@
-const CACHE_NAME = "spiewnik-pwa-v1";
+const CACHE_NAME = "spiewnik-pwa-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -29,10 +29,24 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
+  const url = new URL(req.url);
 
   if (req.mode === "navigate") {
     event.respondWith(
       fetch(req).catch(() => caches.match("./koncert.html"))
+    );
+    return;
+  }
+
+  if (url.pathname.endsWith("/songs.json")) {
+    event.respondWith(
+      fetch(req, { cache: "no-store" })
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req))
     );
     return;
   }
