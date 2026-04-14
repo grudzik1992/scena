@@ -235,12 +235,34 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 /* TOAST */
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--text);color:var(--bg);padding:9px 18px;border-radius:20px;font-size:13px;font-weight:500;opacity:0;transition:all .28s;z-index:300;pointer-events:none;white-space:nowrap}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#stop-flash{position:fixed;inset:0;background:rgba(255,255,255,.08);opacity:0;pointer-events:none;z-index:290;transition:opacity .12s ease}
+#stop-flash.on{opacity:1}
 
 @media(max-width:700px){
   :root{--sidebar-w:270px}
+  #topbar{padding:6px 8px;gap:6px}
+  #topbar-title{font-size:15px}
+  #topbar-count{font-size:11px;padding:3px 8px}
+  .ibtn{width:34px;height:34px;font-size:14px}
+  #sidebar{position:absolute;left:0;top:0;bottom:0;z-index:120;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+  #sidebar.hidden{margin-left:0;min-width:var(--sidebar-w);transform:translateX(-102%)}
+  #main{width:100%}
+  #stbar{padding:6px 8px;gap:6px;position:sticky;top:0;z-index:45}
+  #stbar-title{font-size:14px;max-width:34vw}
+  #fsize-lbl{font-size:11px;min-width:20px}
+  #stbar .ctl-btn{font-size:16px}
+  #del-btn{display:none}
+  #ascroll{right:8px;bottom:10px;padding:8px 7px;border-radius:12px}
+  .asc-pills{flex-wrap:wrap;max-width:190px;justify-content:center}
+  .asc-pill{font-size:10px;padding:4px 7px}
   #sp-resizer{display:none}
-  #sp-right{width:240px}
-  #vmode,#sp-prev{padding:16px 16px 80px}
+  #sped.active{flex-direction:column}
+  #sp-prev{border-right:none;border-bottom:1px solid var(--border);padding:12px 12px 20px;min-height:38vh}
+  #sp-right{width:100%;max-width:none;min-width:0;height:52vh}
+  #sp-meta{padding:8px 8px}
+  #sp-lines-hd{padding:7px 8px 5px}
+  #fmt-tools{padding:6px 8px;overflow-x:auto;white-space:nowrap}
+  #vmode{padding:16px 14px 88px}
   #bulk-grid{grid-template-columns:1fr}
   #bulk-chords{border-right:none;border-bottom:1px solid var(--border);min-height:120px}
 }
@@ -387,6 +409,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
   </div>
 </div>
 <div id="toast"></div>
+<div id="stop-flash"></div>
 
 <script>
 const STORE='spiewnik_v3',PREF='spiewnik_prefs_v3',EXPORT_VER=1,BUNDLED_JSON='songs.json';
@@ -1007,6 +1030,15 @@ function startScroll(){
   isScrolling=true;scrollCarry=0;document.getElementById('asc-btn').classList.add('on');document.getElementById('asc-btn').textContent='⏸';document.getElementById('ascroll').classList.add('vis');lastTs=0;rafId=requestAnimationFrame(doScroll)
 }
 function stopScroll(){isScrolling=false;document.getElementById('asc-btn').classList.remove('on');document.getElementById('asc-btn').textContent='▶';document.getElementById('ascroll').classList.remove('vis');if(rafId){cancelAnimationFrame(rafId);rafId=null}}
+function showStopFeedback(){
+  const fl=document.getElementById('stop-flash');
+  if(fl){
+    fl.classList.add('on');
+    clearTimeout(fl._t);
+    fl._t=setTimeout(()=>fl.classList.remove('on'),140);
+  }
+  if(navigator.vibrate)navigator.vibrate(16);
+}
 function doScroll(ts){
   if(!isScrolling)return;
   const dt=lastTs?ts-lastTs:0;
@@ -1040,7 +1072,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'&&isEditing)toggleEdit()
 });
 let tx0=0;
-document.addEventListener('touchstart',()=>{if(isScrolling)stopScroll()},{passive:true});
+document.addEventListener('touchstart',()=>{if(isScrolling){stopScroll();showStopFeedback();}},{passive:true});
 document.getElementById('vmode').addEventListener('touchstart',e=>{tx0=e.touches[0].clientX},{passive:true});
 document.getElementById('vmode').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>80){if(dx<0&&curIdx<songs.length-1)selectSong(curIdx+1);else if(dx>0&&curIdx>0)selectSong(curIdx-1)}},{passive:true});
 
