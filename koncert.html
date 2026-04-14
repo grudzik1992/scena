@@ -234,13 +234,6 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--text);color:var(--bg);padding:9px 18px;border-radius:20px;font-size:13px;font-weight:500;opacity:0;transition:all .28s;z-index:300;pointer-events:none;white-space:nowrap}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-/* CONCERT */
-body.concert #topbar{display:none}
-body.concert #stbar{padding:12px 20px}
-body.concert #vmode{padding:28px 40px 100px}
-body.concert #del-btn{display:none}
-body.concert #edit-btn{background:var(--accent);color:#fff;border-color:var(--accent)}
-
 @media(max-width:700px){
   :root{--sidebar-w:270px}
   #sp-resizer{display:none}
@@ -258,7 +251,6 @@ body.concert #edit-btn{background:var(--accent);color:#fff;border-color:var(--ac
   <div id="topbar-title">🎵 Śpiewnik</div>
   <div id="topbar-count">0 / 0</div>
   <div class="ibtn" onclick="toggleTheme()" id="theme-btn">☀️</div>
-  <div class="ibtn" onclick="toggleConcert()" id="concert-btn" title="Tryb koncertu">🎤</div>
 </div>
 
 <div id="app">
@@ -395,7 +387,7 @@ const EDITOR_MIN_W=260,EDITOR_DEFAULT_W=420;
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
 const TITLES=["Ja wysiadam","Pomidory","Wiśnia","Moja i twoja nadzieja","Pogoda ducha","Miłość w Portofino","Miałeś być","Smooth Operator","Testosteron","Prześliczna wiolonczelistka","Teksański","Fever","Kasztany","Długość dźwięku samotności","Jesteś lekiem","Ale jestem","Co mi panie dasz","Stand by Me","Zacznij od Bacha","Wszystko mi mówi że mnie ktoś pokochał","Jeżeli chcesz","Ruchome piaski","Shallow","Sway (g-moll)","Poszłabym za tobą","Ostatni","Krakowski spleen","Tears in Heaven","Jolene","Kochaj mnie mimo wszystko"];
 
-let songs=[],curIdx=-1,isDark=false,isConcert=false,isEditing=false;
+let songs=[],curIdx=-1,isDark=false,isEditing=false;
 let fontSize=18,scrollSpeed=30,isScrolling=false,rafId=null,lastTs=0;
 let sbOpen=true,lines=[],editMode='bulk',chordLayout='above';
 let editorWidth=EDITOR_DEFAULT_W,panelResizing=false;
@@ -648,7 +640,6 @@ function shiftText(dir){
 /* THEME */
 function applyTheme(){document.documentElement.setAttribute('data-theme',isDark?'dark':'light');document.getElementById('theme-btn').textContent=isDark?'🌙':'☀️'}
 function toggleTheme(){isDark=!isDark;applyTheme();savePrefs()}
-function toggleConcert(){isConcert=!isConcert;document.body.classList.toggle('concert',isConcert);document.getElementById('concert-btn').classList.toggle('on',isConcert);toast(isConcert?'🎤 Tryb koncertu':'📖 Normalny')}
 function toggleSb(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen)}
 
 function updateChordButton(){
@@ -975,10 +966,23 @@ function deleteSong(){
 function changeFontSize(d){fontSize=Math.max(12,Math.min(36,fontSize+d));document.getElementById('fsize-lbl').textContent=fontSize;if(!isEditing)openView();else updatePreview();savePrefs()}
 
 /* AUTOSCROLL */
-function toggleAutoscroll(){isScrolling?stopScroll():startScroll()}
-function startScroll(){isScrolling=true;document.getElementById('asc-btn').classList.add('on');document.getElementById('asc-btn').textContent='⏸';document.getElementById('ascroll').classList.add('vis');lastTs=0;rafId=requestAnimationFrame(doScroll)}
+function getScrollTarget(){
+  const sped=document.getElementById('sped');
+  if(sped.classList.contains('active'))return document.getElementById('sp-prev');
+  return document.getElementById('vmode');
+}
+function toggleAutoscroll(){
+  if(isEditing)toggleEdit();
+  isScrolling?stopScroll():startScroll();
+}
+function startScroll(){
+  const el=getScrollTarget();
+  if(!el){toast('Brak widoku do przewijania');return}
+  if(el.scrollHeight<=el.clientHeight+4){toast('Brak miejsca do przewijania');return}
+  isScrolling=true;document.getElementById('asc-btn').classList.add('on');document.getElementById('asc-btn').textContent='⏸';document.getElementById('ascroll').classList.add('vis');lastTs=0;rafId=requestAnimationFrame(doScroll)
+}
 function stopScroll(){isScrolling=false;document.getElementById('asc-btn').classList.remove('on');document.getElementById('asc-btn').textContent='▶';document.getElementById('ascroll').classList.remove('vis');if(rafId){cancelAnimationFrame(rafId);rafId=null}}
-function doScroll(ts){if(!isScrolling)return;const dt=lastTs?ts-lastTs:0;lastTs=ts;const el=document.getElementById('vmode');if(el){el.scrollTop+=(scrollSpeed/5000)*dt;if(el.scrollTop+el.clientHeight>=el.scrollHeight-8){stopScroll();toast('🎵 Koniec');return}}rafId=requestAnimationFrame(doScroll)}
+function doScroll(ts){if(!isScrolling)return;const dt=lastTs?ts-lastTs:0;lastTs=ts;const el=getScrollTarget();if(el){el.scrollTop+=(scrollSpeed/1500)*dt;if(el.scrollTop+el.clientHeight>=el.scrollHeight-8){stopScroll();toast('🎵 Koniec');return}}rafId=requestAnimationFrame(doScroll)}
 
 /* MODAL */
 function showAddModal(){document.getElementById('modal-ov').classList.add('on');document.getElementById('modal-title').value='';setTimeout(()=>document.getElementById('modal-title').focus(),80)}
@@ -992,7 +996,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();if(curIdx<songs.length-1)selectSong(curIdx+1)}
   if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();if(curIdx>0)selectSong(curIdx-1)}
   if(e.key===' '){e.preventDefault();toggleAutoscroll()}
-  if(e.key==='Escape'){if(isConcert)toggleConcert();else if(isEditing)toggleEdit()}
+  if(e.key==='Escape'&&isEditing)toggleEdit()
 });
 let tx0=0;
 document.getElementById('vmode').addEventListener('touchstart',e=>{tx0=e.touches[0].clientX},{passive:true});
