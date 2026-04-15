@@ -137,8 +137,8 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 .lb .sl{color:var(--text3);font-family:var(--font-ui);font-size:.78em;display:block;margin-top:22px;margin-bottom:2px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
 .lb .el{display:block;min-height:1.9em}
 .lb .cl,.lb .ll,.lb .sl{white-space:pre-wrap;white-space:break-spaces}
-.lb.multicol{column-gap:30px;column-fill:auto}
-.lb.multicol .cl,.lb.multicol .ll,.lb.multicol .sl,.lb.multicol .el,.lb.multicol .rw{-webkit-column-break-inside:avoid;break-inside:avoid;page-break-inside:avoid}
+.lb.multicol{column-gap:30px;column-fill:balance}
+.lb.multicol > span, .lb.multicol > div {-webkit-column-break-inside:avoid;break-inside:avoid;page-break-inside:avoid}
 .lb.side .rw{display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:14px;align-items:start}
 .lb.side .rc{color:var(--chord);font-family:var(--font-mono);font-weight:600;font-size:.85em;line-height:1.45;letter-spacing:.05em;white-space:pre-wrap;white-space:break-spaces;display:block}
 .lb.side .rl{display:block;line-height:1.9;white-space:pre-wrap;white-space:break-spaces}
@@ -1247,8 +1247,10 @@ function buildLyrics(lns,layout,withChords,cols){
       h+=`<span class="rw${chord.trim()?'':' no-chord'}"><span class="rc">${show&&chord.trim()?escKeepBreaks(chord):'&nbsp;'}</span><span class="rl">${lyric.trim()?escKeepBreaks(lyric):'&nbsp;'}</span></span>`;
       continue;
     }
-    if(show&&l.chord&&l.chord.trim())h+=`<span class="cl">${escKeepBreaks(l.chord)}</span>`;
-    if(l.lyric&&l.lyric.trim())h+=`<span class="ll">${escKeepBreaks(l.lyric)}</span>`;
+    let bl='';
+      if(show&&l.chord&&l.chord.trim())bl+=`<span class="cl">${escKeepBreaks(l.chord)}</span>`;
+      if(l.lyric&&l.lyric.trim())bl+=`<span class="ll">${escKeepBreaks(l.lyric)}</span>`;
+      if(bl)h+=`<div class="l-wrap">${bl}</div>`;
   }
   return h+'</div>';
 }
