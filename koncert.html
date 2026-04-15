@@ -324,6 +324,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
       <button class="side-btn" onclick="loadBundledData(true)">↻ songs.json</button>
       <button class="side-btn" id="admin-btn" onclick="toggleAdminMode()">🔐 Admin</button>
       <button class="side-btn" id="publish-btn" onclick="publishGlobalChanges()" style="display:none">🌍 Publikuj</button>
+      <button class="side-btn" id="update-btn" onclick="forceAppUpdate()" style="display:none">🔥 Odśwież Wersję</button>
     </div>
     <input id="import-file" type="file" accept="application/json,.json" style="display:none">
   </div>
@@ -880,6 +881,8 @@ function updateAdminUI(){
   a.textContent=adminMode?'🔓 Admin ON':'🔐 Admin';
   a.classList.toggle('on',adminMode);
   p.style.display=adminMode?'':'none';
+  const u=document.getElementById('update-btn');
+  if(u)u.style.display=adminMode?'':'none';
 }
 
 async function sha256Hex(text){
@@ -934,6 +937,24 @@ async function toggleAdminMode(){
 }
 
 function toBase64Utf8(text){return btoa(unescape(encodeURIComponent(text)))}
+
+async function forceAppUpdate(){
+  if(!confirm('Czy na pewno chcesz wymusić odświeżenie aplikacji i wyczyścić cache?'))return;
+  if('serviceWorker' in navigator) {
+    try{
+      const regs = await navigator.serviceWorker.getRegistrations();
+      for(let r of regs) await r.unregister();
+    }catch(e){console.error(e);}
+  }
+  if('caches' in window) {
+    try{
+      const keys = await caches.keys();
+      for(let k of keys) await caches.delete(k);
+    }catch(e){console.error(e);}
+  }
+  toast('Pamięć wyczyszczona. Przeładowuję...');
+  setTimeout(() => window.location.reload(true), 1000);
+}
 
 async function publishGlobalChanges(){
   if(!adminMode){toast('Wlacz tryb admina');return}
