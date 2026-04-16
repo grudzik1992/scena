@@ -1559,7 +1559,7 @@ document.getElementById('sp-resizer').addEventListener('mousedown',startPanelRes
 window.addEventListener('mousemove',onPanelResize);
 window.addEventListener('mouseup',stopPanelResize);
 window.addEventListener('resize',()=>{applyEditorWidth();maybeShowTabletOnboarding();});
-if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').catch(()=>{})})}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{})})}
 
 /* INIT */
 loadData();applyTheme();applyEditorWidth();renderList();document.getElementById('fsize-lbl').textContent=fontSize;
@@ -1573,3 +1573,4 @@ if(!localStorage.getItem(STORE))loadBundledData(false);
 </script>
 </body>
 </html>
+
