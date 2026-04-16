@@ -138,7 +138,7 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 .lb .el{display:block;min-height:1.9em}
 .lb .cl,.lb .ll,.lb .sl{white-space:pre-wrap;white-space:break-spaces}
 .lb.multicol{column-gap:30px;column-fill:balance}
-.lb.multicol > span, .lb.multicol > div {-webkit-column-break-inside:avoid;break-inside:avoid;page-break-inside:avoid}
+.lb.multicol > span, .lb.multicol > div {-webkit-column-break-inside:avoid;break-inside:avoid;page-break-inside:avoid;display:inline-block;width:100%;vertical-align:top}
 .lb.side .rw{display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:14px;align-items:start}
 .lb.side .rc{color:var(--chord);font-family:var(--font-mono);font-weight:600;font-size:.85em;line-height:1.45;letter-spacing:.05em;white-space:pre-wrap;white-space:break-spaces;display:block}
 .lb.side .rl{display:block;line-height:1.9;white-space:pre-wrap;white-space:break-spaces}
