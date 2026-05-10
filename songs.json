@@ -1,7 +1,7 @@
 {
   "app": "spiewnik-koncertowy",
   "version": 1,
-  "exportedAt": "2026-04-14T11:34:25.919Z",
+  "exportedAt": "2026-05-10T20:03:10.073Z",
   "songs": [
     {
       "id": "mnyat16fc9ot",
@@ -8347,7 +8347,188 @@
       "bpm": "",
       "notes": "",
       "chordLayout": "above",
-      "lines": []
+      "lines": [
+        {
+          "id": "mp079y7r076n0lr",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r1b491pr",
+          "chord": "",
+          "lyric": "He left no time to regret",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r27ft8ix",
+          "chord": "",
+          "lyric": "Kept his dick wet with his same safe old bet",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3of01ff",
+          "chord": "",
+          "lyric": "Me and my head high",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r4pz3ca0",
+          "chord": "",
+          "lyric": "And my tears dry, get on without my guy",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r5wlozm0",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r6rgg0yk",
+          "chord": "",
+          "lyric": "You went back to what you knew",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r72nag4p",
+          "chord": "",
+          "lyric": "So far removed from all that we went through",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r86q72to",
+          "chord": "",
+          "lyric": "And I tread a troubled track",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r9825mbz",
+          "chord": "",
+          "lyric": "My odds are stacked — I'll go back to black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7ramtnc61",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7rb0yaa1f",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7rcppt53g",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rd4y2vma",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rezwejfc",
+          "chord": "",
+          "lyric": "You go back to her and I go back to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rf8rtp0y",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rga0g6l0",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rhwt3qrk",
+          "chord": "",
+          "lyric": "You go back to her and I go back to black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rir07ssw",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7rjexsdcp",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7rk2vywbn",
+          "chord": "",
+          "lyric": "Black, black, black, black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rl4eqq44",
+          "chord": "",
+          "lyric": "Black, black, black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rmay9j5v",
+          "chord": "",
+          "lyric": "I go back to, I go back to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rnzef7zp",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7rof19mcw",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rpk7ms0x",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rqrfgzn8",
+          "chord": "",
+          "lyric": "You go back to her and I go back to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rrjhwm5f",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rsv0r43t",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rtjma0yk",
+          "chord": "",
+          "lyric": "You go back to her and I go back to black",
+          "type": "normal"
+        }
+      ]
     },
     {
       "id": "1az5o812cn40",
@@ -8626,7 +8807,182 @@
       "bpm": "",
       "notes": "",
       "chordLayout": "above",
-      "lines": []
+      "lines": [
+        {
+          "id": "mp079y7rups66ws",
+          "chord": "",
+          "lyric": "Te prześliczne słowa to powrotna Bossa Nova",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rvl9btfp",
+          "chord": "",
+          "lyric": "A w tych słowach jest migdałów smak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rwwexdop",
+          "chord": "",
+          "lyric": "Wino i migdały będą w domu smakowały",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7rx29nwna",
+          "chord": "",
+          "lyric": "Jak w świecie nic, tak tak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7ry4d674i",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7rzcn6b0d",
+          "chord": "",
+          "lyric": "Świat się gapi z okna, Bossa Nova to powrotna",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r10ju5mnt",
+          "chord": "",
+          "lyric": "I ty się też gapisz razem z nią",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r116pfw49",
+          "chord": "",
+          "lyric": "Dosyć masz metafor, gdy podnosi się semafor",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1241cs7u",
+          "chord": "",
+          "lyric": "Liczy się tylko to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r13srh36k",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r14dg6xvc",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r15hfblct",
+          "chord": "",
+          "lyric": "Wracaj, złe drogi skracaj",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r16j3rjgb",
+          "chord": "",
+          "lyric": "Wracaj, gdzie byś nie był — Rzym czy Krym",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r17lrbh2u",
+          "chord": "",
+          "lyric": "Wracaj, wracaj tam, gdzie się na ogół ma gigant kaca",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r18ea2j4i",
+          "chord": "",
+          "lyric": "Lecz przynajmniej jest się napić z kim",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r19054gvz",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r1ay2v0uu",
+          "chord": "",
+          "lyric": "Wracaj, tam właśnie wracaj, gdzie się całkiem nie opłaca żyć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1bkk8xin",
+          "chord": "",
+          "lyric": "Stary, stary, pomyśl, że ojczyzna to kumpli paru",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1cau3k1x",
+          "chord": "",
+          "lyric": "Z nimi znów szczęśliwy, z nimi znów szczęśliwy spróbuj być",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1dwc35tq",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r1eeulrsq",
+          "chord": "",
+          "lyric": "Była już jak wdowa, ta powrotna Bossa Nova",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1fgji89h",
+          "chord": "",
+          "lyric": "Przymierzała czarny smutku szal",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1guh4d1o",
+          "chord": "",
+          "lyric": "Słona łza na ustach i na skrzynce listów pusta",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1h0zxp9f",
+          "chord": "",
+          "lyric": "Za oknem dal, jaka dal",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1ieg9zuk",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r1j9974o4",
+          "chord": "",
+          "lyric": "Aż któregoś ranka koleżanka zapragnęła",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1k2ndr9j",
+          "chord": "",
+          "lyric": "Dać o sobie znak, choć jeden znak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1lal8jhf",
+          "chord": "",
+          "lyric": "W stronę sinej dali, w stronę tych, co wyjechali",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1mzfrgci",
+          "chord": "",
+          "lyric": "Krzycząc tak, krzycząc tak",
+          "type": "normal"
+        }
+      ]
     },
     {
       "id": "9onxi95gwz00",
@@ -8815,7 +9171,188 @@
       "bpm": "",
       "notes": "",
       "chordLayout": "above",
-      "lines": []
+      "lines": [
+        {
+          "id": "mp079y7r1nn9nafc",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r1oahyghi",
+          "chord": "",
+          "lyric": "He left no time to regret",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1pdedcu0",
+          "chord": "",
+          "lyric": "Kept his dick wet with his same safe old bet",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1ql6gm7p",
+          "chord": "",
+          "lyric": "Me and my head high",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1rvedpxe",
+          "chord": "",
+          "lyric": "And my tears dry, get on without my guy",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1se4wd5g",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r1tjt6n8l",
+          "chord": "",
+          "lyric": "You went back to what you knew",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1uf280on",
+          "chord": "",
+          "lyric": "So far removed from all that we went through",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1vakseqt",
+          "chord": "",
+          "lyric": "And I tread a troubled track",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1w2xewq7",
+          "chord": "",
+          "lyric": "My odds are stacked — I'll go back to black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r1xxcbbvg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r1yv8jrte",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r1zwybcn2",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r20icdxuk",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r214veeg1",
+          "chord": "",
+          "lyric": "You go back to her and I go back to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r22maxdic",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r239bxdms",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r24ccmvuf",
+          "chord": "",
+          "lyric": "You go back to her and I go back to black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r25adk240",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r2606x8qs",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r270idbpl",
+          "chord": "",
+          "lyric": "Black, black, black, black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r28e7nks5",
+          "chord": "",
+          "lyric": "Black, black, black",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2992da3c",
+          "chord": "",
+          "lyric": "I go back to, I go back to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2al85i4h",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r2bt5bt1w",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2cjccsn8",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2d4npv8n",
+          "chord": "",
+          "lyric": "You go back to her and I go back to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2ervau1f",
+          "chord": "",
+          "lyric": "We only said goodbye with words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2fftygn2",
+          "chord": "",
+          "lyric": "I died a hundred times",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2gm0nhvj",
+          "chord": "",
+          "lyric": "You go back to her and I go back to black",
+          "type": "normal"
+        }
+      ]
     },
     {
       "id": "kt07sjjsfqp0",
@@ -9094,7 +9631,182 @@
       "bpm": "",
       "notes": "",
       "chordLayout": "above",
-      "lines": []
+      "lines": [
+        {
+          "id": "mp079y7r2h1n1ea2",
+          "chord": "",
+          "lyric": "Te prześliczne słowa to powrotna Bossa Nova",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2ibgs6xj",
+          "chord": "",
+          "lyric": "A w tych słowach jest migdałów smak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2jjik7pt",
+          "chord": "",
+          "lyric": "Wino i migdały będą w domu smakowały",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2kflk4dz",
+          "chord": "",
+          "lyric": "Jak w świecie nic, tak tak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2lqs6686",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r2muiq01h",
+          "chord": "",
+          "lyric": "Świat się gapi z okna, Bossa Nova to powrotna",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2nnc9t02",
+          "chord": "",
+          "lyric": "I ty się też gapisz razem z nią",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2o4ofww1",
+          "chord": "",
+          "lyric": "Dosyć masz metafor, gdy podnosi się semafor",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2prdkdon",
+          "chord": "",
+          "lyric": "Liczy się tylko to",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2q84cii4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r2rrjsmkv",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r2s0gr6hh",
+          "chord": "",
+          "lyric": "Wracaj, złe drogi skracaj",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2twcp8pg",
+          "chord": "",
+          "lyric": "Wracaj, gdzie byś nie był — Rzym czy Krym",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2uvumya0",
+          "chord": "",
+          "lyric": "Wracaj, wracaj tam, gdzie się na ogół ma gigant kaca",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2v4cvoxq",
+          "chord": "",
+          "lyric": "Lecz przynajmniej jest się napić z kim",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2w2qyf17",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r2x4yys8h",
+          "chord": "",
+          "lyric": "Wracaj, tam właśnie wracaj, gdzie się całkiem nie opłaca żyć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2yrhbvq0",
+          "chord": "",
+          "lyric": "Stary, stary, pomyśl, że ojczyzna to kumpli paru",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r2zy4l7of",
+          "chord": "",
+          "lyric": "Z nimi znów szczęśliwy, z nimi znów szczęśliwy spróbuj być",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r30fhe68e",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r3159ihd1",
+          "chord": "",
+          "lyric": "Była już jak wdowa, ta powrotna Bossa Nova",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3281brt1",
+          "chord": "",
+          "lyric": "Przymierzała czarny smutku szal",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r33dmihal",
+          "chord": "",
+          "lyric": "Słona łza na ustach i na skrzynce listów pusta",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r34yya56x",
+          "chord": "",
+          "lyric": "Za oknem dal, jaka dal",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r35pes06w",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r36pbgub8",
+          "chord": "",
+          "lyric": "Aż któregoś ranka koleżanka zapragnęła",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r379yegqo",
+          "chord": "",
+          "lyric": "Dać o sobie znak, choć jeden znak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r38kar08g",
+          "chord": "",
+          "lyric": "W stronę sinej dali, w stronę tych, co wyjechali",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r391gctwi",
+          "chord": "",
+          "lyric": "Krzycząc tak, krzycząc tak",
+          "type": "normal"
+        }
+      ]
     },
     {
       "id": "kzx8z2xddkm0",
@@ -9158,6 +9870,2450 @@
       "notes": "",
       "chordLayout": "above",
       "lines": []
+    },
+    {
+      "id": "mp079y7r3aeckxwd",
+      "title": "Ain't Nobody",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7r3b86mkxk",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r3chg1rv1",
+          "chord": "",
+          "lyric": "Captured effortlessly, that's the way it was",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3du3vbfp",
+          "chord": "",
+          "lyric": "Happened so naturally, I did not know it was love",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3era1trx",
+          "chord": "",
+          "lyric": "The next thing I felt was you holding me close",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3ffe003d",
+          "chord": "",
+          "lyric": "What was I gonna do? I let myself go",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3g9gmsp8",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r3h140d47",
+          "chord": "",
+          "lyric": "[Pre-refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r3iqxun97",
+          "chord": "",
+          "lyric": "And now we're flying through the stars",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3j7elp7l",
+          "chord": "",
+          "lyric": "I hope this night will last forever — oh",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3kjr0h8m",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r3lz1ip2r",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r3modqyzz",
+          "chord": "",
+          "lyric": "Ain't nobody loves me better",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3nxgtq9u",
+          "chord": "",
+          "lyric": "Makes me happy, makes me feel this way",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3opbostz",
+          "chord": "",
+          "lyric": "Ain't nobody loves me better than you",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3plqw6xi",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r3qvjcvy2",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r3rqrp20k",
+          "chord": "",
+          "lyric": "I've waited all my life to have what I have today",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3sdg1kca",
+          "chord": "",
+          "lyric": "You're what I missed every time I kissed —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3t1wojz9",
+          "chord": "",
+          "lyric": "Tender words only love can say",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3uksblzu",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r3vob8q7f",
+          "chord": "",
+          "lyric": "[Pre-refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r3wh9rgwi",
+          "chord": "",
+          "lyric": "And now we're flying through the stars",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3xzqt800",
+          "chord": "",
+          "lyric": "I hope this night will last forever — oh",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r3yyd83z4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r3zcfu7he",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r40iphyi5",
+          "chord": "",
+          "lyric": "Ain't nobody loves me better",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r41qe524l",
+          "chord": "",
+          "lyric": "Makes me happy, makes me feel this way",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r420nna0d",
+          "chord": "",
+          "lyric": "Ain't nobody loves me better than you",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7r43vbfuvy",
+      "title": "Always Remember Us This Way",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7r440cy2aj",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r45wk0b06",
+          "chord": "",
+          "lyric": "That Arizona sky burning in your eyes",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r46u3kzjk",
+          "chord": "",
+          "lyric": "You look at me, babe, I wanna catch on fire",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r472kc77a",
+          "chord": "",
+          "lyric": "It's buried in my soul, like California gold",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r48wcpfwt",
+          "chord": "",
+          "lyric": "You found the light in me that I couldn't find",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r49douzy1",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7r4a3wiai9",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7r4bjwjrzr",
+          "chord": "",
+          "lyric": "So when I'm all choked up and I can't find the words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r4cpiri7l",
+          "chord": "",
+          "lyric": "Every time we say goodbye, baby, it hurts",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r4det5dds",
+          "chord": "",
+          "lyric": "When the sun goes down and the band won't play",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7r4ebrg2vj",
+          "chord": "",
+          "lyric": "I'll always remember us this way",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4foon6h0",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s4gagq27k",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s4hh9wvsj",
+          "chord": "",
+          "lyric": "Lovers in the night, poets trying to write",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4ibhqy9i",
+          "chord": "",
+          "lyric": "We don't know how to rhyme, but damn, we try",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4jweqblr",
+          "chord": "",
+          "lyric": "But all I really know, you're where I wanna go",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4krddhub",
+          "chord": "",
+          "lyric": "The part of me that's you will never die",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4l7k9q75",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s4mof2sfy",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s4nd87iuc",
+          "chord": "",
+          "lyric": "So when I'm all choked up and I can't find the words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4obvuw55",
+          "chord": "",
+          "lyric": "Every time we say goodbye, baby, it hurts",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4pev39mu",
+          "chord": "",
+          "lyric": "When the sun goes down and the band won't play",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4q7c3b8k",
+          "chord": "",
+          "lyric": "I'll always remember us this way",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4rkwaxmc",
+          "chord": "",
+          "lyric": "Oh yeah",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4s039qwm",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s4tk615hd",
+          "chord": "",
+          "lyric": "[Bridge]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s4u6wj5fo",
+          "chord": "",
+          "lyric": "When you look at me, the whole world fades",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4vrkei4a",
+          "chord": "",
+          "lyric": "I'll always remember us this way",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4wf7o3v3",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s4x8sye0q",
+          "chord": "",
+          "lyric": "[Outro — refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s4yyrdyx2",
+          "chord": "",
+          "lyric": "So when I'm all choked up and I can't find the words",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s4z5kbilk",
+          "chord": "",
+          "lyric": "Every time we say goodbye, baby, it hurts",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s50sjqvph",
+          "chord": "",
+          "lyric": "When the sun goes down and the band won't play",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s513g7d56",
+          "chord": "",
+          "lyric": "I'll always remember us this way",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s526a9kc6",
+          "chord": "",
+          "lyric": "Oh yeah",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s53q7ul5v",
+          "chord": "",
+          "lyric": "I'll always remember us this way",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7s54dcof6e",
+      "title": "Samba na jedną nutę",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7s5513o8yw",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s56deq6f5",
+          "chord": "",
+          "lyric": "Obsesyjna jedna nuta, motyw ten uwięził ją",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s570ymyi6",
+          "chord": "",
+          "lyric": "Wokół nuty tej osnuta — twoja jasność, półcień, mrok",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s58kprzhd",
+          "chord": "",
+          "lyric": "Czy sekunda, czy minuta, czy sto dni, czy tysiąc lat",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s59j4llkh",
+          "chord": "",
+          "lyric": "Obsesyjna jedna nuta mówi ci, że jesteś sam",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5a4qubyz",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s5b4je251",
+          "chord": "",
+          "lyric": "To nie znaczy wcale, że odchodzisz już od siebie",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5ca3uqxn",
+          "chord": "",
+          "lyric": "W chłodne dale, że masz oszaleć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5dtlryhn",
+          "chord": "",
+          "lyric": "Popatrz w nieba błękit, a wygasną struny brzęku",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5e2ndlx7",
+          "chord": "",
+          "lyric": "Twoje lęki — w tym jednym dźwięku",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5fsutup2",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s5gpjm1b0",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s5h720j5q",
+          "chord": "",
+          "lyric": "Obsesyjna jedna nuta, uwięziona w sambie tej",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5iqm9brd",
+          "chord": "",
+          "lyric": "Czy jej słodycz jest zatruta — ty najlepiej o tym wiesz",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5j3t1g8c",
+          "chord": "",
+          "lyric": "Grzech miłości i pokuta u wrót nieba, piekła bram",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5krm8862",
+          "chord": "",
+          "lyric": "Obsesyjna jedna nuta mówi ci, że jesteś sam",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7s5lq4gpds",
+      "title": "Samba przed rozstaniem",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7s5md2kvhh",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s5n4i6e0h",
+          "chord": "",
+          "lyric": "Nie, nie możesz teraz odejść",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5oft13z7",
+          "chord": "",
+          "lyric": "Kiedy cała jestem głodem",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5pppveyc",
+          "chord": "",
+          "lyric": "Twoich oczu, dłoni twych",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5qwknlbv",
+          "chord": "",
+          "lyric": "Mów, powiedz, że zostaniesz jeszcze",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5rt9jop7",
+          "chord": "",
+          "lyric": "Nim odbierzesz mi powietrze",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5sezkl6h",
+          "chord": "",
+          "lyric": "Zanim wejdę w wielkie nic",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5t5cjq6a",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s5u80p1hi",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s5vjfx97q",
+          "chord": "",
+          "lyric": "Nie, nie możesz teraz odejść",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5whl487g",
+          "chord": "",
+          "lyric": "Jestem rozpalonym lodem",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5xd3sw6h",
+          "chord": "",
+          "lyric": "Zrobię wszystko, tylko bądź",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5yn6hxih",
+          "chord": "",
+          "lyric": "Bądź, zostań jeszcze chwilę, moment",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s5zo5ajj8",
+          "chord": "",
+          "lyric": "Płonę, płonę, płonę, płonę…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6029dl6c",
+          "chord": "",
+          "lyric": "Zimnym ogniem czarnych słońc",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s61y4m1cr",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s62qym1ue",
+          "chord": "",
+          "lyric": "[Zwrotka 3]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s63biihq8",
+          "chord": "",
+          "lyric": "Nie, nie możesz teraz odejść",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s64s6dr6i",
+          "chord": "",
+          "lyric": "Popatrz, listki takie młode",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s65nvd775",
+          "chord": "",
+          "lyric": "Nim jesieni rdza i śmierć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s669363ux",
+          "chord": "",
+          "lyric": "Bądź — proszę cię na rozstań moście",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s679y7dc2",
+          "chord": "",
+          "lyric": "Nie zabijaj tej miłości",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s68ntx1dn",
+          "chord": "",
+          "lyric": "Daj spokojnie umrzeć jej",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7s69ubzame",
+      "title": "Lepszy model",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7s6ajwwxq3",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s6bddu6py",
+          "chord": "",
+          "lyric": "Nie mam do ciebie cierpliwości",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6cecg8nh",
+          "chord": "",
+          "lyric": "To pewne, że już nie będę mieć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6dbg96op",
+          "chord": "",
+          "lyric": "Minął termin twojej przydatności",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6e5vtiui",
+          "chord": "",
+          "lyric": "Gwarancja nie obejmuje cię",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6f0bi0i8",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s6ghudcfr",
+          "chord": "",
+          "lyric": "Nie pozostawiasz mi wyboru",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6hl9zinc",
+          "chord": "",
+          "lyric": "Na lepszy model zmienię cię",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6ik66uru",
+          "chord": "",
+          "lyric": "Nie potrzebuję w domu złomu",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6jseesg8",
+          "chord": "",
+          "lyric": "Dłużej nie",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6ktx8gje",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s6lf2pozq",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s6mxxzyhp",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6n74vqmf",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6o6d2rmu",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6pew6x25",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6q7puaf1",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s6r5muf73",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s6swqsbuw",
+          "chord": "",
+          "lyric": "Nie mam do ciebie zaufania",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6th6l4cn",
+          "chord": "",
+          "lyric": "To pewne, że już nie będę mieć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6u9sed2v",
+          "chord": "",
+          "lyric": "Dosyć mam tego naprawiania",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6v7dnrj5",
+          "chord": "",
+          "lyric": "Gdy co chwilę psuje się inna część",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6wopzkw7",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s6xdymtwq",
+          "chord": "",
+          "lyric": "Jesteś zupełnie do niczego",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6ywgzpdq",
+          "chord": "",
+          "lyric": "A na dodatek powiem, że",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s6z4mkbsu",
+          "chord": "",
+          "lyric": "Pożytku z ciebie tu żadnego",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s70wro570",
+          "chord": "",
+          "lyric": "Nie ma, nie —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s71dkz2vo",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s728l0vnf",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s7338eelr",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s74l59i5q",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7525rbi3",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s76nra30y",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s77zx6icj",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s78fhtftm",
+          "chord": "",
+          "lyric": "[Zwrotka 3]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s79nanvqm",
+          "chord": "",
+          "lyric": "Nie mam do ciebie sentymentu",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7an8dvgd",
+          "chord": "",
+          "lyric": "To pewne, że już nie będę mieć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7bpm8ce8",
+          "chord": "",
+          "lyric": "Robisz za dużo tu zamętu",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7c0p7zvx",
+          "chord": "",
+          "lyric": "A nie wynika z tego żadna dobra rzecz",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7dxwmf9s",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s7e2b4lhm",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s7fjqc77h",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7g7ff10u",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7huv2152",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7ijbjqkz",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7jk6cnwg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s7k2tyj91",
+          "chord": "",
+          "lyric": "[Zwrotka 4]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s7lzj54u9",
+          "chord": "",
+          "lyric": "Nie mam do ciebie nic — już nic nie mam",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7m3v5glb",
+          "chord": "",
+          "lyric": "To pewne, że już nie będę mieć",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7nbda9t1",
+          "chord": "",
+          "lyric": "Możesz wysyłać zażalenia",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7oar2dzp",
+          "chord": "",
+          "lyric": "I tak naprawy ciebie nie podejmę się",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7pc3jkpd",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s7q0m8abg",
+          "chord": "",
+          "lyric": "Jesteś zupełnie do niczego",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7re6gllj",
+          "chord": "",
+          "lyric": "A na dodatek powiem, że",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7sg08bpg",
+          "chord": "",
+          "lyric": "Pożytku z ciebie tu żadnego",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7te6q9fq",
+          "chord": "",
+          "lyric": "Nie ma, nie —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7uh2bv9n",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s7vxd46oz",
+          "chord": "",
+          "lyric": "[Refren — outro]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s7wssiw6q",
+          "chord": "",
+          "lyric": "Znów się zepsułeś",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s7x2xwhub",
+          "chord": "",
+          "lyric": "I wiem, co zrobię — zamienię ciebie na lepszy model (×5)",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7s7ygs3zkz",
+      "title": "If I Ain't Got You",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7s7z4ttxcf",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s804hiyyt",
+          "chord": "",
+          "lyric": "Some people live for the fortune",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s812jxben",
+          "chord": "",
+          "lyric": "Some people live just for the fame",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s82vhlekk",
+          "chord": "",
+          "lyric": "Some people live for the power, yeah",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s83jio0ri",
+          "chord": "",
+          "lyric": "Some people live just to play the game",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s84eo7ly6",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s85r7xw8h",
+          "chord": "",
+          "lyric": "[Pre-refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s86dam8sw",
+          "chord": "",
+          "lyric": "Some people think that the physical things",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s87lni9mt",
+          "chord": "",
+          "lyric": "Define what's within and I've been there before —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s886nwuo2",
+          "chord": "",
+          "lyric": "But life's so much more than that",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s89kd5tih",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s8a3k3brl",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s8bc33zsa",
+          "chord": "",
+          "lyric": "Some people want it all — but I don't want nothing at all",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8c29rs00",
+          "chord": "",
+          "lyric": "If it ain't you, baby — if I ain't got you, baby",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8d5he6m3",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s8el5fcbn",
+          "chord": "",
+          "lyric": "Some people want diamond rings —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8fm8prny",
+          "chord": "",
+          "lyric": "Some just want everything —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8gl6s93w",
+          "chord": "",
+          "lyric": "But everything means nothing if I ain't got you, yeah",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8hdba11i",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s8irclw8k",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s8jsndov6",
+          "chord": "",
+          "lyric": "Some people search for a fountain",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8kg1y4hz",
+          "chord": "",
+          "lyric": "That promises forever young, yeah",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8lv96ezh",
+          "chord": "",
+          "lyric": "Some people need three dozen roses —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8msuhlgq",
+          "chord": "",
+          "lyric": "And that's the only way to prove you love them",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8nc8s0r2",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s8ospvlwz",
+          "chord": "",
+          "lyric": "[Pre-refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s8pzuiuoa",
+          "chord": "",
+          "lyric": "Hand me the world on a silver platter",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8qy5jnm1",
+          "chord": "",
+          "lyric": "And what good would it make?",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8r2n77s4",
+          "chord": "",
+          "lyric": "I don't want it if…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8smcc1tg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s8tqm6683",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s8unas3z2",
+          "chord": "",
+          "lyric": "Some people want it all — but I don't want nothing at all",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8vj1o96y",
+          "chord": "",
+          "lyric": "If it ain't you, baby — if I ain't got you, baby",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8wprrn01",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s8xgcd5al",
+          "chord": "",
+          "lyric": "Some people want diamond rings —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8yzzvrvi",
+          "chord": "",
+          "lyric": "Some just want everything —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s8za44yfh",
+          "chord": "",
+          "lyric": "But everything means nothing if I ain't got you",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s90awd74i",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s91bqerin",
+          "chord": "",
+          "lyric": "[Zwrotka 3 — outro końcówka]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s923grqdv",
+          "chord": "",
+          "lyric": "If I ain't got you with me, baby…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s93adp4g2",
+          "chord": "",
+          "lyric": "Say nothing in this whole wide world don't mean a thing",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s94abfdy0",
+          "chord": "",
+          "lyric": "If I ain't got you with me, baby — hmmm",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7s950m84ah",
+      "title": "Dziś późno pójdę spać",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7s96s8aau6",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s9702lmcz",
+          "chord": "",
+          "lyric": "Dziś późno pójdę spać",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s98lgjbau",
+          "chord": "",
+          "lyric": "Gdy wszyscy będą w łóżkach",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s99xt1xvt",
+          "chord": "",
+          "lyric": "Otwarte oczy mam",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9a3gujky",
+          "chord": "",
+          "lyric": "A głowa pełna i pusta",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9b9uzcf8",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s9ctr46la",
+          "chord": "",
+          "lyric": "I nie wiem, o czym myśleć mam,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9dvjuyes",
+          "chord": "",
+          "lyric": "Żeby mi się przyśnił taki świat,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9eo9hex4",
+          "chord": "",
+          "lyric": "W którym się nie boję spać",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9fg5wkmv",
+          "chord": "",
+          "lyric": "W którym się nie boję spać",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9gnbwo0g",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s9hjo5pt3",
+          "chord": "",
+          "lyric": "Już na mnie idzie tłum",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9ikcopxr",
+          "chord": "",
+          "lyric": "I depcze wszystko po drodze",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9jqfhe4v",
+          "chord": "",
+          "lyric": "Nie mogę uciec mu",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9kqrsqxf",
+          "chord": "",
+          "lyric": "On też przed sobą nie może",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9lgojyxr",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s9mwrhj44",
+          "chord": "",
+          "lyric": "Gwiazd już nie widać — no bo jak,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9n4ks8f2",
+          "chord": "",
+          "lyric": "Kiedy łuna z ziemi bije tak,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9oteafjv",
+          "chord": "",
+          "lyric": "Jak gdyby chciała zalać świat,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9p5rgkf4",
+          "chord": "",
+          "lyric": "Jak gdyby chciała zalać świat",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9qq7pkwg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s9rgypn2t",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7s9s1htjtt",
+          "chord": "",
+          "lyric": "Choć nie chcę budzić się — nie umiem spać",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9tj7jbmu",
+          "chord": "",
+          "lyric": "Świat dziwny jest jak sen, a sen jak świat",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9u5nu3vw",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7s9vgoykeo",
+          "chord": "",
+          "lyric": "Nogi skleiły mi się taśmami",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9w9vmv27",
+          "chord": "",
+          "lyric": "Zaczynam spadać w dół — spadam do góry nogami",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9x0gb9a9",
+          "chord": "",
+          "lyric": "Myślę sobie: zaraz obudzę się",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9yz46lfu",
+          "chord": "",
+          "lyric": "Lecz im bardziej spadam, tym bardziej widzę, że",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7s9zafmutb",
+          "chord": "",
+          "lyric": "To wszystko chyba nie jest sen",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sa00i0poe",
+          "chord": "",
+          "lyric": "To wszystko chyba nie jest sen",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sa1l3on86",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sa29kq095",
+          "chord": "",
+          "lyric": "[Refren — powtórzenia]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sa38wvqfd",
+          "chord": "",
+          "lyric": "Choć nie chcę budzić się — nie umiem spać",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sa4gzgjzo",
+          "chord": "",
+          "lyric": "Świat dziwny jest jak sen, a sen jak świat",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sa5ym8qen",
+          "chord": "",
+          "lyric": "Choć nie chcę budzić się — nie umiem spać",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sa67uykk0",
+          "chord": "",
+          "lyric": "Świat dziwny jest jak sen, a sen jak świat",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7sa7kmfdw4",
+      "title": "Riptide",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7sa8al8yo2",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sa9nhuwbb",
+          "chord": "",
+          "lyric": "I was scared of dentists and the dark",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saadgj975",
+          "chord": "",
+          "lyric": "I was scared of pretty girls and starting conversations",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sabnazd8j",
+          "chord": "",
+          "lyric": "Oh, all my friends are turning green — you're the magician's assistant in their dream",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sac1fm78j",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sad4zrrhh",
+          "chord": "",
+          "lyric": "[Pre-refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sae4daorn",
+          "chord": "",
+          "lyric": "Oh, and they come unstuck",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7safuz4re9",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sagv5bw3q",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sah1vw6nh",
+          "chord": "",
+          "lyric": "Lady, running down to the riptide, taken away",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saitut4a5",
+          "chord": "",
+          "lyric": "To the dark side, I wanna be your left-hand man",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sajnojqok",
+          "chord": "",
+          "lyric": "I love you when you're singing that song and",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saky3sy87",
+          "chord": "",
+          "lyric": "I got a lump in my throat 'cause you're gonna sing the words wrong",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sal4hjkdx",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7samrxw4kq",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sanobtvps",
+          "chord": "",
+          "lyric": "There's this movie that I think you'll like",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sao2x5oy9",
+          "chord": "",
+          "lyric": "This guy decides to quit his job and head to New York City",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sapr79vt7",
+          "chord": "",
+          "lyric": "This cowboy's running from himself",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saq4g1q3r",
+          "chord": "",
+          "lyric": "And she's been living on the highest shelf",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sarc5hc6p",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sas3yxd6q",
+          "chord": "",
+          "lyric": "[Pre-refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7satygiau3",
+          "chord": "",
+          "lyric": "Oh, and they come unstuck",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saumfpi55",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sav47e7zp",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sawbb1fqu",
+          "chord": "",
+          "lyric": "Lady, running down to the riptide, taken away",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saxfctrpi",
+          "chord": "",
+          "lyric": "To the dark side, I wanna be your left-hand man",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7saygrcnzt",
+          "chord": "",
+          "lyric": "I love you when you're singing that song and",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sazvz4o17",
+          "chord": "",
+          "lyric": "I got a lump in my throat 'cause you're gonna sing the words wrong",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sb0kogytj",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sb1bwh0jf",
+          "chord": "",
+          "lyric": "[Bridge — whistle / krótko]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sb2ih5lxi",
+          "chord": "",
+          "lyric": "I just wanna—I just wanna know…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sb3i0r8ko",
+          "chord": "",
+          "lyric": "If you're gonna—if you're gonna stay…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sb48m3bx3",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sb5xi22ld",
+          "chord": "",
+          "lyric": "[Refren — finał]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sb6nu410t",
+          "chord": "",
+          "lyric": "Lady, running down to the riptide, taken away",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sb74em7q3",
+          "chord": "",
+          "lyric": "To the dark side, I wanna be your left-hand man",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sb8odwlhb",
+          "chord": "",
+          "lyric": "I love you when you're singing that song and",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sb9e6aagt",
+          "chord": "",
+          "lyric": "I got a lump in my throat 'cause you're gonna sing the words wrong",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7sbakxzczn",
+      "title": "La vie en rose",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7sbb636rkb",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sbc287erz",
+          "chord": "",
+          "lyric": "Des yeux qui font baisser les miens",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbdylt9ek",
+          "chord": "",
+          "lyric": "Un rire qui se perd sur sa bouche — voilà le portrait sans retouche",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbem20piq",
+          "chord": "",
+          "lyric": "De l'homme auquel je — appartiens",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbf3pwrtt",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sbgrk5bwl",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sbhgmfgvn",
+          "chord": "",
+          "lyric": "Quand il me prend dans ses bras il me parle tout bas —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbilk0od3",
+          "chord": "",
+          "lyric": "Je vois la vie — en rose",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbjg2mbb2",
+          "chord": "",
+          "lyric": "Il me dit des mots d'amour, des mots de tous les jours —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbkby3ctu",
+          "chord": "",
+          "lyric": "Et ça me fait quelque chose",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sblrqq0ft",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sbmu4aie9",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sbnoe88oi",
+          "chord": "",
+          "lyric": "Il est entré dans mon cœur une part de bonheur",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sboofqm3v",
+          "chord": "",
+          "lyric": "Dont je connais la cause —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbpz2nbn5",
+          "chord": "",
+          "lyric": "C'est lui pour moi, moi pour lui dans la vie —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbqtl2yrl",
+          "chord": "",
+          "lyric": "Il me l'a dit, juré pour la vie",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbrwclgvt",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sbssbgzse",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sbt1fa4se",
+          "chord": "",
+          "lyric": "Et dès que je l'aperçois alors je sens en moi",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbutuxuos",
+          "chord": "",
+          "lyric": "Mon cœur qui bat — la la la la",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbvgqajiq",
+          "chord": "",
+          "lyric": "Des nuits d'amour à plus finir",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbws043gu",
+          "chord": "",
+          "lyric": "Un grand bonheur qui prend sa place",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbxjb4m4s",
+          "chord": "",
+          "lyric": "Les ennuis, les chagrins s'effacent",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbye7vh1z",
+          "chord": "",
+          "lyric": "Heureux, heureux à en mourir",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sbzwked4z",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sc0b1avph",
+          "chord": "",
+          "lyric": "[Refren — powtórzenie]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sc1uwoqja",
+          "chord": "",
+          "lyric": "Quand il me prend dans ses bras il me parle tout bas —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sc2nhnorf",
+          "chord": "",
+          "lyric": "Je vois la vie — en rose",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7sc3a9f8fq",
+      "title": "Nas nie rozdzieli",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7sc46807dz",
+          "chord": "",
+          "lyric": "[Zwrotka 1]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sc5uh2bra",
+          "chord": "",
+          "lyric": "Stryj Karol dał ciotce parol,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sc6gbewqn",
+          "chord": "",
+          "lyric": "Że z końcem lata los figła nam spłata",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sc7i53z3t",
+          "chord": "",
+          "lyric": "Los zagrać miał z nami w berka,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sc8uxl0e6",
+          "chord": "",
+          "lyric": "Tak stryjek ćwierkał, ćwierkał stryj",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sc95wj5jy",
+          "chord": "",
+          "lyric": "Proszę stryja! Otóż lato właśnie mija,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sca3lcrny",
+          "chord": "",
+          "lyric": "Mija, mija — proszę stryja, lato… lato…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scbrp6nej",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sccy4osg2",
+          "chord": "",
+          "lyric": "[Zwrotka 2]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7scdqpwejj",
+          "chord": "",
+          "lyric": "Wuj Ryszard w kolejce słyszał,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scefefcuh",
+          "chord": "",
+          "lyric": "Że chłodna jesień, więc wiatr nas rozniesie",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scfkmppao",
+          "chord": "",
+          "lyric": "Że na nic nasz upór zda się,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scgwvxqkl",
+          "chord": "",
+          "lyric": "Że o nas w prasie czytał wuj",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7schluvasq",
+          "chord": "",
+          "lyric": "Proszę wuja! Już bociany odlatują, odlatują —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scieqkps0",
+          "chord": "",
+          "lyric": "Sam przecież widzi, wujek!",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scj7m1rc7",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sckye8bag",
+          "chord": "",
+          "lyric": "[Refren]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7scl532xlf",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scm67c6gg",
+          "chord": "",
+          "lyric": "Ni lato, ni tato, ni stryj,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scntcwwhn",
+          "chord": "",
+          "lyric": "Choćby się z piekłem zbratać mieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sco21rk0i",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scpfiwfar",
+          "chord": "",
+          "lyric": "I susza, i kusza, i mróz,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scqq761fc",
+          "chord": "",
+          "lyric": "Święci, anieli i topór Szeli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scrt3m7jv",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7scsktva2v",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sctz6u03b",
+          "chord": "",
+          "lyric": "I plotka, i ciotka, i brat,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scu0iuq1l",
+          "chord": "",
+          "lyric": "Choćbyście tego wszyscy chcieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scv48tj5v",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scwsoi0lp",
+          "chord": "",
+          "lyric": "I dżuma, i puma, i wuj,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scx06nrwg",
+          "chord": "",
+          "lyric": "I orzeł bielik i to, co dzieli…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7scyj15wdu",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7scz79kxpb",
+          "chord": "",
+          "lyric": "[Zwrotka 3]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sd0h2fd33",
+          "chord": "",
+          "lyric": "Twoja ciotka, gdy kogoś spotka,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd1zlwxjz",
+          "chord": "",
+          "lyric": "Mówi, że grudzień nam serca ostudzi",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd2pml9te",
+          "chord": "",
+          "lyric": "Że pierwsze nas mrozy zgubią —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd3l7eza3",
+          "chord": "",
+          "lyric": "Tak w radiu mówią, mówią tak",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd4z6rpue",
+          "chord": "",
+          "lyric": "Proszę cioci! Toż wiosna łąki złoci,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd5t6xgat",
+          "chord": "",
+          "lyric": "Złoci, złoci — proszę cioci, wiosna… wiosna… mhm…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd6sjcob4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sd75p6ijz",
+          "chord": "",
+          "lyric": "[Zwrotka 4]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sd86dvve3",
+          "chord": "",
+          "lyric": "Sąsiedzi, co lubią śledzić,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sd92u1gyx",
+          "chord": "",
+          "lyric": "Wiadomość mieli, że maj nas rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdaqau4px",
+          "chord": "",
+          "lyric": "A wiosna już w pełni — czyli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdbntai4s",
+          "chord": "",
+          "lyric": "Z ostatniej chwili to jest wieść… cud to zwykły!",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdc8a2tca",
+          "chord": "",
+          "lyric": "Bo już dawno bzy przekwitły, przekwitły —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdd79k7uu",
+          "chord": "",
+          "lyric": "Sąsiedzie — cud to zwykły!",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdee42vcy",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sdftao65d",
+          "chord": "",
+          "lyric": "[Refren — finał]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7sdgpnycdd",
+          "chord": "",
+          "lyric": "(Nie nie nie…)",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdh7z1t29",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7sdiday9uz",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdjael7l2",
+          "chord": "",
+          "lyric": "Ni lato, ni tato, ni stryj,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdktbwqep",
+          "chord": "",
+          "lyric": "Choćby się z piekłem zbratać mieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdlh6wqus",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdm2usjsy",
+          "chord": "",
+          "lyric": "I susza, i kusza, i mróz,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7sdnjsx89z",
+          "chord": "",
+          "lyric": "Święci, anieli i topór Szeli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdo2r1cvh",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7tdp7e8835",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdq422m5y",
+          "chord": "",
+          "lyric": "I plotka, i ciotka, i brat,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdr5edrjm",
+          "chord": "",
+          "lyric": "Choćbyście tego wszyscy chcieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdsevt6oa",
+          "chord": "",
+          "lyric": "Nas nie rozdzieli",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdtp8vjiz",
+          "chord": "",
+          "lyric": "I dżuma, i puma, i wuj,",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tduh7n3o8",
+          "chord": "",
+          "lyric": "I orzeł bielik i to, co dzieli…",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mp079y7tdvfj12a3",
+      "title": "City of Stars",
+      "key": "",
+      "bpm": "",
+      "notes": "",
+      "chordLayout": "above",
+      "lines": [
+        {
+          "id": "mp079y7tdw52kpb9",
+          "chord": "",
+          "lyric": "[Intro — Sebastian]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7tdxzblc27",
+          "chord": "",
+          "lyric": "City of stars, are you shining just for me?",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdy1nsq6a",
+          "chord": "",
+          "lyric": "City of stars, there's so much that I can't see",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tdz8qyiy2",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7te0ozi5qf",
+          "chord": "",
+          "lyric": "[Zwrotka — Mia]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7te17fa017",
+          "chord": "",
+          "lyric": "Who knows? I felt it from the first embrace I shared with you",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7te2xezwjc",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7te3ocp3s8",
+          "chord": "",
+          "lyric": "[Refren — duet]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7te4zhgsnn",
+          "chord": "",
+          "lyric": "That now our dreams, they've finally come true",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7te53kibau",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7te63aq9xu",
+          "chord": "",
+          "lyric": "[Zwrotka — Sebastian]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7te76zogxq",
+          "chord": "",
+          "lyric": "City of stars, just one thing everybody wants —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7te8yvx97n",
+          "chord": "",
+          "lyric": "There in the bars and through the smokescreens of the crowded restaurants —",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7te9dim8ct",
+          "chord": "",
+          "lyric": "It's love, yes, all we're looking for is love…",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tearbrdgl",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mp079y7tebwhvqpb",
+          "chord": "",
+          "lyric": "[Zwrotka — Mia]",
+          "type": "section"
+        },
+        {
+          "id": "mp079y7tecm7uep7",
+          "chord": "",
+          "lyric": "City of stars, are you shining just for me?",
+          "type": "normal"
+        },
+        {
+          "id": "mp079y7tedfsryel",
+          "chord": "",
+          "lyric": "City of stars, you never shined so brightly",
+          "type": "normal"
+        }
+      ]
     }
   ],
   "prefs": {
