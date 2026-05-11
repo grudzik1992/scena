@@ -1,0 +1,146 @@
+1.	Ja wysiadam
+2.	Pomidory
+3.	Wiśnia
+4.	Moja i twoja nadzieja
+5.	Pogoda ducha (-)
+6.	Miłość w Portofino
+7.	Miałeś być
+8.	Smooth Operator
+9.	Testosteron
+10.	Prześliczna wiolonczelistka
+11.	Teksański
+12.	Fever
+13.	Kasztany
+14.	Długość dźwięku samotności
+15.	Jesteś lekiem
+16.	Ale jestem
+17.	Co mi panie dasz
+18.	Stand by Me
+19.	Zacznij od Bacha
+20.	Wszystko mi mówi że mnie ktoś pokochał
+21.	Jeżeli chcesz
+22.	Ruchome piaski
+23.	Shallow
+24.	Sway (g-moll)
+25.	Poszłabym za tobą
+26.	Ostatni
+27.	Krakowski spleen
+28.	Tears in Heaven
+29.	Jolene
+30.	Kochaj mnie mimo wszystko
+31.	Nothing compares 2 U
+32.	unfaithful
+33.	Titanium
+34.	hey jude
+35.	imagine
+36.	chandalier
+37.	everytime we touch
+38.	stop
+39.	love story
+40.	over the rainbow
+41.	dream a little
+42.	careless whisper
+43.	girl on fire
+44.	back to black
+45.	niebo było różowe
+46.	ostatnia nadzieja
+47.	natural woman
+48.	Route 66
+49.	fly me to the moon
+50.	shape of my heart
+51.	time of my life
+52.	Englishman in New York
+53.	Message in the bottle
+54.	Wiem i chcę
+55.	Ja dla Pana czasu nie mam
+56.	Goldeneye
+57.	We don't need another hero
+58.	Dni których nie znamy
+59.	Wszystko się może zdarzyć
+60.	opowieść
+61.	piosenka księżycowa
+62.	zanim zrozumiesz
+63.	orła cień
+64.	Jenny
+65.	Ten
+66.	Charlie Charlie
+67.	tego chciałam
+68.	trudno mi sie przyznać
+69.	dwie bajki
+70.	imię deszczu
+71.	cheek to cheek
+72.	the girl from ipanema
+73.	żyj kolorowo
+74.	moje serce to jest muzyk
+75.	powrotna bossa nova
+76.	bossa nova do poduszki
+77.	Boże daj odsapnąć
+78.	Nigdy więcej
+79.	Gdzie Ci mężczyźni
+80.	Part time lover
+81.	Hit the road jack
+82.	What a wonderful world
+83.	Nothing Compares 2 U
+84.	Unfaithful
+85.	Titanium
+86.	Hey Jude
+87.	Imagine
+88.	Chandelier
+89.	Everytime We Touch
+90.	Stop
+91.	Love Story
+92.	Over the Rainbow
+93.	Dream a Little
+94.	Careless Whisper
+95.	Girl on Fire
+96.	Back to Black
+97.	Niebo było różowe
+98.	Ostatnia nadzieja
+99.	Natural Woman
+100.	Route 66
+101.	Fly Me to the Moon
+102.	Shape of My Heart
+103.	Time of My Life
+104.	Englishman in New York
+105.	Message in a Bottle
+106.	Wiem i chcę
+107.	Ja dla Pana czasu nie mam
+108.	GoldenEye
+109.	We Don't Need Another Hero
+110.	Dni których nie znamy
+111.	Wszystko się może zdarzyć
+112.	Opowieść
+113.	Piosenka księżycowa
+114.	Zanim zrozumiesz
+115.	Orła cień
+116.	Jenny
+117.	Ten
+118.	Charlie Charlie
+119.	Tego chciałam
+120.	Trudno mi się przyznać
+121.	Dwie bajki
+122.	Imię deszczu
+123.	Cheek to Cheek
+124.	The Girl from Ipanema
+125.	Żyj kolorowo
+126.	Moje serce to jest muzyk
+127.	Powrotna bossa nova
+128.	Bossa nova do poduszki
+129.	Boże daj odsapnąć
+130.	Nigdy więcej
+131.	Gdzie Ci mężczyźni
+132.	Part Time Lover
+133.	Hit the Road Jack
+134.	What a Wonderful World
+135.	Ain't Nobody
+136.	Always Remember Us This Way
+137.	Samba na jedną nutę
+138.	Samba przed rozstaniem
+139.	Lepszy model
+140.	If I Ain't Got You
+141.	Dziś późno pójdę spać
+142.	Riptide
+143.	La vie en rose
+144.	Nas nie rozdzieli
+145.	City of Stars
+146.	Turn Me On
