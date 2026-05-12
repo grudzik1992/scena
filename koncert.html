@@ -90,6 +90,11 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 .rbtn{width:20px;height:20px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);border-radius:5px;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .rbtn:disabled{opacity:.35;cursor:default}
 .reorder-tag{font-size:10px;padding:2px 6px;border-radius:999px;background:var(--goldbg);color:var(--gold);border:1px solid rgba(154,111,0,.28);font-weight:700;letter-spacing:.02em}
+.reorder-pos-cell{flex-shrink:0;display:flex;align-items:center}
+.reorder-pos-inp{width:46px;padding:4px 5px;font-size:11px;font-family:var(--font-mono);text-align:center;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);-moz-appearance:textfield}
+.reorder-pos-inp::-webkit-outer-spin-button,.reorder-pos-inp::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.si.on .reorder-pos-inp{background:rgba(255,255,255,.95);color:var(--text);border-color:rgba(255,255,255,.55)}
+.si.reorder.pick .reorder-pos-inp{border-color:rgba(154,111,0,.65)}
 #add-btn{margin:8px 10px;padding:9px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:center;flex-shrink:0;font-family:var(--font-ui)}
 #add-btn:active{background:var(--accent2)}
 .list-tools{display:flex;gap:8px;padding:8px 10px 0}
@@ -273,6 +278,21 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 #admin-pass input:focus{border-color:var(--accent)}
 #admin-pass-actions{display:flex;gap:8px;margin-top:10px}
 
+#pl-create-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:210;align-items:center;justify-content:center;padding:16px}
+#pl-create-ov.on{display:flex}
+#pl-create-modal{background:var(--card);border-radius:16px;padding:20px 22px;width:100%;max-width:480px;max-height:min(88vh,640px);box-shadow:var(--shadow2);display:flex;flex-direction:column;min-height:0}
+#pl-create-modal h3{font-family:var(--font-lyrics);font-size:19px;font-style:italic;color:var(--text);margin-bottom:12px;flex-shrink:0}
+.pl-create-lbl{display:block;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 5px}
+.pl-create-lbl:first-of-type{margin-top:0}
+#pl-create-list{flex:1;min-height:120px;max-height:42vh;overflow-y:auto;border:1px solid var(--border);border-radius:10px;background:var(--bg2);padding:6px 0;margin-top:4px}
+.pl-create-row{display:flex;align-items:flex-start;gap:10px;padding:7px 12px;cursor:pointer;font-size:13px;color:var(--text);line-height:1.35}
+.pl-create-row:hover{background:var(--bg3)}
+.pl-create-row input{margin-top:3px;flex-shrink:0}
+.pl-create-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pl-create-tools button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;font-size:11px;font-weight:600;color:var(--text2);cursor:pointer;font-family:var(--font-ui)}
+.pl-create-tools button:active{background:var(--bg3)}
+#pl-create-modal .ma{margin-top:12px;flex-shrink:0}
+
 @media(max-width:700px){
   :root{--sidebar-w:270px}
   #topbar{position:sticky;top:0;padding:calc(6px + env(safe-area-inset-top)) 8px 6px;gap:6px;z-index:220}
@@ -336,7 +356,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
       <button class="side-btn" id="reorder-btn" onclick="toggleReorderMode()">↕ Przestaw</button>
       <button class="side-btn compact" id="reorder-undo-btn" onclick="undoReorderMove()" style="display:none">↶ Cofnij</button>
     </div>
-    <div id="reorder-help">Tryb przestawiania: kliknij utwór, potem kliknij miejsce docelowe. Na komputerze możesz też przeciągać i upuszczać.</div>
+    <div id="reorder-help">Tryb przestawiania: szukaj jak zwykle. Ustaw pozycję wpisując numer w polu obok tytułu (Enter lub klik poza polem), albo kliknij utwór → miejsce docelowe, albo przeciągnij.</div>
     <div class="side-actions">
       <button class="side-btn" onclick="exportData()">⬇ Eksport</button>
       <button class="side-btn" onclick="openImport()">⬆ Import</button>
@@ -483,6 +503,24 @@ body.resizing-panel{user-select:none;cursor:col-resize}
     </div>
   </div>
 </div>
+<div id="pl-create-ov">
+  <div id="pl-create-modal">
+    <h3>Nowa playlista</h3>
+    <label class="pl-create-lbl" for="pl-create-name">Nazwa</label>
+    <input class="mi" id="pl-create-name" placeholder="Koncert" style="margin-bottom:0">
+    <label class="pl-create-lbl" for="pl-create-search">Utwory ze śpiewnika (główny katalog)</label>
+    <input class="mi" id="pl-create-search" placeholder="Szukaj w katalogu..." style="margin-bottom:0" oninput="renderPlaylistCreateCatalog(this.value.trim().toLowerCase())">
+    <div id="pl-create-list"></div>
+    <div class="pl-create-tools">
+      <button type="button" onclick="plCreateSelectAllFiltered()">Zaznacz widoczne</button>
+      <button type="button" onclick="plCreateClearFiltered()">Odznacz widoczne</button>
+    </div>
+    <div class="ma">
+      <button class="ms" onclick="closeCreatePlaylistModal()">Anuluj</button>
+      <button class="mp" onclick="confirmCreatePlaylist()">Utworz</button>
+    </div>
+  </div>
+</div>
 
 <script>
 const STORE='spiewnik_v3',PREF='spiewnik_prefs_v3',PLAYLIST_STORE='spiewnik_playlists_v1',EXPORT_VER=1,BUNDLED_JSON='songs.json';
@@ -507,6 +545,7 @@ let adminMode=false,tabletOnboardingDone=false,onboardingSeenVersion=0;
 let adminPassResolve=null;
 let editHistory=[],editHistoryIdx=-1,editHistoryTimer=null,historyApplying=false;
 let playlists=[],activePlaylistId='';
+let createPlaylistSelectedIds=new Set();
 
 function clampColumns(v){
   const n=Number.isFinite(+v)?Math.round(+v):1;
@@ -708,17 +747,78 @@ function setActivePlaylist(id){
   renderList(document.getElementById('search').value.trim().toLowerCase());
 }
 
-function createPlaylist(){
-  const name=(prompt('Nazwa playlisty / setlisty:', 'Koncert')||'').trim();
-  if(!name)return;
-  const p={id:uid(),name,songIds:[]};
+function openCreatePlaylistModal(){
+  createPlaylistSelectedIds=new Set();
+  const nm=document.getElementById('pl-create-name');
+  const sq=document.getElementById('pl-create-search');
+  if(nm)nm.value='Koncert';
+  if(sq)sq.value='';
+  renderPlaylistCreateCatalog('');
+  document.getElementById('pl-create-ov').classList.add('on');
+  setTimeout(()=>{if(nm)nm.focus();},80);
+}
+
+function closeCreatePlaylistModal(){
+  document.getElementById('pl-create-ov').classList.remove('on');
+}
+
+function renderPlaylistCreateCatalog(q){
+  const host=document.getElementById('pl-create-list');
+  if(!host)return;
+  const query=String(q||'').trim().toLowerCase();
+  host.innerHTML='';
+  songs.forEach(s=>{
+    if(query&&!s.title.toLowerCase().includes(query))return;
+    const row=document.createElement('label');
+    row.className='pl-create-row';
+    const cb=document.createElement('input');
+    cb.type='checkbox';
+    cb.checked=createPlaylistSelectedIds.has(s.id);
+    cb.onchange=()=>{
+      if(cb.checked)createPlaylistSelectedIds.add(s.id);
+      else createPlaylistSelectedIds.delete(s.id);
+    };
+    const sp=document.createElement('span');
+    sp.textContent=s.title;
+    row.appendChild(cb);
+    row.appendChild(sp);
+    host.appendChild(row);
+  });
+}
+
+function plCreateFilteredIds(){
+  const q=(document.getElementById('pl-create-search')&&document.getElementById('pl-create-search').value||'').trim().toLowerCase();
+  return songs.filter(s=>!q||s.title.toLowerCase().includes(q)).map(s=>s.id);
+}
+
+function plCreateSelectAllFiltered(){
+  plCreateFilteredIds().forEach(id=>createPlaylistSelectedIds.add(id));
+  const el=document.getElementById('pl-create-search');
+  renderPlaylistCreateCatalog(el?el.value.trim().toLowerCase():'');
+}
+
+function plCreateClearFiltered(){
+  plCreateFilteredIds().forEach(id=>createPlaylistSelectedIds.delete(id));
+  const el=document.getElementById('pl-create-search');
+  renderPlaylistCreateCatalog(el?el.value.trim().toLowerCase():'');
+}
+
+function confirmCreatePlaylist(){
+  const nameEl=document.getElementById('pl-create-name');
+  const name=(nameEl&&nameEl.value||'').trim();
+  if(!name){toast('Podaj nazwę playlisty');return}
+  const order=songs.map(s=>s.id).filter(id=>createPlaylistSelectedIds.has(id));
+  const p={id:uid(),name,songIds:order};
   playlists.push(p);
   activePlaylistId=p.id;
   savePlaylists();
   renderPlaylistUI();
   renderList(document.getElementById('search').value.trim().toLowerCase());
-  toast(`Utworzono playlistę: ${name}`);
+  closeCreatePlaylistModal();
+  toast(order.length?`Utworzono playlistę: ${name} (${order.length} utworów)`:`Utworzono pustą playlistę: ${name}`);
 }
+
+function createPlaylist(){openCreatePlaylistModal();}
 
 function renamePlaylist(){
   const p=getActivePlaylist();
@@ -1384,33 +1484,68 @@ function toggleReorderMode(){
   reorderPickIdx=-1;
   reorderDropIdx=-1;
   if(!reorderMode)reorderLastMove=null;
-  if(reorderMode){
-    const search=document.getElementById('search');
-    if(search&&search.value.trim())search.value='';
-  }
   updateReorderUI();
   renderList(document.getElementById('search').value.trim().toLowerCase());
-  toast(reorderMode?'↕ Tryb przestawiania: kliknij utwor i miejsce docelowe':'✅ Kolejnosc zapisana');
+  toast(reorderMode?'↕ Tryb przestawiania: pole pozycji, przeciąganie lub dwa kliki':'✅ Kolejnosc zapisana');
+}
+
+function applyManualReorderPosition(ref,raw){
+  const n=parseInt(String(raw).trim(),10);
+  if(!Number.isFinite(n))return;
+  const active=getActivePlaylist();
+  const len=active?active.songIds.length:songs.length;
+  if(len<1)return;
+  const target=Math.max(0,Math.min(len-1,n-1));
+  if(ref<0||(active&&ref>=active.songIds.length)||(!active&&ref>=songs.length))return;
+  if(target===ref)return;
+  if(active)movePlaylistItem(ref,target);
+  else moveSong(ref,target);
 }
 
 /* LIST */
 function renderList(q=''){
   const list=document.getElementById('song-list');
   list.innerHTML='';
-  const query=reorderMode?'':q;
+  const query=q;
   const entries=getVisibleEntries(query);
   const active=getActivePlaylist();
-  entries.forEach(({song:s,idx:i},pos)=>{
+  entries.forEach(({song:s,idx:i})=>{
     const hc=s.lines&&s.lines.some(l=>l.chord&&l.chord.trim());
     const hl=s.lines&&s.lines.some(l=>l.lyric&&l.lyric.trim());
     const d=document.createElement('div');
-    const ref=active?pos:i;
+    const ref=active?active.songIds.indexOf(s.id):i;
+    if(active&&ref<0)return;
     d.className='si'+(i===curIdx?' on':'')+(reorderMode?' reorder':'')+(reorderMode&&ref===reorderPickIdx?' pick':'')+(reorderMode&&ref===reorderDropIdx?' drop-target':'');
     d.draggable=!!reorderMode;
-    const right=reorderMode
-      ? `<span class="reorder-tag">${ref===reorderPickIdx?'WYBRANY':'WSTAW'}</span>`
-      : `<span class="sbs">${hc?'<span class="sb c" title="Utwór ma akordy">AK</span>':''}${hl&&!hc?'<span class="sb l" title="Tylko tekst">TXT</span>':''}</span>`;
-    d.innerHTML=`<span class="drag-h" title="Przeciagnij">⋮⋮</span><span class="sn">${active?pos+1:i+1}</span><span class="st">${esc(s.title)}</span>${right}`;
+    d.innerHTML=`<span class="drag-h" title="Przeciagnij">⋮⋮</span><span class="sn">${ref+1}</span><span class="st">${esc(s.title)}</span>`;
+    if(reorderMode){
+      const posCell=document.createElement('span');
+      posCell.className='reorder-pos-cell';
+      const posInp=document.createElement('input');
+      posInp.type='number';
+      posInp.className='reorder-pos-inp';
+      posInp.min=1;
+      posInp.max=active?active.songIds.length:songs.length;
+      posInp.value=String(ref+1);
+      posInp.title='Pozycja na liście (1–'+posInp.max+') — Enter lub klik poza polem';
+      posInp.onclick=e=>e.stopPropagation();
+      posInp.onmousedown=e=>e.stopPropagation();
+      posInp.onkeydown=e=>{
+        if(e.key==='Enter'){e.preventDefault();posInp.blur();}
+      };
+      posInp.onblur=()=>applyManualReorderPosition(ref,posInp.value);
+      posCell.appendChild(posInp);
+      d.appendChild(posCell);
+      const tag=document.createElement('span');
+      tag.className='reorder-tag';
+      tag.textContent=ref===reorderPickIdx?'WYBRANY':'WSTAW';
+      d.appendChild(tag);
+    }else{
+      const sbs=document.createElement('span');
+      sbs.className='sbs';
+      sbs.innerHTML=`${hc?'<span class="sb c" title="Utwór ma akordy">AK</span>':''}${hl&&!hc?'<span class="sb l" title="Tylko tekst">TXT</span>':''}`;
+      d.appendChild(sbs);
+    }
     d.onclick=()=>{
       if(reorderMode){handleReorderTap(ref);return}
       selectSong(i);
@@ -1788,6 +1923,7 @@ function confirmAdd(){
   save();hideModal();renderPlaylistUI();renderList();selectSong(songs.length-1);isEditing=true;openEditor();document.getElementById('edit-btn').textContent='👁';toast('🎵 Dodano: '+t)
 }
 document.getElementById('modal-ov').addEventListener('click',e=>{if(e.target===document.getElementById('modal-ov'))hideModal()});
+document.getElementById('pl-create-ov').addEventListener('click',e=>{if(e.target===document.getElementById('pl-create-ov'))closeCreatePlaylistModal()});
 
 /* KEYS & SWIPE */
 document.addEventListener('keydown',e=>{
