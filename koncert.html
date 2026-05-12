@@ -63,7 +63,7 @@ body{font-family:var(--font-ui);background:var(--bg);color:var(--text);display:f
 #playlist-box{display:flex;flex-direction:column;gap:7px;margin-top:9px}
 #playlist-select{width:100%;padding:8px 10px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;font-family:var(--font-ui);outline:none}
 #playlist-select:focus{border-color:var(--accent)}
-#playlist-tools{display:flex;gap:6px}
+#playlist-tools{display:flex;flex-wrap:wrap;gap:6px}
 .pl-btn{flex:1;padding:6px 7px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;color:var(--text2);font-size:11px;font-weight:700;font-family:var(--font-ui);cursor:pointer}
 .pl-btn:active{background:var(--bg3)}
 #song-list{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:6px 0}
@@ -345,6 +345,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
         </select>
         <div id="playlist-tools">
           <button class="pl-btn" onclick="createPlaylist()">+ Playlista</button>
+          <button class="pl-btn" onclick="editPlaylist()">Edytuj</button>
           <button class="pl-btn" onclick="renamePlaylist()">Zmień</button>
           <button class="pl-btn" onclick="deletePlaylist()">Usuń</button>
         </div>
@@ -505,7 +506,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 </div>
 <div id="pl-create-ov">
   <div id="pl-create-modal">
-    <h3>Nowa playlista</h3>
+    <h3 id="pl-modal-heading">Nowa playlista</h3>
     <label class="pl-create-lbl" for="pl-create-name">Nazwa</label>
     <input class="mi" id="pl-create-name" placeholder="Koncert" style="margin-bottom:0">
     <label class="pl-create-lbl" for="pl-create-search">Utwory ze śpiewnika (główny katalog)</label>
@@ -517,7 +518,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
     </div>
     <div class="ma">
       <button class="ms" onclick="closeCreatePlaylistModal()">Anuluj</button>
-      <button class="mp" onclick="confirmCreatePlaylist()">Utworz</button>
+      <button class="mp" id="pl-modal-submit" onclick="confirmPlaylistModal()">Utwórz</button>
     </div>
   </div>
 </div>
@@ -546,6 +547,8 @@ let adminPassResolve=null;
 let editHistory=[],editHistoryIdx=-1,editHistoryTimer=null,historyApplying=false;
 let playlists=[],activePlaylistId='';
 let createPlaylistSelectedIds=new Set();
+let playlistModalMode='create';
+let playlistModalEditId=null;
 
 function clampColumns(v){
   const n=Number.isFinite(+v)?Math.round(+v):1;
@@ -748,7 +751,13 @@ function setActivePlaylist(id){
 }
 
 function openCreatePlaylistModal(){
+  playlistModalMode='create';
+  playlistModalEditId=null;
   createPlaylistSelectedIds=new Set();
+  const hd=document.getElementById('pl-modal-heading');
+  const sub=document.getElementById('pl-modal-submit');
+  if(hd)hd.textContent='Nowa playlista';
+  if(sub)sub.textContent='Utwórz';
   const nm=document.getElementById('pl-create-name');
   const sq=document.getElementById('pl-create-search');
   if(nm)nm.value='Koncert';
@@ -756,6 +765,25 @@ function openCreatePlaylistModal(){
   renderPlaylistCreateCatalog('');
   document.getElementById('pl-create-ov').classList.add('on');
   setTimeout(()=>{if(nm)nm.focus();},80);
+}
+
+function openEditPlaylistModal(){
+  const p=getActivePlaylist();
+  if(!p){toast('Najpierw wybierz playlistę na liście');return}
+  playlistModalMode='edit';
+  playlistModalEditId=p.id;
+  createPlaylistSelectedIds=new Set(p.songIds);
+  const hd=document.getElementById('pl-modal-heading');
+  const sub=document.getElementById('pl-modal-submit');
+  if(hd)hd.textContent='Edytuj playlistę';
+  if(sub)sub.textContent='Zapisz';
+  const nm=document.getElementById('pl-create-name');
+  const sq=document.getElementById('pl-create-search');
+  if(nm)nm.value=p.name;
+  if(sq)sq.value='';
+  renderPlaylistCreateCatalog('');
+  document.getElementById('pl-create-ov').classList.add('on');
+  setTimeout(()=>{if(sq)sq.focus();},80);
 }
 
 function closeCreatePlaylistModal(){
@@ -803,10 +831,25 @@ function plCreateClearFiltered(){
   renderPlaylistCreateCatalog(el?el.value.trim().toLowerCase():'');
 }
 
-function confirmCreatePlaylist(){
+function confirmPlaylistModal(){
   const nameEl=document.getElementById('pl-create-name');
   const name=(nameEl&&nameEl.value||'').trim();
   if(!name){toast('Podaj nazwę playlisty');return}
+  if(playlistModalMode==='edit'){
+    const p=playlists.find(x=>x.id===playlistModalEditId);
+    if(!p){closeCreatePlaylistModal();return}
+    const prev=p.songIds.slice();
+    const kept=prev.filter(id=>createPlaylistSelectedIds.has(id));
+    const added=songs.map(s=>s.id).filter(id=>createPlaylistSelectedIds.has(id)&&!kept.includes(id));
+    p.name=name;
+    p.songIds=uniqueSongIds(kept.concat(added));
+    savePlaylists();
+    renderPlaylistUI();
+    renderList(document.getElementById('search').value.trim().toLowerCase());
+    closeCreatePlaylistModal();
+    toast(`Zapisano playlistę: ${name} (${p.songIds.length} utworów)`);
+    return;
+  }
   const order=songs.map(s=>s.id).filter(id=>createPlaylistSelectedIds.has(id));
   const p={id:uid(),name,songIds:order};
   playlists.push(p);
@@ -819,6 +862,7 @@ function confirmCreatePlaylist(){
 }
 
 function createPlaylist(){openCreatePlaylistModal();}
+function editPlaylist(){openEditPlaylistModal();}
 
 function renamePlaylist(){
   const p=getActivePlaylist();
