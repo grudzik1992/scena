@@ -1075,17 +1075,23 @@ function closeWebImport(){document.getElementById('web-ov').classList.remove('on
 function setWebProxy(){
   const v=prompt('Adres proxy (Cloudflare Worker). Zostaw domyślny lub wpisz własny:',webProxyUrl||DEFAULT_WEB_PROXY);
   if(v==null)return false;
-  let url=v.trim().replace(/\/+$/,'');
-  if(url&&!/^https?:\/\//i.test(url)){toast('Adres musi zaczynać się od https://');return false}
+  let url=v.trim();
+  if(url){
+    if(!/^https?:\/\//i.test(url))url='https://'+url;
+    try{url=new URL(url).origin}catch(e){toast('Niepoprawny adres proxy');return false}
+  }
   webProxyUrl=url;savePrefs();
   webStatus(url?'Zapisano proxy.':'Proxy wyczyszczone.',!url);
   toast(url?'Zapisano proxy':'Wyczyszczono proxy');
   return !!url;
 }
 async function proxyFetch(targetUrl){
-  const base=(webProxyUrl||DEFAULT_WEB_PROXY).replace(/\/+$/,'');
-  if(!base)throw new Error('NO_PROXY');
-  const res=await fetch(base+'/?url='+encodeURIComponent(targetUrl));
+  // Zawsze budujemy https://host/?url=... z samego origin, nawet jak w ustawieniach
+  // proxy zapisano cos z ogonem (/?url=, slash, query) — eliminuje bledne 400.
+  let origin;
+  try{origin=new URL(webProxyUrl||DEFAULT_WEB_PROXY).origin}
+  catch(e){try{origin=new URL(DEFAULT_WEB_PROXY).origin}catch(e2){throw new Error('NO_PROXY')}}
+  const res=await fetch(origin+'/?url='+encodeURIComponent(targetUrl));
   if(!res.ok)throw new Error('HTTP '+res.status);
   return await res.text();
 }
@@ -2233,7 +2239,13 @@ document.getElementById('sp-resizer').addEventListener('mousedown',startPanelRes
 window.addEventListener('mousemove',onPanelResize);
 window.addEventListener('mouseup',stopPanelResize);
 window.addEventListener('resize',()=>{applyEditorWidth();maybeShowTabletOnboarding();});
-if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{})})}
+if('serviceWorker' in navigator){
+  let swRefreshing=false;
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{
+    if(swRefreshing)return;swRefreshing=true;window.location.reload();
+  });
+  window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{})});
+}
 
 /* INIT */
 loadData();applyTheme();applyEditorWidth();renderPlaylistUI();renderList();document.getElementById('fsize-lbl').textContent=fontSize;
