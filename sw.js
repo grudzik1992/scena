@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = "spiewnik-pwa-20260512-v4";
+﻿const CACHE_NAME = "spiewnik-pwa-20260622-v7";
 const ASSETS = [
   "./",
   "./index.html",
@@ -30,6 +30,10 @@ self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+
+  // Cross-origin (proxy tekstów, CDN fontów) zostawiamy przeglądarce —
+  // SW nie cache'uje cudzych odpowiedzi ani nie psuje pobierania przez proxy.
+  if (url.origin !== self.location.origin) return;
 
   if (req.mode === "navigate") {
     event.respondWith(
