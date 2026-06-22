@@ -530,14 +530,14 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 <div id="web-ov">
   <div id="web-modal">
     <h3>🌐 Pobierz utwór z sieci</h3>
-    <input class="mi" id="web-artist" placeholder="Wykonawca (opcjonalnie)" style="margin-bottom:8px">
-    <input class="mi" id="web-title" placeholder="Tytuł — lub wklej link tekstowo.pl" style="margin-bottom:6px" onkeydown="if(event.key==='Enter')runWebImport()">
+    <input class="mi" id="web-artist" placeholder="Wykonawca (np. Sia)" style="margin-bottom:8px">
+    <input class="mi" id="web-title" placeholder="Tytuł (np. Chandelier) — lub wklej link tekstowo.pl" style="margin-bottom:6px" onkeydown="if(event.key==='Enter')runWebImport()">
     <div id="web-status"></div>
     <div id="web-results"></div>
     <div class="ma">
       <button class="ms" onclick="setWebProxy()" title="Adres Twojego proxy">⚙ Proxy</button>
       <button class="ms" onclick="closeWebImport()">Anuluj</button>
-      <button class="mp" id="web-go" onclick="runWebImport()">Szukaj</button>
+      <button class="mp" id="web-go" onclick="runWebImport()">Pobierz</button>
     </div>
     <div id="web-hint">Tekst pobierany jest z tekstowo.pl przez Twój proxy. Akordy dodajesz sam (przyciski ♭/♯ transponują). To nie omija praw autorskich — używaj prywatnie.</div>
   </div>
@@ -546,6 +546,7 @@ body.resizing-panel{user-select:none;cursor:col-resize}
 <script>
 const STORE='spiewnik_v3',PREF='spiewnik_prefs_v3',PLAYLIST_STORE='spiewnik_playlists_v1',EXPORT_VER=1,BUNDLED_JSON='songs.json';
 const EDITOR_MIN_W=260,EDITOR_DEFAULT_W=420;
+const DEFAULT_WEB_PROXY='https://spiewnik-proxy.agr-actoom.workers.dev';
 const SCROLL_SPEED_PRESETS=[72,14,24,38,56];
 const SCROLL_SPEED_LABELS=['ULTRA','B.WOLNO','WOLNO','SREDNIO','SZYBKO'];
 const ONBOARDING_VER=2;
@@ -1066,13 +1067,13 @@ function openWebImport(){
   document.getElementById('web-artist').value='';
   document.getElementById('web-title').value='';
   document.getElementById('web-results').innerHTML='';
-  webStatus(webProxyUrl?'':'Najpierw ustaw adres proxy (⚙ Proxy).',!webProxyUrl);
+  webStatus('',false);
   document.getElementById('web-ov').classList.add('on');
   setTimeout(()=>document.getElementById('web-title').focus(),80);
 }
 function closeWebImport(){document.getElementById('web-ov').classList.remove('on')}
 function setWebProxy(){
-  const v=prompt('Adres Twojego proxy (Cloudflare Worker), np.\nhttps://spiewnik-proxy.xxx.workers.dev',webProxyUrl||'');
+  const v=prompt('Adres proxy (Cloudflare Worker). Zostaw domyślny lub wpisz własny:',webProxyUrl||DEFAULT_WEB_PROXY);
   if(v==null)return false;
   let url=v.trim().replace(/\/+$/,'');
   if(url&&!/^https?:\/\//i.test(url)){toast('Adres musi zaczynać się od https://');return false}
@@ -1082,8 +1083,8 @@ function setWebProxy(){
   return !!url;
 }
 async function proxyFetch(targetUrl){
-  if(!webProxyUrl)throw new Error('NO_PROXY');
-  const base=webProxyUrl.replace(/\/+$/,'');
+  const base=(webProxyUrl||DEFAULT_WEB_PROXY).replace(/\/+$/,'');
+  if(!base)throw new Error('NO_PROXY');
   const res=await fetch(base+'/?url='+encodeURIComponent(targetUrl));
   if(!res.ok)throw new Error('HTTP '+res.status);
   return await res.text();
@@ -1120,72 +1121,63 @@ function songLinesFromText(text){
   }
   return out.length?out:[{id:uid(),chord:'',lyric:'',type:'normal'}];
 }
-function parseSearchResults(html){
-  const doc=new DOMParser().parseFromString(html,'text/html');
-  const seen=new Set(),out=[];
-  doc.querySelectorAll('a[href]').forEach(a=>{
-    const href=a.getAttribute('href')||'';
-    if(!href)return;
-    let abs;try{abs=new URL(href,'https://www.tekstowo.pl')}catch(e){return}
-    if(!/(^|\.)tekstowo\.pl$/.test(abs.hostname))return;
-    const path=abs.pathname;
-    const isSong=/^\/piosenka,/.test(path)||/^\/[a-z0-9_-]+\/[a-z0-9_,.\-]+\.html$/i.test(path);
-    if(!isSong)return;
-    const text=(a.textContent||'').replace(/\s+/g,' ').trim();
-    if(text.length<2)return;
-    if(seen.has(path))return;seen.add(path);
-    out.push({title:text,url:abs.toString()});
-  });
-  return out.slice(0,10);
+// tekstowo używa przewidywalnych adresów /wykonawca/tytul (polskie znaki -> ASCII),
+// więc budujemy slug zamiast scrapować wyszukiwarkę (ta ładuje wyniki przez JS).
+function slugifyTekstowo(s){
+  const map={'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ż':'z','ź':'z'};
+  return String(s||'').trim().toLowerCase()
+    .replace(/[ąćęłńóśżź]/g,c=>map[c]||c)
+    .normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'-')
+    .replace(/^-+|-+$/g,'');
 }
-function renderSearchResults(results,fallbackTitle){
+function renderSearchFallback(query){
   const host=document.getElementById('web-results');host.innerHTML='';
-  results.forEach(r=>{
-    const b=document.createElement('button');
-    b.className='web-res';
-    b.innerHTML=esc(r.title)+'<small>'+esc(r.url.replace(/^https?:\/\/(www\.)?/,''))+'</small>';
-    b.onclick=()=>importSongFromUrl(r.url,fallbackTitle||r.title);
-    host.appendChild(b);
-  });
+  const b=document.createElement('button');
+  b.className='web-res';
+  b.innerHTML='🔎 Otwórz wyszukiwarkę tekstowo.pl<small>znajdź utwór, skopiuj adres ze strony i wklej go w pole tytułu</small>';
+  b.onclick=()=>window.open('https://www.tekstowo.pl/szukaj.html?q='+encodeURIComponent(query||''),'_blank','noopener');
+  host.appendChild(b);
 }
 async function importSongFromUrl(url,preferredTitle){
-  try{
-    webStatus('Pobieram tekst…');
-    const html=await proxyFetch(url);
-    const parsed=parseFetchedLyrics(html);
-    if(!parsed||!parsed.text.trim()){webStatus('Nie znalazłem tekstu na tej stronie.',true);return}
-    const lines=songLinesFromText(parsed.text);
-    const title=(preferredTitle||'').trim()||cleanFetchedTitle(parsed.title)||'Nowy utwór';
-    const song={id:uid(),title,key:'',bpm:'',notes:'Tekst: tekstowo.pl',chordLayout:'above',viewCols:1,lines};
-    songs.push(song);
-    const p=getActivePlaylist();
-    if(p&&!p.songIds.includes(song.id)){p.songIds.push(song.id);savePlaylists()}
-    save();renderPlaylistUI();renderList();
-    closeWebImport();
-    selectSong(songs.length-1);
-    isEditing=true;openEditor();document.getElementById('edit-btn').textContent='👁';
-    toast('🌐 Pobrano: '+title);
-  }catch(e){
-    webStatus(e&&e.message==='NO_PROXY'?'Najpierw ustaw proxy (⚙ Proxy).':'Błąd pobierania: '+String(e&&e.message||e).slice(0,80),true);
-  }
+  let html;
+  try{webStatus('Pobieram tekst…');html=await proxyFetch(url);}
+  catch(e){webStatus(e&&e.message==='NO_PROXY'?'Najpierw ustaw proxy (⚙ Proxy).':'Błąd pobierania: '+String(e&&e.message||e).slice(0,80)+' — sprawdź proxy/sieć.',true);return false}
+  const parsed=parseFetchedLyrics(html);
+  if(!parsed||!parsed.text.trim())return false;
+  const lines=songLinesFromText(parsed.text);
+  const title=(preferredTitle||'').trim()||cleanFetchedTitle(parsed.title)||'Nowy utwór';
+  const song={id:uid(),title,key:'',bpm:'',notes:'Tekst: tekstowo.pl',chordLayout:'above',viewCols:1,lines};
+  songs.push(song);
+  const p=getActivePlaylist();
+  if(p&&!p.songIds.includes(song.id)){p.songIds.push(song.id);savePlaylists()}
+  save();renderPlaylistUI();renderList();
+  closeWebImport();
+  selectSong(songs.length-1);
+  isEditing=true;openEditor();document.getElementById('edit-btn').textContent='👁';
+  toast('🌐 Pobrano: '+title);
+  return true;
 }
 async function runWebImport(){
-  if(!webProxyUrl){if(!setWebProxy())return}
   const artist=document.getElementById('web-artist').value.trim();
   const title=document.getElementById('web-title').value.trim();
   document.getElementById('web-results').innerHTML='';
-  if(!title){webStatus('Podaj tytuł albo wklej link.',true);return}
-  if(/^https?:\/\//i.test(title)){importSongFromUrl(title,artist);return}
-  try{
-    webStatus('Szukam…');
-    const q=(artist+' '+title).trim();
-    const html=await proxyFetch('https://www.tekstowo.pl/szukaj.html?q='+encodeURIComponent(q));
-    const results=parseSearchResults(html);
-    if(!results.length){webStatus('Brak wyników. Wklej bezpośredni link do utworu z tekstowo.pl.',true);return}
-    renderSearchResults(results,artist?'':title);
-    webStatus('Wybierz utwór ('+results.length+'):');
-  }catch(e){
-    webStatus(e&&e.message==='NO_PROXY'?'Najpierw ustaw proxy (⚙ Proxy).':'Błąd: '+String(e&&e.message||e).slice(0,80)+' — sprawdź proxy/sieć.',true);
+  if(!title){webStatus('Podaj wykonawcę i tytuł, albo wklej link tekstowo.pl.',true);return}
+  if(/^https?:\/\//i.test(title)){
+    const ok=await importSongFromUrl(title,artist);
+    if(!ok)webStatus('Nie znalazłem tekstu pod tym linkiem.',true);
+    return;
+  }
+  if(!artist){
+    webStatus('Podaj wykonawcę (potrzebny do adresu) albo wklej bezpośredni link.',true);
+    renderSearchFallback(title);
+    return;
+  }
+  const url='https://www.tekstowo.pl/'+slugifyTekstowo(artist)+'/'+slugifyTekstowo(title);
+  const ok=await importSongFromUrl(url,title);
+  if(!ok){
+    webStatus('Nie trafiłem w adres. Otwórz wyszukiwarkę tekstowo, znajdź utwór i wklej jego link w pole tytułu.',true);
+    renderSearchFallback((artist+' '+title).trim());
   }
 }
 

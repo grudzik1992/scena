@@ -4,6 +4,13 @@ Mały pośrednik, dzięki któremu PWA na tablecie może pobrać tekst piosenki
 z tekstowo.pl / teksciory mimo blokady CORS. Przepuszcza wyłącznie GET do
 trzech dozwolonych hostów, nic więcej.
 
+## Status: wdrożone
+
+Worker działa pod `https://spiewnik-proxy.agr-actoom.workers.dev` i ten adres jest
+wpisany w aplikacji jako domyślny (`DEFAULT_WEB_PROXY` w `koncert.html`), więc
+funkcja „🌐 Z sieci" działa od razu. Poniższe kroki potrzebne tylko przy
+ponownym wdrożeniu / zmianie konta.
+
 ## Wdrożenie (raz, ~3 minuty)
 
 W tym katalogu (`proxy/`):

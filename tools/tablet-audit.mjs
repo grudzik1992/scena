@@ -215,10 +215,6 @@ async function runFlow(browser, label, viewport) {
 // Test pobierania tekstu z sieci — proxy podstawiony przez route mock (bez sieci).
 async function runWebImportTest(browser) {
   const PROXY = 'https://spiewnik-proxy.test.workers.dev';
-  const SEARCH_HTML = `<!doctype html><html><body>
-    <a href="/sia/chandelier.html">Sia - Chandelier</a>
-    <a href="/inny/utwor.html">Inny - Utwor</a>
-    <a href="/o-nas.html">O nas</a></body></html>`;
   const LYRICS_HTML = `<!doctype html><html><body><h1>Sia - Chandelier (tekst piosenki)</h1>
     <div class="inner-text">[Zwrotka 1]<br>Party girls don't get hurt<br>Can't feel anything<br><br>[Refren]<br>I'm gonna swing from the chandelier</div>
     </body></html>`;
@@ -229,27 +225,33 @@ async function runWebImportTest(browser) {
   page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
   page.on('pageerror', e => consoleErrors.push('pageerror: ' + e.message));
 
+  // mock proxy: zwraca tekst tylko dla poprawnie zbudowanego slugu /sia/chandelier
+  let requestedTarget = '';
   await page.route(/spiewnik-proxy\.test\.workers\.dev/, route => {
     const u = new URL(route.request().url());
-    const target = u.searchParams.get('url') || '';
-    const body = target.includes('szukaj.html') ? SEARCH_HTML : LYRICS_HTML;
-    route.fulfill({ status: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'access-control-allow-origin': '*' }, body });
+    requestedTarget = u.searchParams.get('url') || '';
+    const ok = /\/sia\/chandelier$/.test(requestedTarget);
+    route.fulfill({ status: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'access-control-allow-origin': '*' }, body: ok ? LYRICS_HTML : '<html><body>404</body></html>' });
   });
 
   await page.goto(`http://localhost:${PORT}/koncert.html`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => typeof songs !== 'undefined' && songs.length > 0, null, { timeout: 8000 }).catch(() => {});
   await page.evaluate(p => { webProxyUrl = p; savePrefs(); }, PROXY);
 
+  // slug-build: polskie znaki -> ASCII
+  const slugs = await page.evaluate(() => ({
+    podsiadlo: slugifyTekstowo('Dawid Podsiadło'),
+    trojkaty: slugifyTekstowo('Trójkąty i kwadraty'),
+  }));
+  check('[web] slug z polskich znaków', slugs.podsiadlo === 'dawid-podsiadlo' && slugs.trojkaty === 'trojkaty-i-kwadraty', JSON.stringify(slugs));
+
   const before = await page.evaluate(() => songs.length);
   await page.locator('button[onclick="openWebImport()"]').click();
+  await page.locator('#web-artist').fill('Sia');
   await page.locator('#web-title').fill('Chandelier');
   await page.locator('#web-go').click();
-  await page.waitForSelector('.web-res', { timeout: 5000 });
-  const resCount = await page.evaluate(() => document.querySelectorAll('.web-res').length);
-  check('[web] wyniki wyszukiwania (filtr linków)', resCount === 2, `${resCount} wyników`);
-
-  await page.locator('.web-res').first().click();
   await page.waitForFunction(n => songs.length === n + 1, before, { timeout: 5000 });
+  check('[web] zbudowano poprawny adres slug', /\/sia\/chandelier$/.test(requestedTarget), requestedTarget);
   const added = await page.evaluate(() => {
     const s = songs[songs.length - 1];
     return {

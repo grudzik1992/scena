@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = "spiewnik-pwa-20260622-v7";
+﻿const CACHE_NAME = "spiewnik-pwa-20260622-v8";
 const ASSETS = [
   "./",
   "./index.html",
