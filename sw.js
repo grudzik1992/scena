@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = "spiewnik-pwa-20260622-v9";
+﻿const CACHE_NAME = "spiewnik-pwa-20260622-v10";
 const ASSETS = [
   "./",
   "./index.html",
@@ -11,7 +11,12 @@ const ASSETS = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
+  // Pojedynczy brakujacy plik nie moze wywalic calej instalacji (pusty cache = pusta strona).
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) =>
+      Promise.allSettled(ASSETS.map((a) => cache.add(a)))
+    )
+  );
   self.skipWaiting();
 });
 
@@ -37,7 +42,9 @@ self.addEventListener("fetch", (event) => {
 
   if (req.mode === "navigate") {
     event.respondWith(
-      fetch(req).catch(() => caches.match("./koncert.html"))
+      fetch(req).catch(() =>
+        caches.match("./koncert.html").then((r) => r || caches.match("./"))
+      )
     );
     return;
   }

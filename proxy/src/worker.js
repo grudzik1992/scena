@@ -27,7 +27,17 @@ export default {
     const reqUrl = new URL(request.url);
     const target = reqUrl.searchParams.get('url');
     if (!target) {
-      return new Response('Brak parametru ?url=', { status: 400, headers: CORS });
+      // Ktos otworzyl sam adres proxy zamiast aplikacji — pokaz czytelna strone.
+      return new Response(
+        '<!doctype html><html lang="pl"><head><meta charset="utf-8">' +
+          '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+          '<title>Spiewnik proxy</title></head><body style="font-family:system-ui;max-width:34em;margin:3em auto;padding:0 1em;line-height:1.5;color:#1c1a14">' +
+          '<h1 style="color:#c0430e">Spiewnik proxy</h1>' +
+          '<p>To jest pomocniczy serwer pobierania tekstow, a nie sama aplikacja.</p>' +
+          '<p>Otworz <strong>spiewnik (koncert.html)</strong> i uzyj w nim przycisku <strong>🌐 Z sieci</strong>.</p>' +
+          '</body></html>',
+        { status: 200, headers: { ...CORS, 'content-type': 'text/html; charset=utf-8' } }
+      );
     }
 
     let t;
