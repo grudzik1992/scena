@@ -10,7 +10,7 @@ const ALLOWED_HOSTS = new Set([
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': '*',
   'Access-Control-Max-Age': '86400',
 };
@@ -20,7 +20,7 @@ export default {
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: CORS });
     }
-    if (request.method !== 'GET') {
+    if (request.method !== 'GET' && request.method !== 'POST') {
       return new Response('method not allowed', { status: 405, headers: CORS });
     }
 
@@ -52,15 +52,25 @@ export default {
 
     let upstream;
     try {
-      upstream = await fetch(t.toString(), {
+      const fetchInit = {
+        method: request.method,
         headers: {
           'user-agent':
             'Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
-          'accept': 'text/html,application/xhtml+xml',
+          'accept': 'text/html,application/xhtml+xml,application/json,*/*;q=0.9',
           'accept-language': 'pl-PL,pl;q=0.9',
+          'referer': 'https://www.tekstowo.pl/',
+          'origin': 'https://www.tekstowo.pl',
         },
         cf: { cacheTtl: 3600, cacheEverything: true },
-      });
+      };
+      if (request.method === 'POST') {
+        fetchInit.body = request.body;
+        const ct = request.headers.get('content-type');
+        if (ct) fetchInit.headers['content-type'] = ct;
+        fetchInit.cf = { cacheTtl: 60, cacheEverything: false };
+      }
+      upstream = await fetch(t.toString(), fetchInit);
     } catch {
       return new Response('Błąd pobierania ze źródła', { status: 502, headers: CORS });
     }

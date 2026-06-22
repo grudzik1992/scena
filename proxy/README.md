@@ -39,7 +39,8 @@ Powinno zwrócić HTML strony wyszukiwania.
 
 ## Bezpieczeństwo
 
-- Tylko metoda GET, tylko `https`, tylko hosty: `www.tekstowo.pl`, `tekstowo.pl`,
+- Tylko metody GET i POST, tylko `https`, tylko hosty: `www.tekstowo.pl`, `tekstowo.pl`,
   `teksciory.interia.pl` (edytuj listę w `src/worker.js`).
+- POST używany wyłącznie do endpointu autocomplete (`/js/completeSongSearch`).
 - Read-only: worker nic nie zapisuje, niczego nie modyfikuje.
 - Darmowy plan Cloudflare w zupełności wystarcza (100k żądań/dobę).
