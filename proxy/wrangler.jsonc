@@ -1,0 +1,5 @@
+{
+  "name": "spiewnik-proxy",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-06-01"
+}
