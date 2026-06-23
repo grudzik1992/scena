@@ -1,7 +1,7 @@
 {
   "app": "spiewnik-koncertowy",
   "version": 1,
-  "exportedAt": "2026-06-22T20:59:26.226Z",
+  "exportedAt": "2026-06-23T14:19:39.587Z",
   "songs": [
     {
       "id": "mnyat16fc9ot",
@@ -7857,214 +7857,430 @@
       "viewCols": 1,
       "lines": [
         {
-          "id": "mnyjlbcdaeyq",
+          "id": "mqqqbolzgerj",
           "chord": "a C G a ",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdd8mx",
+          "id": "mqqqbolzlkas",
           "chord": "G a",
           "lyric": "I'm begging of you, please don't take my man",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdp1ok",
+          "id": "mqqqbolza6py",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdf92m",
+          "id": "mqqqbolz8k00",
           "chord": "",
           "lyric": "Please don't take him just because you can",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdrn31",
+          "id": "mqqqbolzzmzf",
           "chord": "",
           "lyric": "Your beauty is beyond compare",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcddp1b",
+          "id": "mqqqbolz19n9",
           "chord": "",
           "lyric": "With flaming locks of auburn hair",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdlfpc",
+          "id": "mqqqbolzhb0m",
           "chord": "",
           "lyric": "Ivory skin and eyes of emerald green",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdfcvh",
+          "id": "mqqqbolzr2k9",
           "chord": "",
           "lyric": "Your smile is like a breath of spring",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd5vx5",
+          "id": "mqqqbolzx7pg",
           "chord": "",
           "lyric": "Your voice is soft like summer rain",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd3w45",
+          "id": "mqqqbolzxw5u",
           "chord": "",
           "lyric": "I cannot compete with you, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcddnnm",
+          "id": "mqqqbolzwkpp",
           "chord": "",
           "lyric": "He talks about you in his sleep",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdno2l",
+          "id": "mqqqbolzycnl",
           "chord": "",
           "lyric": "There's nothing I can do to keep",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdibde",
+          "id": "mqqqbolz1zqx",
           "chord": "",
           "lyric": "From crying when he calls your name, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd8gd2",
+          "id": "mqqqbolz8ga7",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdwwgf",
+          "id": "mqqqbolzxy2g",
           "chord": "",
           "lyric": "I'm begging of you, please don't take my man",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd647a",
+          "id": "mqqqbolz0a8a",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdhxzn",
+          "id": "mqqqbolz7d5k",
           "chord": "",
           "lyric": "Please don't take him just because you can",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdqdv8",
+          "id": "mqqqbolzccz3",
           "chord": "",
           "lyric": "Now you could have your choice of men",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdmcme",
+          "id": "mqqqbolz3f5k",
           "chord": "",
           "lyric": "I could never love again",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdwz23",
+          "id": "mqqqbolz4wja",
           "chord": "",
           "lyric": "'Cause he's the only one for me, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdb2bq",
+          "id": "mqqqbolzi0ak",
           "chord": "",
           "lyric": "I had to have this talk with you",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdpi3q",
+          "id": "mqqqbolzibl0",
           "chord": "",
           "lyric": "My happiness depends on you",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdet1c",
+          "id": "mqqqbolzzzh8",
           "chord": "",
           "lyric": "And whatever you decide to do, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdtz4s",
+          "id": "mqqqbolzht2d",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdz8jt",
+          "id": "mqqqbolzlj5x",
           "chord": "",
           "lyric": "Oh, I'm begging of you, please don't take my man",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdvwh0",
+          "id": "mqqqbolzjt77",
           "chord": "",
           "lyric": "Jolene (Jolene), Jolene (Jolene), Jolene, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdynih",
+          "id": "mqqqbolzd2dr",
           "chord": "",
           "lyric": "Please don't take him even though you can",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd8zii",
+          "id": "mqqqbolzcxwq",
           "chord": "",
           "lyric": "I can easily understand",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd1aon",
+          "id": "mqqqbolz6v7x",
           "chord": "",
           "lyric": "How you could easily take my man",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdy6yw",
+          "id": "mqqqbolzi5u5",
           "chord": "",
           "lyric": "But you don't know what he means to me, Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd1tkv",
+          "id": "mqqqbolziudc",
           "chord": "",
           "lyric": "Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd9728",
+          "id": "mqqqbolzjj6y",
           "chord": "",
           "lyric": "Jolene (Jolene)",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdidgb",
+          "id": "mqqqbolzvtae",
           "chord": "",
           "lyric": "Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcdaao9",
+          "id": "mqqqbolz7b38",
           "chord": "",
           "lyric": "Jolene",
           "type": "normal"
         },
         {
-          "id": "mnyjlbcd5pne",
+          "id": "mqqqbolzd3fb",
           "chord": "",
           "lyric": "",
           "type": "empty"
+        },
+        {
+          "id": "mqqqbolzsl25",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolz2zgd",
+          "chord": "",
+          "lyric": "PL:",
+          "type": "section"
+        },
+        {
+          "id": "mqqqbolz75gh",
+          "chord": "",
+          "lyric": "Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz3qbv",
+          "chord": "",
+          "lyric": "błagam cię nie próbuj mi go skraść ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolztk74",
+          "chord": "",
+          "lyric": "Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzjv0i",
+          "chord": "",
+          "lyric": "nie próbuj by co tylko zechcesz brać ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz0l48",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolz92cw",
+          "chord": "",
+          "lyric": "Twe piękno nie zna żadnych ram ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzqznu",
+          "chord": "",
+          "lyric": "Szmaragdy oczu, gładka twarz ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz2nmj",
+          "chord": "",
+          "lyric": "W miedzianych lokach dziki ogień śpi ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz9q3i",
+          "chord": "",
+          "lyric": "Jak tchnienie wiosny brzmi twój śmiech ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz4c2h",
+          "chord": "",
+          "lyric": "Łagodny głos jak letni deszcz ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz9s9h",
+          "chord": "",
+          "lyric": "Nie mogę z Tobą mierzyć się Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzseyb",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolzouyf",
+          "chord": "",
+          "lyric": "O Tobie mówi wciąż przez sen wcią",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz5mpz",
+          "chord": "",
+          "lyric": "I nic nie zrobię aby me ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzglnt",
+          "chord": "",
+          "lyric": "Powstrzymać łzy gdy wzdycha do Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzbp0i",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolzn2xu",
+          "chord": "",
+          "lyric": "I łatwo się domyślić że Twój będzie kiedy tylko chcesz ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz0ill",
+          "chord": "",
+          "lyric": "Lecz nie wiesz czym on dla mnie jest Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzmpjv",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolzcodb",
+          "chord": "",
+          "lyric": "Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzcbq6",
+          "chord": "",
+          "lyric": "błagam cię nie próbuj mi go skraść ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz1e6a",
+          "chord": "",
+          "lyric": "Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzjt1z",
+          "chord": "",
+          "lyric": "nie próbuj by co tylko zechcesz brać ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzckh7",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolzmp44",
+          "chord": "",
+          "lyric": "Mogłabyś każdego mieć lecz ja już nie zakocham się ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz5pul",
+          "chord": "",
+          "lyric": "On jedynym dla mnie jest Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzhd08",
+          "chord": "",
+          "lyric": "Musiałam to powiedzieć ci ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzm6db",
+          "chord": "",
+          "lyric": "W twych rękach moje szczęście tkwi ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzka6x",
+          "chord": "",
+          "lyric": "Cokolwiek zechcesz zrobić z nim Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzmjs4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqbolzgkbz",
+          "chord": "",
+          "lyric": "Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolz65hs",
+          "chord": "",
+          "lyric": "błagam cię nie próbuj mi go skraść ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzl8of",
+          "chord": "",
+          "lyric": "Jolene ",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqbolzqnxt",
+          "chord": "",
+          "lyric": "Pozwól mi choć swoje szanse znasz",
+          "type": "normal"
         }
       ]
     },
@@ -23369,566 +23585,1332 @@
       "key": "",
       "bpm": "",
       "notes": "Tekst: tekstowo.pl",
-      "chordLayout": "above",
+      "chordLayout": "side",
       "viewCols": 1,
       "lines": [
         {
-          "id": "mqpp7ukdlk9m",
+          "id": "mqqq6vrutv5x",
           "chord": "",
           "lyric": "Ooo...",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd8g54",
-          "chord": "",
+          "id": "mqqq6vruhhfl",
+          "chord": "e a",
           "lyric": "",
-          "type": "empty"
+          "type": "normal"
         },
         {
-          "id": "mqpp7ukdqrf2",
+          "id": "mqqq6vru25ot",
           "chord": "",
           "lyric": "Nie napiszę o miłości",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdrix6",
+          "id": "mqqq6vru8qv2",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukddhd3",
+          "id": "mqqq6vrutrp2",
           "chord": "",
           "lyric": "Kolejnej piosenki,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdcs88",
+          "id": "mqqq6vru4ezb",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdi5e4",
+          "id": "mqqq6vrutjci",
           "chord": "",
           "lyric": "Miłość sama we mnie śpiewać ma.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdz7h3",
+          "id": "mqqq6vru9wmx",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd81oa",
+          "id": "mqqq6vrubvpx",
           "chord": "",
           "lyric": "Nie chcę prosić o zbyt wiele,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdu9a1",
+          "id": "mqqq6vrur1ug",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdjmvz",
+          "id": "mqqq6vruy6cd",
           "chord": "",
           "lyric": "Nic mi dziś nie potrzeba,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdnfrq",
+          "id": "mqqq6vru55p4",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdin80",
+          "id": "mqqq6vrucgip",
           "chord": "",
           "lyric": "Doceniam, co z natury mam.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdhvvx",
+          "id": "mqqq6vru8wm5",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdhnxc",
+          "id": "mqqq6vruatfo",
           "chord": "",
           "lyric": "Wiem jedno, że dostałam więcej niż",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd0z8n",
+          "id": "mqqq6vrunwgi",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukduamz",
+          "id": "mqqq6vru0mre",
           "chord": "",
           "lyric": "Udźwignąć sama zdołam, więc",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukds3lm",
+          "id": "mqqq6vrucfcm",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd5c6c",
+          "id": "mqqq6vru8r93",
           "chord": "",
           "lyric": "Wysyłam trochę ciepła",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdjc2c",
+          "id": "mqqq6vruuw8a",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdul31",
+          "id": "mqqq6vrukiwh",
           "chord": "",
           "lyric": "Z mego głosu, z mego serca. Aaa...",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdnd5w",
+          "id": "mqqq6vrugn5e",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdm49w",
+          "id": "mqqq6vru4twc",
           "chord": "",
           "lyric": "Ref:",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdyedk",
+          "id": "mqqq6vru1wfr",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdhfn5",
+          "id": "mqqq6vrub2qo",
           "chord": "",
           "lyric": "Jeżeli jutra nie ma,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd85v9",
+          "id": "mqqq6vruvfv4",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdsiva",
+          "id": "mqqq6vru2mm8",
           "chord": "",
           "lyric": "Ja nie przestaję śpiewać -",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd64g4",
+          "id": "mqqq6vruo3uw",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdfneq",
+          "id": "mqqq6vrupfag",
           "chord": "",
           "lyric": "To moja sutra serca...",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdrgka",
+          "id": "mqqq6vruvqeo",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdwtyk",
+          "id": "mqqq6vru39zp",
           "chord": "",
           "lyric": "Wyciszam się,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdweog",
+          "id": "mqqq6vrusntq",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd9vq9",
+          "id": "mqqq6vruye3g",
           "chord": "",
           "lyric": "W wodzie umarłam dawno,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdpf1y",
+          "id": "mqqq6vruu86r",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdv7lz",
+          "id": "mqqq6vruzjh0",
           "chord": "",
           "lyric": "Teraz opadam na dno.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdqbzv",
+          "id": "mqqq6vrum3o5",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdm2z0",
+          "id": "mqqq6vruitur",
           "chord": "",
           "lyric": "Pozwalam sobie zniknąć,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd7j6v",
+          "id": "mqqq6vrui0pk",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdk9qi",
+          "id": "mqqq6vru30xx",
           "chord": "",
           "lyric": "Po prostu brzmię.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdrs87",
+          "id": "mqqq6vruexsi",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd5qxi",
+          "id": "mqqq6vru8ccd",
           "chord": "",
           "lyric": "Chyba jestem jak ta tafla wody,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdtv68",
+          "id": "mqqq6vruqb7w",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd03j2",
+          "id": "mqqq6vruapcl",
           "chord": "",
           "lyric": "Odbijam w sobie świat",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdccnv",
+          "id": "mqqq6vruxnho",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd5cy4",
+          "id": "mqqq6vrujn2f",
           "chord": "",
           "lyric": "I wasze biedne głowy.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdha56",
+          "id": "mqqq6vruc5qj",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdopll",
+          "id": "mqqq6vruvnck",
           "chord": "",
           "lyric": "Nie staram się was zmieniać,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdmxqq",
+          "id": "mqqq6vru5bjx",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdumqf",
+          "id": "mqqq6vruc2tf",
           "chord": "",
           "lyric": "Daje słowo,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdkvqz",
+          "id": "mqqq6vru0b05",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdbh3b",
+          "id": "mqqq6vru2183",
           "chord": "",
           "lyric": "Jedno chcę wam dać -",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd21n8",
+          "id": "mqqq6vruwt28",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdojcu",
+          "id": "mqqq6vrumz4p",
           "chord": "",
           "lyric": "Obdarzyć was swobodą.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdaps6",
+          "id": "mqqq6vrubfje",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd5qw3",
+          "id": "mqqq6vru5ee7",
           "chord": "",
           "lyric": "Chcę tylko, żeby wszystko",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd9ex9",
+          "id": "mqqq6vrue833",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd76vp",
+          "id": "mqqq6vru299h",
           "chord": "",
           "lyric": "Śmiało do mnie zgłaszać,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd7nsc",
+          "id": "mqqq6vru9ad7",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdxybd",
+          "id": "mqqq6vrujme1",
           "chord": "",
           "lyric": "Mówić, co jest nie tak,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdjen7",
+          "id": "mqqq6vruedz1",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdbwzx",
+          "id": "mqqq6vruzwe6",
           "chord": "",
           "lyric": "Za nic nie przepraszać,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdnawg",
+          "id": "mqqq6vru1zi0",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd183y",
+          "id": "mqqq6vrumbkw",
           "chord": "",
           "lyric": "Nie zaprzeczać, kiedy stwierdzam, że to miłość,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd3vzx",
+          "id": "mqqq6vru1tjp",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdzbej",
+          "id": "mqqq6vruii3n",
           "chord": "",
           "lyric": "Nie wątpić w wartość swoją nijak.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdbnum",
+          "id": "mqqq6vruq7dn",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdtngv",
+          "id": "mqqq6vru5ugz",
           "chord": "",
           "lyric": "Jestem wariatką, komu ufać - jak nie sobie.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdm8sx",
+          "id": "mqqq6vruli9g",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdd7ds",
+          "id": "mqqq6vrug4hr",
           "chord": "",
           "lyric": "Wiem, jeśli czuje... a znalazłam właśnie w tobie",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukde1pk",
+          "id": "mqqq6vruk9cv",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdkw74",
+          "id": "mqqq6vruwwsy",
           "chord": "",
           "lyric": "Odwagę, siłę i intelekt... wątpisz?",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd7v8d",
+          "id": "mqqq6vruo3su",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd3nm1",
+          "id": "mqqq6vruy26l",
           "chord": "",
           "lyric": "Zobacz, gdzie stoimy... dziś się pod tym podpisz.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukddvca",
+          "id": "mqqq6vrugzui",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd5ggb",
+          "id": "mqqq6vruahlq",
           "chord": "",
           "lyric": "Ref: Jeżeli jutra nie ma...",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdfbt5",
+          "id": "mqqq6vru8e7h",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdzxdb",
+          "id": "mqqq6vruu3fj",
           "chord": "",
           "lyric": "Żadne słowo",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdd0vt",
+          "id": "mqqq6vruyusu",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd436r",
+          "id": "mqqq6vru9xvp",
           "chord": "",
           "lyric": "Nie ma teraz znaczenia,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdvkwa",
+          "id": "mqqq6vruvdi0",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdarvy",
+          "id": "mqqq6vruya4j",
           "chord": "",
           "lyric": "Nic  nowego nie odkryję, wiem.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd8bw6",
+          "id": "mqqq6vru5gh2",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd4f1f",
+          "id": "mqqq6vruc1p8",
           "chord": "",
           "lyric": "W jednym punkcie",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd16e6",
+          "id": "mqqq6vruo6ew",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd2s1u",
+          "id": "mqqq6vru5txq",
           "chord": "",
           "lyric": "Z biegiem czasu się zmieniam,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdsn7o",
+          "id": "mqqq6vruozcl",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdbfmb",
+          "id": "mqqq6vruzr5a",
           "chord": "",
           "lyric": "Nawet pamięć nie zatrzyma mnie.",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukd5oah",
+          "id": "mqqq6vruwrqh",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukd6wux",
+          "id": "mqqq6vrus9eg",
           "chord": "",
           "lyric": "Ref: Jeżeli jutra nie ma... 2x",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdyalo",
+          "id": "mqqq6vruzp2i",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdrk46",
+          "id": "mqqq6vruu6h3",
           "chord": "",
           "lyric": "Więc wysyłam trochę ciepła,",
           "type": "normal"
         },
         {
-          "id": "mqpp7ukdd6vy",
+          "id": "mqqq6vruc8qr",
           "chord": "",
           "lyric": "",
           "type": "empty"
         },
         {
-          "id": "mqpp7ukdosub",
+          "id": "mqqq6vrubapp",
           "chord": "",
           "lyric": "Wysyłam trochę ciepła. 2x",
           "type": "normal"
+        }
+      ]
+    },
+    {
+      "id": "mqqq7ceropnp",
+      "title": "The Cranberries - Zombie",
+      "key": "",
+      "bpm": "",
+      "notes": "Tekst: tekstowo.pl",
+      "chordLayout": "above",
+      "viewCols": 1,
+      "lines": [
+        {
+          "id": "mqqq8azspbjb",
+          "chord": "e C G D/F#",
+          "lyric": "Another head hangs lowly",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azszexa",
+          "chord": "",
+          "lyric": "Child is slowly taken",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsdl3j",
+          "chord": "",
+          "lyric": "And the violence, caused silence",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsq7fy",
+          "chord": "",
+          "lyric": "Who are we mistaken?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs0pe9",
+          "chord": "",
+          "lyric": "But you see, it's not me, it's not my family",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs5ufr",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsk8cw",
+          "chord": "",
+          "lyric": "In your head, in your head they are fighting",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azslti9",
+          "chord": "",
+          "lyric": "With their tanks and their bombs",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsp9xc",
+          "chord": "",
+          "lyric": "And their bombs and their guns",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azseomm",
+          "chord": "",
+          "lyric": "In your head, in your head they are crying",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsf96z",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsmbuz",
+          "chord": "",
+          "lyric": "In your head, in your head",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsia4w",
+          "chord": "",
+          "lyric": "Zombie, zombie, zombie-ie-ie",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsnfbb",
+          "chord": "",
+          "lyric": "What's in your head?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azslbyf",
+          "chord": "",
+          "lyric": "In your head",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsg4hu",
+          "chord": "",
+          "lyric": "Zombie, zombie, zombie-ie-ie",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsfen3",
+          "chord": "",
+          "lyric": "Oh, to, to, to, to, to, to, to, to, to, to, to, to",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs13lb",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs2soo",
+          "chord": "",
+          "lyric": "Another mother's breakin'",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsehq7",
+          "chord": "",
+          "lyric": "Heart is taking over",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsg01u",
+          "chord": "",
+          "lyric": "When the violence causes silence",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsetqt",
+          "chord": "",
+          "lyric": "We must be mistaken",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs6330",
+          "chord": "",
+          "lyric": "It's the same old theme, since 1916",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsqjpj",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsgq4i",
+          "chord": "",
+          "lyric": "In your head, in your head they're still fighting",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs1m64",
+          "chord": "",
+          "lyric": "With their tanks and their bombs",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsxkgx",
+          "chord": "",
+          "lyric": "And their bombs and their guns",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsvffj",
+          "chord": "",
+          "lyric": "In your head, in your head they are dying",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs4tgr",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs2uum",
+          "chord": "",
+          "lyric": "In your head, in your head",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azs6v6s",
+          "chord": "",
+          "lyric": "Zombie, zombie, zombie-ie-ie",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsrmlt",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs8sgu",
+          "chord": "",
+          "lyric": "What's in your head?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsz2s6",
+          "chord": "",
+          "lyric": "In your head",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsk8ry",
+          "chord": "",
+          "lyric": "Zombie, zombie, zombie-ie-ie",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsa7a7",
+          "chord": "",
+          "lyric": "Oh, oh, oh, oh, oh, oh, oh",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azst8yu",
+          "chord": "",
+          "lyric": "Hey, oh, ya, ya-a...",
+          "type": "normal"
+        },
+        {
+          "id": "mqqq8azsjky6",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsh9f2",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azszwdp",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs62vr",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs6mpd",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsdyzg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs71zv",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azssfen",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs52fw",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs7oar",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsdm7l",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsrnkf",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsseie",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsaoty",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsqi57",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsj46z",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsb0kf",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsnkxh",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsvya4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azswaf4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azs55rq",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsm46a",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsk8ey",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqq8azsecc4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        }
+      ]
+    },
+    {
+      "id": "mqqq9ahgopsu",
+      "title": "Gigi Perez - Sailor Song",
+      "key": "",
+      "bpm": "",
+      "notes": "Tekst: tekstowo.pl",
+      "chordLayout": "above",
+      "viewCols": 1,
+      "lines": [
+        {
+          "id": "mqqqaz95t49d",
+          "chord": "C e G -> G",
+          "lyric": "I saw her in the rightest way",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95talq",
+          "chord": "",
+          "lyric": "Looking like Anne Hathaway",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95lnw5",
+          "chord": "",
+          "lyric": "Laughing while she hit her pen",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz955xcp",
+          "chord": "",
+          "lyric": "And coughed, and coughed",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95yssl",
+          "chord": "",
+          "lyric": "And then she came up to my knees",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95nqey",
+          "chord": "",
+          "lyric": "Begging, \"Baby, would you please",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95tak9",
+          "chord": "",
+          "lyric": "Do the things you said you'd do to me, to me?\"",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95sv94",
+          "chord": "",
+          "lyric": "Oh, won't you kiss me on the mouth and love me like a sailor?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz955ueh",
+          "chord": "",
+          "lyric": "And when you get a taste, can you tell me, what's my flavor?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95p18i",
+          "chord": "",
+          "lyric": "I don't believe in God, but I believe that you're my savior",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz958eul",
+          "chord": "",
+          "lyric": "My mom says that she's worried, but I'm covered in this favor",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95r6qb",
+          "chord": "",
+          "lyric": "And when we're getting dirty, I forget all that is wrong",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95o80t",
+          "chord": "",
+          "lyric": "I sleep so I can see you 'cause I hate to wait so long",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95dzty",
+          "chord": "",
+          "lyric": "I sleep so I can see you, and I hate to wait so long",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz959xc5",
+          "chord": "",
+          "lyric": "She took my fingers to her mouth",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz952i3n",
+          "chord": "",
+          "lyric": "The kind of thing that makes you proud",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95ca9e",
+          "chord": "",
+          "lyric": "That nothing else had ever",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz959pfk",
+          "chord": "",
+          "lyric": "Worked out, worked out",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95eupy",
+          "chord": "",
+          "lyric": "And lately, I've tried other things",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz951ii1",
+          "chord": "",
+          "lyric": "But nothing can capture the sting",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95qlv7",
+          "chord": "",
+          "lyric": "Of the venom she's gonna spit out right now",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95q1tg",
+          "chord": "",
+          "lyric": "Won't you kiss me on the mouth and love me like a sailor?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz952ndk",
+          "chord": "",
+          "lyric": "And when you get a taste, can you tell me, what's my flavor?",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz951k00",
+          "chord": "",
+          "lyric": "I don't believe in God, but I believe that you're my savior",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95roti",
+          "chord": "",
+          "lyric": "I know that you've been worried, but you're dripping in my favor",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95joq8",
+          "chord": "",
+          "lyric": "And when we're getting dirty, I forget all that is wrong",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95jptt",
+          "chord": "",
+          "lyric": "I sleep so I can see you 'cause I hate to wait so long",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95gxhr",
+          "chord": "",
+          "lyric": "I sleep so I can see you, and I hate to wait so long",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95bfia",
+          "chord": "",
+          "lyric": "And we can run away to the walls inside your house",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz9570h3",
+          "chord": "",
+          "lyric": "I can be the cat, baby, you can be the mouse",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95kxxh",
+          "chord": "",
+          "lyric": "And we can laugh off things that we know nothing about",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95400s",
+          "chord": "",
+          "lyric": "We can go forever until you wanna sit it out",
+          "type": "normal"
+        },
+        {
+          "id": "mqqqaz95azct",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz952vrl",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95wydw",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95qvrf",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz9564bu",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95c6fn",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz953gek",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz9532ej",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95oqkt",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95e9c0",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95ikg4",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95zg7c",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95e60v",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95cm0q",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95ahhb",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz955tte",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95araj",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95t51p",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz955kut",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95cmrb",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95h9eg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95yxw9",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95cc4c",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz9571cg",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95qkbv",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz9577a5",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95zgvz",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz953oul",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95yi65",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz95es0e",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
+        },
+        {
+          "id": "mqqqaz952k35",
+          "chord": "",
+          "lyric": "",
+          "type": "empty"
         }
       ]
     }
