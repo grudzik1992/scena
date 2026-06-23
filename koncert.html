@@ -1033,8 +1033,40 @@ async function loadBundledData(interactive){
     const parsed=parseSongsPayload(raw);
     if(interactive&&!confirm(`Wczytać ${BUNDLED_JSON} i zastąpić obecną listę utworów (${songs.length})?\n\nTwoje playlisty i ustawienia (motyw, czcionka, tempo) pozostaną nietknięte.`))return;
     applySongsData(parsed.songs);
+    localStorage.removeItem(SONGS_SEEN_KEY);
     if(interactive)toast('↻ Wczytano songs.json');
   }catch(e){if(interactive)toast('❌ Nie udało się wczytać songs.json')}
+}
+
+/* ============================================================
+   MONIT O NOWEJ WERSJI
+   Przy starcie porównujemy treść lokalnej listy z opublikowanym
+   songs.json. Jeśli różni się (admin coś dograł i wypchnął na
+   GitHuba), pytamy użytkownika czy pobrać. Porównanie po treści,
+   więc działa też dla osób, które już mają dane w localStorage.
+============================================================ */
+const SONGS_SEEN_KEY='spiewnik_songs_seen';
+function hashStr(s){let h=5381;for(let i=0;i<s.length;i++){h=((h<<5)+h+s.charCodeAt(i))>>>0}return h.toString(36)}
+function songsSignature(arr){
+  try{return hashStr(JSON.stringify((arr||[]).map(normalizeSong)))}catch(e){return 'n'+((arr&&arr.length)||0)}
+}
+async function checkForSongsUpdate(){
+  try{
+    const res=await fetch(BUNDLED_JSON,{cache:'no-store'});
+    if(!res.ok)return;
+    const raw=await res.json();
+    const parsed=parseSongsPayload(raw);
+    const remoteSig=songsSignature(parsed.songs);
+    if(remoteSig===songsSignature(songs))return;            // nic nowego
+    if(localStorage.getItem(SONGS_SEEN_KEY)===remoteSig)return; // tę wersję już odrzucono
+    if(confirm(`Dostępna nowa wersja śpiewnika (${parsed.songs.length} utworów). Czy chcesz ją pobrać i zaktualizować listę?\n\nTwoje playlisty i ustawienia (motyw, czcionka, tempo) pozostaną nietknięte.`)){
+      applySongsData(parsed.songs);
+      localStorage.removeItem(SONGS_SEEN_KEY);
+      toast('✅ Zaktualizowano śpiewnik');
+    }else{
+      localStorage.setItem(SONGS_SEEN_KEY,remoteSig);        // nie pytaj o tę samą wersję co start
+    }
+  }catch(e){/* offline albo brak pliku — nie zawracamy głowy */}
 }
 
 function exportData(){
@@ -1596,8 +1628,11 @@ async function publishGlobalChanges(){
       const ej=await putRes.json();
       throw new Error(ej.message||'PUT failed');
     }
+    // Świeże dane admin ma już lokalnie — NIE pobieramy od razu z Pages,
+    // bo GitHub Pages przebudowuje się z opóźnieniem i podałby starą wersję,
+    // nadpisując właśnie opublikowaną listę. Inni dostaną monit przy starcie.
+    localStorage.removeItem(SONGS_SEEN_KEY);
     toast('🌍 Opublikowano globalnie songs.json');
-    await loadBundledData(false);
   }catch(e){toast(`❌ Publish error: ${String((e&&e.message)||e).slice(0,72)}`)}
 }
 
@@ -2305,6 +2340,7 @@ updateTempoUI();
 updateTransposeUI();
 maybeShowTabletOnboarding();
 if(!localStorage.getItem(STORE))loadBundledData(false);
+else setTimeout(checkForSongsUpdate,800);
 </script>
 </body>
 </html>
